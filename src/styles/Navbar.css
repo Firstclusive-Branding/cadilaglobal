@@ -1,0 +1,203 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 80px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 999;
+}
+
+.navbar-logo-img {
+  height: 80px;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #6e6e6e;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-link span {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.navbar-link:hover {
+  color: #0c557e;
+}
+
+.navbar-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-phone-text {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #0c557e;
+  transition: color 0.3s ease;
+}
+
+.navbar-phone-text:hover {
+  color: #1a84c2;
+}
+
+.navbar-find-jobs {
+  background: #0c557e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-find-jobs:hover {
+  background-color: #1a84c2;
+}
+
+.navbar-hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.jobs-dropdown {
+  position: absolute;
+  background-color: white;
+  display: none;
+  gap: 5px;
+  flex-direction: column;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.jobs-dropdown a {
+  text-decoration: none;
+  padding: 5px 40px;
+  width: 100%;
+  color: #6e6e6e;
+  display: block;
+}
+
+.jobs-dropdown a:hover {
+  color: #0c557e;
+}
+
+.jobs-dropdown.show {
+  display: flex;
+}
+.jobs-dropdown {
+  display: none;
+}
+
+.jobs-dropdown.show {
+  display: flex;
+}
+
+@media screen and (min-width: 1201px) {
+  .navbar-jobs:hover .jobs-dropdown {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-hamburger {
+    display: block;
+  }
+
+  .navbar-contact {
+    display: none;
+  }
+
+  .navbar-links {
+    position: absolute;
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    left: 0;
+    top: 80%;
+    background: white;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    transition: max-height 0.5s ease, visibility 0s 0.5s;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .navbar-links.open {
+    visibility: visible;
+    max-height: 500px;
+    transition: max-height 0.5s ease;
+  }
+
+  .navbar-links li {
+    margin: 10px 20px;
+  }
+
+  .nav-down-icon {
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-down-icon.open {
+    transform: rotate(0deg);
+  }
+
+  .jobs-dropdown {
+    position: static;
+    box-shadow: none;
+    padding: 0;
+    margin-left: 0;
+  }
+
+  .jobs-dropdown.show {
+    display: flex;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 10px 40px;
+  }
+  .navbar-logo-img {
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navbar-container {
+    padding: 10px;
+  }
+  .navbar-logo-img {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .navbar-logo-img {
+    height: 40px;
+  }
+}

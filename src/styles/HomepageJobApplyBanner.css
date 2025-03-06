@@ -1,0 +1,163 @@
+.homepage-jobapply-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.homepage-jobapply-quote-container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #12bdbd 25%, #0d557f 25%);
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+}
+
+.homepage-jobapply-quote-text {
+  font-size: 2.5rem;
+  margin: 0 auto;
+  font-style: italic;
+  font-weight: 500;
+  filter: drop-shadow(1px 1px black);
+  width: 80%;
+}
+
+.homepage-jobapply-quote-icon {
+  font-size: 48px;
+  margin-right: 10rem;
+  color: #d2d2d2d1;
+}
+
+.homepage-jobapply-content {
+  position: relative;
+  height: 50vh;
+  padding: 60px 20px;
+  background-image: url("../assets/homepage assets/homepage-employment.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-jobapply-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #124559ae;
+  z-index: 0;
+}
+
+.homepage-jobapply-title {
+  position: relative;
+  font-size: 4rem;
+  width: 70%;
+  font-weight: bold;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.homepage-jobapply-btn {
+  background-color: #0985a6;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+
+.homepage-jobapply-btn:hover {
+  background-color: #0d557f;
+}
+
+@media (max-width: 1024px) {
+  .homepage-jobapply-title {
+    font-size: 3rem;
+    width: 80%;
+  }
+
+  .homepage-jobapply-quote-text {
+    font-size: 2rem;
+    width: 90%;
+  }
+
+  .homepage-jobapply-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-jobapply-title {
+    font-size: 2.5rem;
+    width: 90%;
+  }
+
+  .homepage-jobapply-quote-text {
+    font-size: 1.6rem;
+    width: 90%;
+  }
+
+  .homepage-jobapply-quote-icon {
+    font-size: 38px;
+    margin-right: 8rem;
+  }
+  .homepage-jobapply-btn {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .homepage-jobapply-title {
+    font-size: 2rem;
+    width: 90%;
+  }
+  .homepage-jobapply-quote-container {
+    gap: 0;
+  }
+  .homepage-jobapply-quote-text {
+    font-size: 1.2rem;
+    width: 90%;
+  }
+
+  .homepage-jobapply-quote-icon {
+    display: none;
+  }
+  .homepage-jobapply-content {
+    height: 30vh;
+  }
+  .homepage-jobapply-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .homepage-jobapply-title {
+    font-size: 18px;
+  }
+
+  .homepage-jobapply-quote-text {
+    font-size: 10px;
+  }
+
+  .homepage-jobapply-btn {
+    font-size: 10px;
+    padding: 5px 12px;
+  }
+}

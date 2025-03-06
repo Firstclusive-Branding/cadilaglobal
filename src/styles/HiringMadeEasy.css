@@ -1,0 +1,206 @@
+.hiring-made-easy-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.hiring-made-easy-header {
+  display: flex;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hiring-made-easy-image {
+  width: 40%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.hiring-made-easy-text {
+  width: 60%;
+  text-align: left;
+}
+
+.hiring-made-easy-subtitle {
+  color: #12bdbd;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hiring-made-easy-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hiring-made-easy-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.hiring-made-easy-step {
+  flex: 1;
+  max-width: 400px;
+  border: 1px solid #12bdbd7d;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.hiring-made-easy-step:hover {
+  transform: scale(1.05);
+}
+.step-number {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #12bdbd;
+}
+
+.step-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.step-description {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 1024px) {
+  .hiring-made-easy-header {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .hiring-made-easy-image {
+    width: 80%;
+  }
+
+  .hiring-made-easy-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hiring-made-easy-title {
+    font-size: 1.8rem;
+  }
+
+  .hiring-made-easy-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 80%;
+  }
+
+  .hiring-made-easy-step {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hiring-made-easy-container {
+    padding: 2rem 1rem;
+  }
+
+  .hiring-made-easy-title {
+    font-size: 1.6rem;
+  }
+
+  .hiring-made-easy-image {
+    width: 90%;
+  }
+
+  .hiring-made-easy-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .hiring-made-easy-step {
+    min-height: 150px;
+    max-height: 150px;
+  }
+  .step-number {
+    font-size: 1.3rem;
+  }
+
+  .step-title {
+    font-size: 1rem;
+  }
+
+  .step-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .hiring-made-easy-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .hiring-made-easy-title {
+    font-size: 1.4rem;
+  }
+
+  .hiring-made-easy-image {
+    width: 90%;
+  }
+
+  .hiring-made-easy-steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .step-number {
+    font-size: 1.2rem;
+  }
+
+  .step-title {
+    font-size: 0.95rem;
+  }
+
+  .step-description {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .hiring-made-easy-container {
+    padding: 1rem;
+  }
+
+  .hiring-made-easy-title {
+    font-size: 1.2rem;
+  }
+
+  .hiring-made-easy-step {
+    padding: 6px 12px;
+  }
+
+  .step-number {
+    font-size: 1.1rem;
+  }
+
+  .step-title {
+    font-size: 0.9rem;
+  }
+
+  .step-description {
+    font-size: 0.75rem;
+  }
+}
