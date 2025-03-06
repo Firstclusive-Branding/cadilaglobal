@@ -127,6 +127,7 @@ const JobCarousel = () => {
           1024: { slidesPerView: 3 },
           768: { slidesPerView: 2 },
           425: { slidesPerView: 1 },
+          0: { slidesPerView: 1 },
         }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         className="job-carousel-cards"
