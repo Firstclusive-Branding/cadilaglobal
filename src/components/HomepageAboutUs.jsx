@@ -7,7 +7,7 @@ import { MdArrowRightAlt } from "react-icons/md";
 
 function HomepageAboutUs() {
   return (
-    <section className="about-us-section">
+    <section className="about-us-section" id="about-us">
       <div className="about-us-container">
         <div className="about-us-image">
           <img src={aboutUsMainImg} alt="Team working" className="main-image" />

@@ -46,7 +46,7 @@ const Navbar = () => {
         </li>
         <li>
           <a
-            href="#"
+            href="#about-us"
             className="navbar-link"
             onClick={() => setMenuOpen(false)}
           >
