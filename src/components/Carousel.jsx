@@ -17,7 +17,7 @@ import "swiper/css/pagination";
 import humanResource from "../assets/homepage assets/carousel/human-resource.jpg";
 import softwareIndustry from "../assets/homepage assets/carousel/software-industry.jpg";
 import telecommunication from "../assets/homepage assets/carousel/telecommunication.jpg";
-import industries from "../assets/homepage assets/carousel/industries.png";
+import industries from "../assets/homepage assets/carousel/all-industries.png";
 
 const slides = [
   {
