@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
-import ContactUs from "./components/ContactUs";
+// import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 
 const AppLayout = () => {
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       { index: true, element: <Homepage /> },
-      { path: "/contact-us", element: <ContactUs /> },
+      // { path: "/contact-us", element: <ContactUs /> },
       // { path: "about", element: <About /> },
       // { path: "*", element: <NotFound /> },
     ],

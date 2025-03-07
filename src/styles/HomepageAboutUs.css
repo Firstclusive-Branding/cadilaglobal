@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 5rem;
 }
 
 .about-us-image {
@@ -20,8 +20,8 @@
 }
 .overlay-image {
   position: absolute;
-  right: -5%;
-  bottom: -5%;
+  right: -10%;
+  bottom: -10%;
   background: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -46,10 +46,11 @@
   align-items: center;
   gap: 10px;
   background-color: #fff;
+  box-shadow: 0 0 10px black;
   border-radius: 10px;
   position: absolute;
-  left: 40%;
-  bottom: 2%;
+  left: 50%;
+  bottom: -3%;
   z-index: 3;
 }
 .phone-box h4 {
@@ -57,11 +58,15 @@
 }
 .phone-box a {
   color: #484848;
+  font-weight: 600;
   text-decoration: none;
   font-size: 14px;
   text-align: center;
+  transition: color 0.3s ease;
 }
-
+.phone-box a:hover {
+  color: #13bcbd;
+}
 .phone-icon {
   color: #13bcbd;
   font-size: 20px;
@@ -137,9 +142,18 @@
 @media (max-width: 1024px) {
   .about-us-container {
     flex-direction: column;
+    gap: 3rem;
   }
 
-  .about-us-image,
+  .overlay-image {
+    right: -5%;
+    bottom: -5%;
+    max-width: 40%;
+  }
+  .about-us-image {
+    width: 90%;
+  }
+
   .about-us-content {
     width: 100%;
   }
@@ -178,9 +192,13 @@
 }
 
 @media (max-width: 425px) {
+  .about-us-container {
+    gap: 2rem;
+  }
+
   .phone-box {
     left: 10%;
-    bottom: 5%;
+    bottom: -5%;
     padding: 5px 15px;
   }
   .phone-box h4,
@@ -189,17 +207,17 @@
   }
 
   .overlay-image {
-    right: 5%;
-    bottom: -15%;
+    right: -5%;
+    bottom: -10%;
     padding: 5px;
     max-width: 40%;
   }
 
   .overlay-image img {
     width: 100%;
+    height: auto;
     max-width: 350px;
     border-radius: 10px;
-    height: auto;
   }
   .about-us-content p {
     margin-right: 10px;

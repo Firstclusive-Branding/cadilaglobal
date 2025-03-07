@@ -37,7 +37,7 @@ const Navbar = () => {
       <ul className={`navbar-links ${menuOpen ? "open" : ""}`}>
         <li>
           <a
-            href="#"
+            href="/"
             className="navbar-link"
             onClick={() => setMenuOpen(false)}
           >

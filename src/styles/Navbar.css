@@ -70,66 +70,10 @@
   background-color: #003a5c;
 }
 
-/* 
-.navbar-find-jobs {
-  background: #0c557e;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.navbar-find-jobs:hover {
-  background-color: #1a84c2;
-} */
-
 .navbar-hamburger {
   display: none;
   font-size: 24px;
   cursor: pointer;
-}
-
-.jobs-dropdown {
-  position: absolute;
-  background-color: white;
-  display: none;
-  gap: 5px;
-  flex-direction: column;
-  text-align: left;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-
-.jobs-dropdown a {
-  text-decoration: none;
-  padding: 5px 40px;
-  width: 100%;
-  color: #6e6e6e;
-  display: block;
-}
-
-.jobs-dropdown a:hover {
-  color: #0c557e;
-}
-
-.jobs-dropdown.show {
-  display: flex;
-}
-.jobs-dropdown {
-  display: none;
-}
-
-.jobs-dropdown.show {
-  display: flex;
-}
-
-@media screen and (min-width: 1201px) {
-  .navbar-jobs:hover .jobs-dropdown {
-    display: flex;
-  }
 }
 
 @media screen and (max-width: 1200px) {

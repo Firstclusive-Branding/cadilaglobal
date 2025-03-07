@@ -20,7 +20,7 @@ function HomepageAboutUs() {
               <FaPhoneAlt className="phone-icon" />
             </div>
             <div>
-              <h4>Telephone</h4>
+              <h4>GIVE US A RING</h4>
               <a href="tel:+18327579277">+1 832 757 9277</a>
             </div>
           </div>
