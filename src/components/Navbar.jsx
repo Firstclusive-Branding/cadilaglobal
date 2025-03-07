@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <nav className="navbar-container" ref={navRef}>
       <div className="navbar-logo">
-        <a href="#">
+        <a href="">
           <img src={Logo} alt="Cadila Global" className="navbar-logo-img" />
         </a>
       </div>

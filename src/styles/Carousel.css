@@ -18,7 +18,7 @@
   justify-content: flex-start;
   position: relative;
 }
-.carousel-slide::before {
+/* .carousel-slide::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   background: #0c547e77;
-}
+} */
 .carousel-content {
   color: white;
   max-width: 600px;
@@ -40,6 +40,7 @@
 
 .carousel-heading {
   font-size: 20px;
+  filter: drop-shadow(1px 1px 5px black);
   margin: 0;
   text-transform: uppercase;
 }
@@ -53,6 +54,7 @@
 
 .carousel-description {
   font-size: 18px;
+  filter: drop-shadow(1px 1px 5px black);
   color: #dedede;
   margin: 10px 0;
 }
