@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Carousel from "./Carousel";
 import CounterStats from "./CounterStats";
 import HomepageAboutUs from "./HomepageAboutUs";
@@ -15,16 +16,95 @@ import HomepageJobApplyBanner from "./HomepageJobApplyBanner";
 function Homepage() {
   return (
     <div>
-      <Carousel />
-      <CounterStats />
-      <HomepageAboutUs />
-      <HomepageWhatWeDo />
-      <HomepageWhyPartnerWithUs />
-      <JobCarousel />
-      <HomepageSuccessStories />
-      <HiringMadeEasy />
-      <EmployerBenefits />
-      <HomepageJobApplyBanner />
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <Carousel />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <CounterStats />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <HomepageAboutUs />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <HomepageWhatWeDo />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <HomepageWhyPartnerWithUs />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <JobCarousel />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <HomepageSuccessStories />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <HiringMadeEasy />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <EmployerBenefits />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <HomepageJobApplyBanner />
+      </motion.div>
       {/* <HomepageJobCards /> */}
       {/* <HomepageHowItWorks /> */}
     </div>
