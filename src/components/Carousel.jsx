@@ -159,9 +159,9 @@ const Carousel = () => {
                 <h2 className="carousel-title">{slide.title}</h2>
                 <p className="carousel-description">{slide.description}</p>
                 <hr />
-                <a href={slide.link} className="carousel-button">
+                <Link to="/contact-us" className="carousel-button">
                   KNOW MORE
-                </a>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
