@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../styles/Navbar.css";
 import Logo from "../assets/Logo.png";
-import { FaXmark, FaPhone, FaChevronDown, FaBars } from "react-icons/fa6";
+import { FaXmark, FaPhone, FaBars } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [jobsOpen, setJobsOpen] = useState(false);
   const navRef = useRef(null);
 
   const handleClickOutside = (event) => {
@@ -75,13 +75,13 @@ const Navbar = () => {
           <a className="navbar-link">FIND JOBS</a>
         </li>
         <li>
-          <a
-            href="#"
+          <Link
+            to="/contact-us"
             className="navbar-link"
             onClick={() => setMenuOpen(false)}
           >
             CONTACT US
-          </a>
+          </Link>
         </li>
       </ul>
 

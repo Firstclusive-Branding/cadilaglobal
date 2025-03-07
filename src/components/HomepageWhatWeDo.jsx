@@ -39,7 +39,7 @@ const HomepageWhatWeDo = () => {
       </div>
 
       <button className="all-services-btn">
-        ALL OUR SERVICES <FaArrowRight />
+        BROUSE ALL CATEGORIES <FaArrowRight />
       </button>
     </div>
   );
