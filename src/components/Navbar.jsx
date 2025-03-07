@@ -53,29 +53,14 @@ const Navbar = () => {
             ABOUT US
           </a>
         </li>
-        <li
-          className="navbar-jobs"
-          onMouseEnter={() => window.innerWidth > 1200 && setJobsOpen(true)}
-          onMouseLeave={() => window.innerWidth > 1200 && setJobsOpen(false)}
-        >
+        <li>
           <a
-            className="navbar-link jobs-toggle"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              if (window.innerWidth <= 1200) setJobsOpen(!jobsOpen);
-            }}
+            href="#"
+            className="navbar-link"
+            onClick={() => setMenuOpen(false)}
           >
-            JOBS
-            <span className={`nav-down-icon ${jobsOpen ? "open" : ""}`}>
-              <FaChevronDown />
-            </span>
+            OUR SERVICES
           </a>
-          <div className={`jobs-dropdown ${jobsOpen ? "show" : ""}`}>
-            <a href="#">Job 1</a>
-            <a href="#">Job 2</a>
-            <a href="#">Job 3</a>
-          </div>
         </li>
         <li>
           <a
@@ -83,25 +68,30 @@ const Navbar = () => {
             className="navbar-link"
             onClick={() => setMenuOpen(false)}
           >
-            CONTACT
+            HIRE TALENT
+          </a>
+        </li>
+        <li className="navbar-jobs">
+          <a className="navbar-link">FIND JOBS</a>
+        </li>
+        <li>
+          <a
+            href="#"
+            className="navbar-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            CONTACT US
           </a>
         </li>
       </ul>
 
       <div className="navbar-contact">
-        <div>
-          <a href="tel:+18327579277" className="navbar-phone-text">
-            <span>
-              <FaPhone />
-            </span>
-            +1 832 757 9277
-          </a>
-        </div>
-        <div>
-          <a href="#" className="navbar-find-jobs">
-            FIND JOBS
-          </a>
-        </div>
+        <a href="tel:+18327579277" className="navbar-phone-text">
+          <span>
+            <FaPhone />
+          </span>
+          +1 (832) 757-9277
+        </a>
       </div>
     </nav>
   );

@@ -51,17 +51,26 @@
 .navbar-phone-text {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #0c557e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
-  color: #0c557e;
-  transition: color 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
-
+.navbar-phone-text span {
+  display: flex;
+}
 .navbar-phone-text:hover {
-  color: #1a84c2;
+  background-color: #003a5c;
 }
 
+/* 
 .navbar-find-jobs {
   background: #0c557e;
   color: white;
@@ -75,7 +84,7 @@
 
 .navbar-find-jobs:hover {
   background-color: #1a84c2;
-}
+} */
 
 .navbar-hamburger {
   display: none;

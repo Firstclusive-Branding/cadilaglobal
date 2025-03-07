@@ -30,17 +30,22 @@ function HomepageAboutUs() {
           <h5 className="about-title">ABOUT US</h5>
           <h2>Finding You The Leaders Of Tomorrow.</h2>
           <p>
-            CADILA GLOBAL SOLUTION understands the local markets and cultures
-            and tailors its services to meet client needs. Our clients value our
-            flexibility and agility, enabling us to deliver high-quality results
-            at any scale. CADILA GLOBAL SOLUTION ensures services that exceed
-            expectations, guaranteeing long-term business relationships. We
-            specialize in Engineering Staffing, IT Staffing, Administrative
-            Staffing, Financial Staffing, Healthcare Staffing, and more.
+            At Cadila Global Solution, we understand local markets and cultures,
+            allowing us to tailor our services to meet the unique needs of our
+            clients. Our flexibility and agility enable us to deliver
+            high-quality results at any scale. We are committed to exceeding
+            expectations and fostering long-term business relationships through
+            exceptional service.
+          </p>
+          <p>
+            We specialize in Staffing Services - Engineering Staffing, IT
+            Staffing, Administrative Staffing, Financial Staffing, Healthcare
+            Staffing, Headhunting, Direct Hire Services, IT Staffing Services
+            and Contract Hire Staffing.
           </p>
           <blockquote>
             <em>
-              “Empowering businesses with top talent for a brighter future.”
+              “Helping businesses find top talent to build a stronger future.”
             </em>
           </blockquote>
 
@@ -51,8 +56,11 @@ function HomepageAboutUs() {
               </span>
             </div>
             <div>
-              <h4>5 Years Of Business</h4>
-              <p>5 Years of Excellence in Connecting Talent & Opportunities!</p>
+              <h4>10+ Years Of Experience</h4>
+              <p>
+                A decade of helping businesses hire top talent and connecting
+                professionals with the right opportunities.
+              </p>
             </div>
           </div>
 
