@@ -105,9 +105,11 @@
   .carousel-content {
     max-width: 60%;
     padding: 30px;
-    margin-left: 5rem;
+    margin-left: 0;
   }
-
+  .carousel-slide {
+    justify-content: center;
+  }
   .carousel-heading {
     font-size: 18px;
   }
@@ -142,7 +144,6 @@
   .carousel-content {
     max-width: 80%;
     padding: 20px;
-    margin-left: 2rem;
   }
 
   .carousel-heading {
@@ -169,5 +170,10 @@
   .swiper-pagination-bullet {
     width: 8px;
     height: 8px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .carousel-title {
+    font-size: 24px;
   }
 }
