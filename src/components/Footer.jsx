@@ -11,18 +11,19 @@ import {
   FaCaretRight,
 } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="footer-container">
       <div className="footer-content">
-        {/* Information Section */}
         <div className="footer-section">
-          <h3>Information</h3>
+          <h3>CADILA GLOBAL SOLUTION</h3>
           <p>
-            Cadila Global Solution delivers tailored staffing solutions,
-            ensuring flexibility, agility, and excellence across diverse
-            industries.
+            With 10+ years of experience, we connect top talent with leading
+            companies in engineering, IT, healthcare, finance and more. Our
+            flexible, high-quality staffing solutions ensure long-term success
+            for businesses and job seekers alike.
           </p>
           <div className="footer-social-icons">
             <a
@@ -58,49 +59,53 @@ const Footer = () => {
           <ul>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">About Us</a>
+              <Link to="/about-us">About Us</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Our Team Work</a>
+              <Link to="/contact-us">Contact</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Services</a>
+              <Link to="/careers">Careers</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Work Gallery</a>
+              <Link to="/">Terms & Conditions</Link>
+            </li>
+            <li>
+              <FaCaretRight className="arrow-icon" />
+              <Link to="/">Privacy Policy</Link>
             </li>
           </ul>
         </div>
 
         <div className="footer-section">
-          <h3>Site Links</h3>
+          <h3>Our Services</h3>
           <ul>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Privacy Policy</a>
+              <Link to="/services/executive-search">Executive Search</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Disclaimer</a>
+              <Link to="/services/direct-hire">Direct Hire</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Terms & Condition</a>
+              <Link to="/services/contract-hire">Contract Hire</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">GDPR</a>
+              <Link to="/services/permanent-staffing">Permanent Staffing</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <a href="#">Cookies Used</a>
+              <Link to="/services/it-staffing">IT Staffing</Link>
             </li>
           </ul>
         </div>

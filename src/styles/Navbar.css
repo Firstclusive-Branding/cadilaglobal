@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 80px;
+  padding: 10px 60px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 999;
@@ -14,31 +14,81 @@
 
 .navbar-links {
   display: flex;
+  align-items: center;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
 .navbar-links li {
   margin: 0 15px;
   font-weight: 600;
+  position: relative;
+  cursor: pointer;
 }
 
 .navbar-link {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   color: #6e6e6e;
   font-size: 16px;
   transition: color 0.3s ease;
 }
 
-.navbar-link span {
-  display: flex;
-  align-items: center;
+.navbar-link:hover {
+  color: #0c557e;
+}
+
+.navbar-services {
+  position: relative;
+}
+.navbar-down-arrow {
   margin-left: 5px;
 }
 
-.navbar-link:hover {
-  color: #0c557e;
+.navbar-dropdown-menu {
+  position: absolute;
+  padding: 0;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-services:hover .navbar-dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-dropdown-menu li {
+  list-style: none;
+  margin: 0;
+}
+
+.navbar-dropdown-menu li a {
+  display: block;
+  padding: 12px;
+  color: #6e6e6e;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-dropdown-menu li a:hover {
+  background-color: #0c557e;
+  color: white;
 }
 
 .navbar-contact {
@@ -57,15 +107,12 @@
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
-  color: white;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-.navbar-phone-text span {
-  display: flex;
-}
+
 .navbar-phone-text:hover {
   background-color: #003a5c;
 }
@@ -103,7 +150,7 @@
 
   .navbar-links.open {
     visibility: visible;
-    max-height: 500px;
+    max-height: 1000px;
     transition: max-height 0.5s ease;
   }
 
@@ -111,46 +158,28 @@
     margin: 10px 20px;
   }
 
-  .nav-down-icon {
-    transform: rotate(-90deg);
-    transition: transform 0.3s ease;
-  }
-
-  .nav-down-icon.open {
-    transform: rotate(0deg);
-  }
-
-  .jobs-dropdown {
+  .navbar-dropdown-menu {
     position: static;
     box-shadow: none;
     padding: 0;
     margin-left: 0;
-  }
-
-  .jobs-dropdown.show {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
   }
 }
+
 @media screen and (max-width: 768px) {
   .navbar-container {
-    padding: 10px 40px;
-  }
-  .navbar-logo-img {
-    height: 60px;
+    padding: 10px 60px;
   }
 }
 
 @media screen and (max-width: 425px) {
-  .navbar-container {
-    padding: 10px;
-  }
   .navbar-logo-img {
     height: 50px;
   }
-}
-
-@media screen and (max-width: 320px) {
-  .navbar-logo-img {
-    height: 40px;
+  .navbar-container {
+    padding: 10px 40px;
   }
 }

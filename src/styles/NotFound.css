@@ -1,0 +1,26 @@
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.not-found-image {
+  max-width: 100%;
+  height: auto;
+  width: 40%;
+  filter: drop-shadow(1px 1px 1px #0d557f);
+}
+
+@media (max-width: 768px) {
+  .not-found-image {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found-image {
+    width: 100%;
+  }
+}

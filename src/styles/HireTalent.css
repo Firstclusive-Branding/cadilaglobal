@@ -1,0 +1,158 @@
+.hire-talent-container {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.hire-talent-image {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: 50%;
+}
+.hire-talent-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: auto;
+  width: 100%;
+  gap: 3rem;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hire-talent-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hire-talent-subtitle {
+  color: #12bdbd;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.hire-talent-title {
+  color: #000;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hire-talent-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.hire-talent-right {
+  flex: 1;
+  max-width: 800px;
+}
+
+.hire-talent-form {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hire-talent-form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.hire-talent-form input,
+.hire-talent-form textarea {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f8f8f8;
+}
+
+.hire-talent-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.hire-talent-form button {
+  background: linear-gradient(to right, #0f6aad, #0a4f8b);
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hire-talent-form button:hover {
+  background: linear-gradient(to right, #0a4f8b, #073f6b);
+}
+
+@media (max-width: 1024px) {
+  .hire-talent-content {
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  .hire-talent-left {
+    max-width: 800px;
+  }
+
+  .hire-talent-right {
+    width: 100%;
+  }
+
+  .hire-talent-form {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hire-talent-title {
+    font-size: 2.5rem;
+  }
+
+  .hire-talent-left {
+    width: 80%;
+  }
+
+  .hire-talent-right {
+    width: 80%;
+  }
+  .hire-talent-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .hire-talent-subtitle {
+    font-size: 0.9rem;
+  }
+  .hire-talent-title {
+    font-size: 1.8rem;
+  }
+  .hire-talent-description {
+    font-size: 0.9rem;
+  }
+  .hire-talent-left {
+    width: 90%;
+  }
+
+  .hire-talent-right {
+    width: 90%;
+  }
+  .hire-talent-form {
+    padding: 1rem;
+  }
+}

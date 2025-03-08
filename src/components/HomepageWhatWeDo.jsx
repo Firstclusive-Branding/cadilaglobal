@@ -54,10 +54,12 @@ const HomepageWhatWeDo = () => {
 
   return (
     <div className="what-we-do-container">
-      <p className="what-we-do-subtitle">WHAT WE DO</p>
-      <h2 className="what-we-do-title">
-        Discover Our Comprehensive Staffing Solutions
-      </h2>
+      <div className="what-we-do-header">
+        <p className="what-we-do-subtitle">WHAT WE DO</p>
+        <h2 className="what-we-do-title">
+          Discover Our Comprehensive Staffing Solutions
+        </h2>
+      </div>
 
       <div className="what-we-do-grid">
         {initialSolutions.map((solution, index) => (

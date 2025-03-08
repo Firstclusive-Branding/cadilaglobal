@@ -1,9 +1,11 @@
 .what-we-do-container {
   background-color: #f9f9f9;
   padding: 4rem 1rem;
-  text-align: center;
 }
-
+.what-we-do-header {
+  max-width: 1200px;
+  margin: auto;
+}
 .what-we-do-subtitle {
   color: #0985a6;
   font-weight: bold;
@@ -136,6 +138,10 @@
   }
   .what-we-do-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .show-categories {
+    max-height: 800px;
   }
 }
 
