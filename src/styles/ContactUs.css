@@ -1,140 +1,193 @@
-.contact-container {
+.contact-us-container {
   background-color: #f9f9f9;
-  padding: 20px;
 }
 
-.contact-header {
+.contact-us-header {
   position: relative;
   text-align: center;
 }
 
-.contact-image {
+.contact-us-image {
   width: 100%;
   height: auto;
   max-height: 250px;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 50%;
 }
 
-.contact-header h2 {
+.contact-us-title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #0a0a0a;
-  font-size: 2rem;
-  font-weight: bold;
+  color: #fff;
+  font-size: 3rem;
+  filter: drop-shadow(0px 0px 10px black);
 }
 
-.contact-content {
+.contact-us-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 30px;
 }
 
-.contact-info {
+.contact-us-info {
   flex: 1;
   min-width: 300px;
   margin-bottom: 20px;
 }
 
-.contact-info h3 {
+.contact-us-subtitle {
   font-size: 1.5rem;
   color: #0a0a0a;
 }
 
-.contact-info p {
+.contact-us-description {
   font-size: 1rem;
   color: #333;
 }
 
-.contact-form {
+.contact-us-details {
+  margin-top: 10px;
+}
+
+.contact-us-details a {
+  text-decoration: none;
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+.contact-us-details a:hover {
+  color: #0985a6;
+}
+.contact-us-icons {
+  font-size: 20px;
+  color: #0985a6;
+}
+.contact-us-form {
   flex: 1;
   min-width: 300px;
 }
 
-form {
+.contact-form {
   background: white;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.input-group {
+.contact-form-name-group {
   display: flex;
   gap: 10px;
 }
-
-.input-group input {
-  flex: 1;
+.contact-form-name-group input {
+  flex-grow: 1;
 }
-
-input,
-textarea {
-  width: 100%;
+.contact-form-input,
+.contact-form-textarea {
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-textarea {
+.contact-form-textarea {
   height: 100px;
   resize: none;
 }
 
-button {
-  width: 100%;
+.contact-form-button {
+  width: 40%;
   padding: 10px;
-  background: linear-gradient(90deg, #005ea6, #003f7f);
+  margin: auto;
+  background: linear-gradient(to bottom, #56a1c1, #0d557f);
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease;
+  z-index: 1;
 }
 
-button:hover {
-  background: linear-gradient(90deg, #003f7f, #00285c);
+.contact-form-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #3c89a0, #083b5a);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50px;
+  z-index: -1;
 }
 
-/* Responsive Design */
-@media (max-width: 1027px) {
-  .contact-content {
+.contact-form-button:hover::before {
+  opacity: 1;
+}
+.contact-form-button:active {
+  transform: scale(0.9);
+}
+
+@media (max-width: 1024px) {
+  .contact-us-content {
     flex-direction: column;
     text-align: center;
   }
-
-  .input-group {
+  .contact-us-title {
+    font-size: 2.5rem;
+  }
+  .contact-us-content {
+    text-align: left;
+  }
+  .contact-form-group {
     flex-direction: column;
   }
 }
 
 @media (max-width: 768px) {
-  .contact-header h2 {
-    font-size: 1.8rem;
+  .contact-us-title {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 425px) {
-  .contact-header h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact-content {
+  .contact-us-content {
     padding: 20px;
   }
 
-  form {
+  .contact-us-form {
+    width: 100%;
+  }
+
+  .contact-form {
     padding: 15px;
+  }
+  .contact-form-name-group {
+    flex-direction: column;
+  }
+  .contact-form-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
   }
 }
 
 @media (max-width: 320px) {
-  .contact-header h2 {
+  .contact-us-title {
     font-size: 1.2rem;
   }
 
-  .contact-content {
+  .contact-us-content {
     padding: 15px;
   }
 }
