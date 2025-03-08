@@ -9,6 +9,7 @@ import humanResource from "../assets/homepage assets/carousel/human-resource.jpg
 import softwareIndustry from "../assets/homepage assets/carousel/software-industry.jpg";
 import telecommunication from "../assets/homepage assets/carousel/telecommunication.jpg";
 import industries from "../assets/homepage assets/carousel/all-industries.png";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -16,28 +17,24 @@ const slides = [
     title: "Helping Businesses Find Top Talent, Effortlessly!",
     description: "From Direct Hires to Contract Staffing & More.",
     image: humanResource,
-    link: "#",
   },
   {
     heading: "Work With Us",
     title: "Hire Smarter, Grow Faster!",
     description: "10+ Years of Excellence in Staffing.",
     image: softwareIndustry,
-    link: "#",
   },
   {
     heading: "Find Talent",
     title: "Flexible Hiring for Every Need!",
     description: "Permanent or Temporary - we’ve got you covered.",
     image: telecommunication,
-    link: "#",
   },
   {
     heading: "Explore Industries",
     title: "Expert Hiring Across Key Industries!",
     description: "From IT & Engineering to Healthcare, Finance & More.",
     image: industries,
-    link: "#",
   },
 ];
 // const slides = [
@@ -162,9 +159,9 @@ const Carousel = () => {
                 <h2 className="carousel-title">{slide.title}</h2>
                 <p className="carousel-description">{slide.description}</p>
                 <hr />
-                <a href={slide.link} className="carousel-button">
+                <Link to="/contact-us" className="carousel-button">
                   KNOW MORE
-                </a>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
