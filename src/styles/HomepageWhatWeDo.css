@@ -113,7 +113,7 @@
   gap: 5px;
   margin: auto;
   margin-top: 2rem;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .browse-categories-btn:hover {
