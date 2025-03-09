@@ -95,7 +95,13 @@
 .heart-icon {
   color: #12bdbd;
 }
-
+.footer-bottom p a {
+  color: white;
+  text-decoration: none;
+}
+.footer-bottom p a:hover {
+  color: #aef507;
+}
 @media (max-width: 1024px) {
   .footer-content {
     flex-wrap: wrap;

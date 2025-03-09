@@ -129,7 +129,15 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
-          MADE WITH <FaHeart className="heart-icon" /> BY FIRSTCLUSIVE
+          MADE WITH <FaHeart className="heart-icon" /> BY
+          <a
+            href="https://firstclusive.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            FIRSTCLUSIVE
+          </a>
         </p>
       </div>
     </footer>
