@@ -154,7 +154,7 @@ const JobCarousel = () => {
                 </div>
                 <p className="job-carousel-description">{job.description}</p>
                 <button className="job-carousel-apply-button">
-                  Apply Now →
+                  Apply Now <FaArrowRight />
                 </button>
               </div>
             </div>

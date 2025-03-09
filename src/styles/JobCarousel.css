@@ -104,13 +104,17 @@
   background-color: #0985a6;
   color: white;
   border: none;
-  padding: 12px 18px;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 14px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: auto;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
 }
 .job-carousel-apply-button:hover {
   background-color: #006a87;
@@ -157,7 +161,9 @@
   .job-carousel-details {
     padding: 10px 20px;
   }
-
+  .job-carousel-nav-buttons {
+    display: none;
+  }
   .job-carousel-apply-button {
     padding: 10px 15px;
   }
@@ -172,14 +178,14 @@
   .job-carousel-title {
     font-size: 1.4rem;
   }
-  .job-carousel-nav-buttons {
+  /* .job-carousel-nav-buttons {
     margin-right: 0;
-  }
+  } */
 
-  .job-carousel-nav-buttons button {
+  /* .job-carousel-nav-buttons button {
     padding: 10px 45px;
     font-size: 18px;
-  }
+  } */
 }
 
 @media screen and (max-width: 320px) {
@@ -192,12 +198,12 @@
   .job-carousel-title {
     font-size: 1.2rem;
   }
-  .job-carousel-nav-buttons {
+  /* .job-carousel-nav-buttons {
     margin-right: 0;
-  }
+  } */
 
-  .job-carousel-nav-buttons button {
+  /* .job-carousel-nav-buttons button {
     padding: 10px 35px;
     font-size: 18px;
-  }
+  } */
 }
