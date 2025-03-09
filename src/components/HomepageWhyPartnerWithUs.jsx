@@ -3,23 +3,27 @@ import "../styles/HomepageWhyPartnerWithUs.css";
 import partnerImage from "../assets/homepage assets/homepage-why-partner-with-us.png";
 import partnerImage2 from "../assets/homepage assets/homepage-why-partner-with-us-2.png";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const benefits = [
   {
-    title: "Industry Specialization",
-    description: "Expert staffing solutions for diverse industry needs.",
+    title: "Industry-Specific Expertise",
+    description:
+      "Customized recruitment strategies tailored for your business sector.",
   },
   {
-    title: "Industry-Specific",
-    description: "Tailored staffing solutions for your industry’s needs.",
+    title: "Scalable Hiring Solutions",
+    description:
+      "Flexible staffing options for businesses of all sizes and industries.",
   },
   {
-    title: "International Recruitment",
-    description: "Tailored staffing solutions for your industry’s needs.",
+    title: "Global Talent Access",
+    description: "Seamless international recruitment to expand your workforce.",
   },
   {
-    title: "Inclusion Hiring",
-    description: "Diverse and inclusive hiring for equal opportunities.",
+    title: "Diversity & Inclusion Hiring",
+    description:
+      "Helping you build strong, inclusive teams for long-term success.",
   },
 ];
 
@@ -30,14 +34,16 @@ const HomepageWhyPartnerWithUs = () => {
         <div className="why-partner-text">
           <p className="why-partner-subtitle">WHY PARTNER WITH US</p>
           <h2 className="why-partner-title">
-            Experience Our Industry Expertise & Personalized Approach
+            Industry Expertise & Tailored Hiring Solutions
           </h2>
           <div className="why-partner-image-mobile">
             <img src={partnerImage2} alt="Why Partner With Us" />
           </div>
           <p className="why-partner-description">
-            Experience our industry expertise, personalized approach, and
-            commitment to delivering top talent for your business success.
+            We help businesses find, hire, and retain top talent through
+            customized staffing solutions. Our deep industry knowledge and
+            commitment to excellence ensure you get the right people to drive
+            success.
           </p>
 
           <div className="benefits-grid">
@@ -50,7 +56,9 @@ const HomepageWhyPartnerWithUs = () => {
           </div>
 
           <button className="get-started-btn">
-            GET STARTED <FaArrowRight />
+            <Link to="/contact-us">
+              GET IN TOUCH <FaArrowRight />
+            </Link>
           </button>
         </div>
 

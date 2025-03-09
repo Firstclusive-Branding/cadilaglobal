@@ -135,10 +135,9 @@
 }
 
 .about-us-button:hover {
-  background: #005f5f;
+  background: #086f8a;
 }
 
-/* Tablets (768px) */
 @media (max-width: 1024px) {
   .about-us-container {
     flex-direction: column;

@@ -6,6 +6,7 @@ import CounterStats from "./CounterStats";
 import HomepageAboutUs from "./HomepageAboutUs";
 // import HomepageJobCards from "./HomepageJobCards";
 // import HomepageHowItWorks from "./HomepageHowItWorks";
+import ClientSuccessStories from "./ClientSuccessStories";
 import HomepageSuccessStories from "./HomepageSuccessStories";
 import HomepageWhatWeDo from "./HomepageWhatWeDo";
 import HomepageWhyPartnerWithUs from "./HomepageWhyPartnerWithUs";
@@ -71,6 +72,14 @@ function Homepage() {
         <JobCarousel />
       </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <ClientSuccessStories />
+      </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

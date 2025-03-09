@@ -1,34 +1,35 @@
 import React from "react";
 import "../styles/HomepageSuccessStories.css";
-import user1 from "../assets/homepage assets/homepage-success-stories-2.png";
-import user2 from "../assets/homepage assets/homepage-success-stories-3.png";
+import "../styles/ClientSuccessStories.css";
+import client1 from "../assets/homepage assets/client-testimony-1.png";
+import client2 from "../assets/homepage assets/client-testimony-2.png";
 import { FaStar } from "react-icons/fa";
 
 const testimonials = [
   {
-    image: user1,
-    name: "Rebecca Swartz",
-    role: "CANDIDATE",
+    image: client1,
+    name: "Mark Thompson",
+    role: "HR Director",
     review:
-      "I was at a crossroads in my career and needed professional guidance to make a successful transition. CADILA GLOBAL SOLUTION not only understood my unique situation but also tailored their services to meet my specific needs.",
+      "Finding skilled professionals used to be a challenge for us. Cadila Global understood our hiring needs and provided us with top-tier candidates who perfectly fit our company culture. Their efficiency and expertise saved us valuable time and resources.",
   },
   {
-    image: user2,
-    name: "Jeffrey Montgomery",
-    role: "CANDIDATE",
+    image: client2,
+    name: "Sarah Collins",
+    role: "Talent Acquisition Manager",
     review:
-      "I can't express my gratitude enough to CADILA GLOBAL SOLUTION for their invaluable support in my job search journey. From refining my resume to providing personalized interview and coaching.",
+      "We needed a reliable staffing partner for our rapid expansion. Cadila Global delivered highly qualified candidates in record time, allowing us to scale without any hiring bottlenecks. Their tailored approach and commitment to quality make them our go-to recruitment partner.",
   },
 ];
 
-const HomepageSuccessStories = () => {
+const ClientSuccessStories = () => {
   return (
-    <div className="success-stories-container">
+    <div className="client-success-stories">
       <div className="success-stories-overlay"></div>
       <div className="success-stories-content">
-        <p className="success-subtitle">CANDIDATE SUCCESS STORIES</p>
+        <p className="success-subtitle">CLIENT SUCCESS STORIES</p>
         <h2 className="success-title">
-          Discover Stories Of Candidates Who Found Their Dream Jobs
+          Discover How Businesses Found the Right Talent with Cadila Global
         </h2>
         <div className="testimonial-grid">
           {testimonials.map((testimonial, index) => (
@@ -56,4 +57,4 @@ const HomepageSuccessStories = () => {
   );
 };
 
-export default HomepageSuccessStories;
+export default ClientSuccessStories;

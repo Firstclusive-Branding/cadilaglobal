@@ -69,7 +69,6 @@
 
 .homepage-jobapply-btn {
   background-color: #0985a6;
-  color: white;
   padding: 12px 24px;
   font-size: 16px;
   border: none;
@@ -79,9 +78,12 @@
   position: relative;
   z-index: 2;
 }
-
+.homepage-jobapply-btn a {
+  color: white;
+  text-decoration: none;
+}
 .homepage-jobapply-btn:hover {
-  background-color: #0d557f;
+  background-color: #0c557e;
 }
 
 @media (max-width: 1024px) {

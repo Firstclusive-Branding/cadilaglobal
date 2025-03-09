@@ -59,7 +59,6 @@
 
 .get-started-btn {
   background-color: #0985a6;
-  color: white;
   border: none;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -71,7 +70,10 @@
   gap: 5px;
   transition: background-color 0.3s ease;
 }
-
+.get-started-btn a {
+  text-decoration: none;
+  color: white;
+}
 .get-started-btn:hover {
   background-color: #086f8a;
 }

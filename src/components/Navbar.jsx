@@ -66,7 +66,7 @@ const Navbar = () => {
           }
           onClick={handleServicesClick}
         >
-          <p className="navbar-link">
+          <p className="navbar-link navbar-services-link">
             <span> SERVICES</span>
             <span className="navbar-down-arrow">
               <FaChevronDown />
@@ -103,7 +103,7 @@ const Navbar = () => {
             HIRE TALENT
           </Link>
         </li>
-        <li className="navbar-jobs">
+        <li>
           <Link to="/careers" className="navbar-link">
             FIND JOBS
           </Link>

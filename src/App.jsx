@@ -16,15 +16,17 @@ import ITStaffing from "./components/ITSatffing";
 import NotFound from "./components/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import HireTalent from "./components/HireTalent";
+import FloatingIcons from "./components/FloatingIcons";
 
 const AppLayout = () => {
   return (
-    <div>
+    <div className="app-layout">
       <Header />
       <Navbar />
       <ScrollToTop />
       <Outlet />
       <Footer />
+      <FloatingIcons />
     </div>
   );
 };

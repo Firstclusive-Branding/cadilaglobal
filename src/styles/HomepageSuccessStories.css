@@ -3,14 +3,13 @@
   background: url("../assets/homepage assets/homepage-success-stories-1.png")
     no-repeat center;
   background-size: cover;
-
   padding: 4rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.overlay {
+.success-stories-overlay {
   position: absolute;
   top: 0;
   left: 0;

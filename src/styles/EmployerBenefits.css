@@ -35,7 +35,6 @@
 
 .employer-benefits-btn {
   background-color: #0985a6;
-  color: white;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
@@ -43,9 +42,12 @@
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 }
-
+.employer-benefits-btn a {
+  text-decoration: none;
+  color: white;
+}
 .employer-benefits-btn:hover {
-  background-color: #0d557f;
+  background-color: #0c557e;
 }
 .employer-benefits-container {
   display: flex;

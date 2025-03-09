@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/EmployerBenefits.css";
 import employerBenefitsImg from "../assets/homepage assets/employer-benefits.png";
+import { Link } from "react-router-dom";
 
 const EmployerBenefits = () => {
   return (
@@ -8,13 +9,16 @@ const EmployerBenefits = () => {
       <div className="employer-benefits-content">
         <h5 className="employer-benefits-subtitle">EMPLOYER BENEFITS</h5>
         <h2 className="employer-benefits-title">
-          Experience The Benefits Of Partnering
+          Experience the Advantages of Partnering with Us
         </h2>
         <p className="employer-benefits-description">
-          Experience the advantages of partnering with us, including top talent,
-          streamlined hiring, and customized workforce solutions.
+          We help businesses build high-performing teams with top talent,
+          streamlined hiring and customized workforce solutions. Partner with us
+          for a faster, smarter and more effective hiring experience.
         </p>
-        <button className="employer-benefits-btn">LET FIND JOBS →</button>
+        <button className="employer-benefits-btn">
+          <Link to="/contact-us">LET’S HIRE →</Link>
+        </button>
       </div>
       <div className="employer-benefits-container">
         <div className="employer-benefits-image">
@@ -23,16 +27,24 @@ const EmployerBenefits = () => {
 
         <div className="employer-benefits-cards">
           <div className="employer-benefits-card">
-            <h4>Work-Life Balance</h4>
-            <p>Achieve harmony between work and life.</p>
+            <h4>Effortless Hiring</h4>
+            <p>
+              Save time and resources with our seamless recruitment process.
+            </p>
           </div>
           <div className="employer-benefits-card">
-            <h4>Valuing Our Team</h4>
-            <p>Empowering, supporting, and appreciating talent.</p>
+            <h4>Quality Talent Access</h4>
+            <p>
+              Connect with top-tier professionals tailored to your industry.
+            </p>
           </div>
           <div className="employer-benefits-card">
-            <h4>A Culture of Care</h4>
-            <p>Supportive, inclusive, and growth-oriented.</p>
+            <h4>Flexible Workforce Solutions</h4>
+            <p>Scalable hiring to meet your evolving business needs.</p>
+          </div>
+          <div className="employer-benefits-card">
+            <h4>Long-Term Hiring Success</h4>
+            <p>Find talent that stays and grows with your company.</p>
           </div>
         </div>
       </div>

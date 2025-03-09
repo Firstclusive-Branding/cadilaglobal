@@ -4,23 +4,27 @@ import hiringmadeeasy from "../assets/homepage assets/hiring-made-easy.png";
 const steps = [
   {
     number: "01",
-    title: "Apply Opening Jobs",
-    description: "Explore opportunities and submit applications.",
+    title: "Share Job Requirements",
+    description:
+      "Tell us what you're looking for, and we’ll craft a hiring strategy tailored to your needs.",
   },
   {
     number: "02",
-    title: "Send Your CV",
-    description: "Share your resume for job matching.",
+    title: "Talent Screening & Shortlisting",
+    description:
+      "We source, vet, and shortlist top candidates that align with your job roles.",
   },
   {
     number: "03",
-    title: "Interviewed",
-    description: "Showcase your skills and impress recruiters.",
+    title: "Interview & Selection",
+    description:
+      "Seamless interview coordination, ensuring you meet only the best candidates.",
   },
   {
     number: "04",
-    title: "Enjoy Join Jobs",
-    description: "Start your new role and thrive in success.",
+    title: "Hassle-Free Onboarding",
+    description:
+      "We assist in final hiring steps, making the transition smooth for both you and the new hire.",
   },
 ];
 
@@ -38,7 +42,7 @@ const HiringMadeEasy = () => {
             Streamlined Hiring Made Easy
           </p>
           <h2 className="hiring-made-easy-title">
-            Learn about our efficient and effective recruitment process
+            Learn How We Deliver the Right Talent for Your Business
           </h2>
         </div>
       </div>

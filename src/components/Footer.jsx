@@ -111,7 +111,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h3>Stay Tuned With Us</h3>
+          <h3>GET IN TOUCH</h3>
           <p>
             <FaMapMarkerAlt className="footer-icon" />
             <a href="#">Houston, Texas 77469</a>

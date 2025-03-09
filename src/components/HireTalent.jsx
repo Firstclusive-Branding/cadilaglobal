@@ -34,7 +34,6 @@ const HireTalent = () => {
                 required
               ></textarea>
 
-              <label>Contact Number</label>
               <input type="tel" placeholder="Enter contact number" required />
 
               <button type="submit">Submit Requirement</button>
