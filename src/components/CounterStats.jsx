@@ -4,10 +4,10 @@ import "../styles/CounterStats.css";
 
 const CounterStats = () => {
   const stats = [
-    { id: 1, label: "Hiring Companies", target: 100, suffix: "+" },
-    { id: 2, label: "Industries Served", target: 30, suffix: "+" },
-    { id: 3, label: "Successful Hires", target: 5000, suffix: "+" },
-    { id: 4, label: "Active Jobs", target: 200, suffix: "+" },
+    { id: 1, label: "Clients", target: 80, suffix: "+" },
+    { id: 2, label: "Industries", target: 10, suffix: "+" },
+    { id: 3, label: "Placements", target: 4000, suffix: "+" },
+    { id: 4, label: "Openings", target: 350, suffix: "+" },
   ];
 
   const duration = 2000;

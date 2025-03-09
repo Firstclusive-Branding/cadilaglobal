@@ -1,6 +1,7 @@
 .carousel-container {
   height: 550px;
   position: relative;
+  z-index: 5;
 }
 
 .swiper-container {

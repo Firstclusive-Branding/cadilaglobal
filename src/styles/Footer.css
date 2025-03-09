@@ -95,13 +95,18 @@
 .heart-icon {
   color: #12bdbd;
 }
+
 .footer-bottom p a {
+  margin-left: 5px;
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
+
 .footer-bottom p a:hover {
   color: #aef507;
 }
+
 @media (max-width: 1024px) {
   .footer-content {
     flex-wrap: wrap;

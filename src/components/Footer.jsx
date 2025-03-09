@@ -135,7 +135,6 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {" "}
             FIRSTCLUSIVE
           </a>
         </p>
