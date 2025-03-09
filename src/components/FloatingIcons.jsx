@@ -13,7 +13,7 @@ const FloatingIcons = () => {
   return (
     <div className="floating-icons-container">
       <a
-        href="https://wa.me/1234567890" // Replace with your number
+        href="https://wa.me/+18327579277" // Replace with your number
         target="_blank"
         rel="noopener noreferrer"
         className="floating-icon whatsapp"
