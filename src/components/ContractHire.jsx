@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/contractHire.css";
+import "../styles/ContractHire.css";
 import contractHireImage from "../assets/services assets/contract-hire.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
