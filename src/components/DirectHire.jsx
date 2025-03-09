@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/directHire.css";
+import "../styles/DirectHire.css";
 import directHireImage from "../assets/services assets/direct-hire.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
