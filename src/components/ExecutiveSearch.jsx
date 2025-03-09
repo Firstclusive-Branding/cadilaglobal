@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/executiveSearch.css";
+import "../styles/ExecutiveSearch.css";
 import executiveSearchImage from "../assets/services assets/executive-search.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
