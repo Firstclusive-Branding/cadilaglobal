@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/permanentStaffing.css";
+import "../styles/PermanentStaffing.css";
 import permanentStaffingImage from "../assets/services assets/permanent-staffing.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
