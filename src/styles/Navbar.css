@@ -177,7 +177,9 @@
     max-height: 500px;
     opacity: 1;
   }
-
+  .navbar-services {
+    margin-bottom: 0 !important;
+  }
   .navbar-services-link {
     justify-content: flex-start;
   }
