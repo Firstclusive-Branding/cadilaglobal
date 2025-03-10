@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Rpo.css";
+import "../styles/RPO.css";
 import rpoImage from "../assets/services assets/recruitment-process-outsourcing.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
