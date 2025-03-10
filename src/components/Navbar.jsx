@@ -72,40 +72,72 @@ const Navbar = () => {
               <FaChevronDown />
             </span>
           </p>
-          {servicesOpen && (
-            <ul className="navbar-dropdown-menu">
-              <li>
-                <Link to="/services/permanent-hiring">Permanent Hiring</Link>
-              </li>
-              <li>
-                <Link to="/services/temporary-hiring">Temporary Hiring</Link>
-              </li>
-              <li>
-                <Link to="/services/contract-hiring">Contract Hiring</Link>
-              </li>
-              <li>
-                <Link to="/services/recruitment-process-outsourcing">
-                  Recruitment Process Outsourcing (RPO)
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/contract-to-hire">
-                  Contract to Hire Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/consulting">Consulting Services</Link>
-              </li>
-              <li>
-                <Link to="/services/executive-hiring">Executive Hiring</Link>
-              </li>
-              <li>
-                <Link to="/services/specialized-hiring">
-                  Specialized Hiring
-                </Link>
-              </li>
-            </ul>
-          )}
+          <ul className={`navbar-dropdown-menu ${servicesOpen ? "open" : ""}`}>
+            <li>
+              <Link
+                to="/services/permanent-hiring"
+                onClick={() => setMenuOpen(false)}
+              >
+                Permanent Hiring
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/temporary-hiring"
+                onClick={() => setMenuOpen(false)}
+              >
+                Temporary Hiring
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/contract-hiring"
+                onClick={() => setMenuOpen(false)}
+              >
+                Contract Hiring
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/recruitment-process-outsourcing"
+                onClick={() => setMenuOpen(false)}
+              >
+                Recruitment Process Outsourcing (RPO)
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/contract-to-hire"
+                onClick={() => setMenuOpen(false)}
+              >
+                Contract to Hire Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/consulting"
+                onClick={() => setMenuOpen(false)}
+              >
+                Consulting Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/executive-hiring"
+                onClick={() => setMenuOpen(false)}
+              >
+                Executive Hiring
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services/specialized-hiring"
+                onClick={() => setMenuOpen(false)}
+              >
+                Specialized Hiring
+              </Link>
+            </li>
+          </ul>
         </li>
         <li>
           <Link

@@ -13,16 +13,16 @@ const FloatingIcons = () => {
   return (
     <div className="floating-icons-container">
       <a
-        href="https://wa.me/+18327579277" // Replace with your number
+        href="https://wa.me/+18327579277"
         target="_blank"
         rel="noopener noreferrer"
         className="floating-icon whatsapp"
       >
-        <FaWhatsapp size={40} />
+        <FaWhatsapp className="icon-size" />
       </a>
 
       <button className="floating-icon chat">
-        <FaComments size={40} />
+        <FaComments className="icon-size" />
       </button>
     </div>
   );
