@@ -1,21 +1,21 @@
-.contract-hire-container {
-  background-color: #f9f9f9;
+.temporary-hiring-container {
+  background-color: #f4f4f4;
   padding: 60px 5%;
 }
 
-.contract-hire-content {
+.temporary-hiring-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
 }
 
-.contract-hire-text {
+.temporary-hiring-text {
   flex: 1;
   max-width: 50%;
 }
 
-.contract-hire-title {
+.temporary-hiring-title {
   color: #12bdbd;
   font-size: 14px;
   font-weight: 600;
@@ -23,21 +23,21 @@
   margin-bottom: 10px;
 }
 
-.contract-hire-heading {
+.temporary-hiring-heading {
   font-size: 32px;
   font-weight: bold;
-  color: #000;
+  color: #333;
   margin-bottom: 20px;
 }
 
-.contract-hire-description {
+.temporary-hiring-description {
   font-size: 16px;
-  color: #555;
+  color: #666;
   line-height: 1.6;
   margin-bottom: 20px;
 }
 
-.contract-hire-button {
+.temporary-hiring-button {
   background-color: #0985a6;
   color: white;
   border: none;
@@ -46,81 +46,79 @@
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-  margin-top: 2rem;
-  transition: opacity 0.3s;
-}
-.contract-hire-button a {
   text-decoration: none;
-  color: #fff;
-}
-.contract-hire-button:hover {
-  opacity: 0.9;
+  gap: 5px;
+  margin: auto;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
 }
 
-.contract-hire-image {
+.temporary-hiring-button:hover {
+  background-color: #086f8a;
+}
+
+.temporary-hiring-image {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.contract-hire-image img {
+.temporary-hiring-image img {
   max-width: 100%;
   height: auto;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .contract-hire-heading {
+  .temporary-hiring-heading {
     font-size: 28px;
   }
 }
 
 @media (max-width: 768px) {
-  .contract-hire-container {
+  .temporary-hiring-container {
     padding: 0;
   }
-  .contract-hire-content {
+  .temporary-hiring-content {
     flex-direction: column-reverse;
   }
 
-  .contract-hire-text {
+  .temporary-hiring-text {
     max-width: 100%;
+    padding: 20px;
   }
 
-  .contract-hire-image {
+  .temporary-hiring-image {
     width: 100%;
   }
 
-  .contract-hire-image img {
+  .temporary-hiring-image img {
     width: 100%;
     height: 300px;
     object-fit: cover;
   }
-  .contract-hire-text {
-    padding: 20px;
-  }
-  .contract-hire-heading {
+
+  .temporary-hiring-heading {
     font-size: 26px;
   }
 
-  .contract-hire-description {
+  .temporary-hiring-description {
     font-size: 15px;
   }
 
-  .contract-hire-button {
+  .temporary-hiring-button {
     padding: 12px 18px;
     font-size: 14px;
   }
 }
 
 @media (max-width: 425px) {
-  .contract-hire-heading {
+  .temporary-hiring-heading {
     font-size: 24px;
   }
-  .contract-hire-button {
+  .temporary-hiring-button {
     padding: 10px 16px;
     font-size: 14px;
   }

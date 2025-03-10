@@ -20,11 +20,12 @@ const ContactUs = () => {
             alt="Contact Us"
             className="contact-us-image"
           />
-          <h2 className="contact-us-title">Contact Us</h2>
         </div>
 
         <div className="contact-us-content">
           <div className="contact-us-info">
+            <h2 className="contact-us-title">Contact Us</h2>
+
             <h3 className="contact-us-subtitle">Let's talk with us</h3>
             <p className="contact-us-description">
               Questions, comments, or suggestions? Simply fill in the form and

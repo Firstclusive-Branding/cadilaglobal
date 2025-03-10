@@ -2,6 +2,8 @@ import React from "react";
 import "../styles/HomepageJobApplyBanner.css";
 import { FaQuoteRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
+
 const HomepageJobApplyBanner = () => {
   return (
     <section className="homepage-jobapply-banner">
@@ -21,9 +23,9 @@ const HomepageJobApplyBanner = () => {
         <h2 className="homepage-jobapply-title">
           Let Us Help You Find The Perfect Job Or The Ideal Candidate
         </h2>
-        <button className="homepage-jobapply-btn">
-          <Link to="/contact-us">CONTACT US →</Link>
-        </button>
+        <Link to="/contact-us" className="homepage-jobapply-btn">
+          CONTACT US <FaArrowRight />
+        </Link>
       </div>
     </section>
   );

@@ -3,7 +3,8 @@ import "../styles/HomepageAboutUs.css";
 import aboutUsMainImg from "../assets/homepage assets/homepage-about-us-1.jpg";
 import aboutUsSubImg from "../assets/homepage assets/homepage-about-us-2.png";
 import { FaPhoneAlt, FaCalendar } from "react-icons/fa";
-import { MdArrowRightAlt } from "react-icons/md";
+import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function HomepageAboutUs() {
   return (
@@ -64,9 +65,9 @@ function HomepageAboutUs() {
             </div>
           </div>
 
-          <button className="about-us-button">
-            ABOUT US <MdArrowRightAlt />
-          </button>
+          <Link to="/about-us" className="about-us-button">
+            ABOUT US <FaArrowRight />
+          </Link>
         </div>
       </div>
     </section>

@@ -18,11 +18,11 @@ const FloatingIcons = () => {
         rel="noopener noreferrer"
         className="floating-icon whatsapp"
       >
-        <FaWhatsapp size={30} />
+        <FaWhatsapp size={40} />
       </a>
 
       <button className="floating-icon chat">
-        <FaComments size={30} />
+        <FaComments size={40} />
       </button>
     </div>
   );

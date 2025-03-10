@@ -1,56 +1,56 @@
 import React, { useState } from "react";
 import "../styles/HomepageWhatWeDo.css";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const staffingSolutions = [
   {
-    title: "Direct Hire Staffing",
-    description: "Permanent employee placement service",
+    title: "Permanent Hiring",
+    description: "Secure top talent for long-term roles.",
+    link: "/services/permanent-hiring",
   },
   {
-    title: "Contract & Temporary Staffing",
-    description: "Short-term workforce recruitment solutions",
+    title: "Temporary Hiring",
+    description: "Flexible staffing for short-term needs.",
+    link: "/services/temporary-hiring",
   },
   {
-    title: "IT & Tech Staffing",
-    description: "Specialized tech talent acquisition",
-  },
-  {
-    title: "Engineering & Manufacturing Staffing",
-    description: "Skilled engineers & production hires",
-  },
-  {
-    title: "Healthcare & Medical Staffing",
-    description: "Medical professionals staffing services",
-  },
-  {
-    title: "Finance & Administrative Staffing",
-    description: "Financial & office support recruitment",
-  },
-  {
-    title: "Executive Search & Leadership Hiring",
-    description: "Senior-level & C-suite recruitment",
-  },
-  {
-    title: "High-Volume & Bulk Hiring",
-    description: "Mass hiring for large needs",
+    title: "Contract Hiring",
+    description: "Hire skilled professionals on contract.",
+    link: "/services/contract-hiring",
   },
   {
     title: "Recruitment Process Outsourcing (RPO)",
-    description: "End-to-end hiring process management",
+    description: "End-to-end hiring process management.",
+    link: "/services/recruitment-process-outsourcing",
+  },
+  {
+    title: "Contract to Hire Services",
+    description: "Transition from contract to full-time.",
+    link: "/services/contract-to-hire",
+  },
+  {
+    title: "Consulting Services",
+    description: "Expert guidance for better hiring.",
+    link: "/services/consulting",
+  },
+  {
+    title: "Executive Hiring",
+    description: "Find top leaders and executives.",
+    link: "/services/executive-hiring",
+  },
+  {
+    title: "Specialized Hiring",
+    description: "Industry-specific talent acquisition.",
+    link: "/services/specialized-hiring",
   },
 ];
 
 const HomepageWhatWeDo = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const initialSolutions = staffingSolutions.slice(
-    0,
-    staffingSolutions.length - 3
-  );
-  const lastThreeSolutions = staffingSolutions.slice(
-    staffingSolutions.length - 3
-  );
+  const initialSolutions = staffingSolutions.slice(0, 4);
+  const extraSolutions = staffingSolutions.slice(4);
 
   return (
     <div className="what-we-do-container">
@@ -71,20 +71,18 @@ const HomepageWhatWeDo = () => {
           >
             <h3>{solution.title}</h3>
             <p>{solution.description}</p>
-            <a href="#" className="learn-more">
+            <Link to={solution.link} className="learn-more">
               LEARN MORE <FaArrowRight />
-            </a>
+            </Link>
           </div>
         ))}
       </div>
 
       <div
-        className={`extra-categories-container ${
-          showAll ? "show-categories" : ""
-        }`}
+        className={`extra-services-container ${showAll ? "show-services" : ""}`}
       >
-        <div className="extra-categories">
-          {lastThreeSolutions.map((solution, index) => (
+        <div className="extra-services">
+          {extraSolutions.map((solution, index) => (
             <div
               key={index}
               className={`what-we-do-card ${
@@ -95,19 +93,20 @@ const HomepageWhatWeDo = () => {
             >
               <h3>{solution.title}</h3>
               <p>{solution.description}</p>
-              <a href="#" className="learn-more">
+              <Link to={solution.link} className="learn-more">
                 LEARN MORE <FaArrowRight />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
       </div>
 
+      {/* Toggle Button */}
       <button
-        className="browse-categories-btn"
+        className="browse-services-btn"
         onClick={() => setShowAll(!showAll)}
       >
-        {showAll ? "HIDE CATEGORIES" : "BROWSE ALL CATEGORIES"} <FaArrowRight />
+        {showAll ? "HIDE SERVICES" : "SHOW ALL SERVICES"} <FaArrowRight />
       </button>
     </div>
   );

@@ -49,13 +49,12 @@
 .carousel-title {
   font-size: 56px;
   font-weight: 700;
+  filter: drop-shadow(1px 1px 5px black);
   margin: 0;
-  filter: drop-shadow(1px 2px #13bcbd);
 }
 
 .carousel-description {
   font-size: 18px;
-  /* background-color: #0e0e0e8a; */
   padding: 5px;
   filter: drop-shadow(1px 1px 5px black);
   color: #dedede;

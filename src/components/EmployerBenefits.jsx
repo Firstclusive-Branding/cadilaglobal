@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/EmployerBenefits.css";
 import employerBenefitsImg from "../assets/homepage assets/employer-benefits.png";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const EmployerBenefits = () => {
   return (
@@ -16,9 +17,9 @@ const EmployerBenefits = () => {
           streamlined hiring and customized workforce solutions. Partner with us
           for a faster, smarter and more effective hiring experience.
         </p>
-        <button className="employer-benefits-btn">
-          <Link to="/contact-us">LET’S HIRE →</Link>
-        </button>
+        <Link to="/contact-us" className="employer-benefits-btn">
+          LET’S HIRE <FaArrowRight />{" "}
+        </Link>
       </div>
       <div className="employer-benefits-container">
         <div className="employer-benefits-image">

@@ -55,11 +55,9 @@ const HomepageWhyPartnerWithUs = () => {
             ))}
           </div>
 
-          <button className="get-started-btn">
-            <Link to="/contact-us">
-              GET IN TOUCH <FaArrowRight />
-            </Link>
-          </button>
+          <Link to="/contact-us" className="get-started-btn">
+            GET IN TOUCH <FaArrowRight />
+          </Link>
         </div>
 
         <div className="why-partner-image">

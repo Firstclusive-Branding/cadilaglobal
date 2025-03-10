@@ -8,15 +8,18 @@ import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import Careers from "./components/Careers";
 import AboutUs from "./components/AboutUs";
-import ExecutiveSearch from "./components/ExecutiveSearch";
-import DirectHire from "./components/DirectHire";
-import ContractHire from "./components/ContractHire";
-import PermanentStaffing from "./components/PermanentStaffing";
-import ITStaffing from "./components/ITSatffing";
 import NotFound from "./components/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
-import HireTalent from "./components/HireTalent";
 import FloatingIcons from "./components/FloatingIcons";
+import PermanentHiring from "./components/PermanentHiring";
+import TemporaryHiring from "./components/TemporaryHiring";
+import ContractHire from "./components/ContractHire";
+import RPO from "./components/RPO";
+import ContractToHire from "./components/ContractToHire";
+import ConsultingServices from "./components/ConsultingServices";
+import ExecutiveHiring from "./components/ExecutiveHiring";
+import SpecializedHiring from "./components/SpecializedHiring";
+import HireTalent from "./components/HireTalent";
 
 const AppLayout = () => {
   return (
@@ -40,11 +43,14 @@ const router = createBrowserRouter([
       { path: "/contact-us", element: <ContactUs /> },
       { path: "/careers", element: <Careers /> },
       { path: "/about-us", element: <AboutUs /> },
-      { path: "/services/executive-search", element: <ExecutiveSearch /> },
-      { path: "/services/direct-hire", element: <DirectHire /> },
-      { path: "/services/contract-hire", element: <ContractHire /> },
-      { path: "/services/permanent-staffing", element: <PermanentStaffing /> },
-      { path: "/services/it-staffing", element: <ITStaffing /> },
+      { path: "/services/permanent-hiring", element: <PermanentHiring /> },
+      { path: "/services/temporary-hiring", element: <TemporaryHiring /> },
+      { path: "/services/recruitment-process-outsourcing", element: <RPO /> },
+      { path: "/services/contract-to-hire", element: <ContractToHire /> },
+      { path: "/services/consulting", element: <ConsultingServices /> },
+      { path: "/services/executive-hiring", element: <ExecutiveHiring /> },
+      { path: "/services/specialized-hiring", element: <SpecializedHiring /> },
+      { path: "/services/contract-hiring", element: <ContractHire /> },
       { path: "/hire-talent", element: <HireTalent /> },
       { path: "*", element: <NotFound /> },
     ],

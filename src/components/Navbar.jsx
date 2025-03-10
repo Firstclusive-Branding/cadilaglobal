@@ -75,21 +75,34 @@ const Navbar = () => {
           {servicesOpen && (
             <ul className="navbar-dropdown-menu">
               <li>
-                <Link to="/services/executive-search">Executive Search</Link>
+                <Link to="/services/permanent-hiring">Permanent Hiring</Link>
               </li>
               <li>
-                <Link to="/services/direct-hire">Direct Hire</Link>
+                <Link to="/services/temporary-hiring">Temporary Hiring</Link>
               </li>
               <li>
-                <Link to="/services/contract-hire">Contract Hire</Link>
+                <Link to="/services/contract-hiring">Contract Hiring</Link>
               </li>
               <li>
-                <Link to="/services/permanent-staffing">
-                  Permanent Staffing
+                <Link to="/services/recruitment-process-outsourcing">
+                  Recruitment Process Outsourcing (RPO)
                 </Link>
               </li>
               <li>
-                <Link to="/services/it-staffing">IT Staffing</Link>
+                <Link to="/services/contract-to-hire">
+                  Contract to Hire Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/consulting">Consulting Services</Link>
+              </li>
+              <li>
+                <Link to="/services/executive-hiring">Executive Hiring</Link>
+              </li>
+              <li>
+                <Link to="/services/specialized-hiring">
+                  Specialized Hiring
+                </Link>
               </li>
             </ul>
           )}
