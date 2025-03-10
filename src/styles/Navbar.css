@@ -5,7 +5,7 @@
   padding: 10px 60px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .navbar-logo-img {
@@ -200,8 +200,7 @@
 
 @media screen and (max-width: 768px) {
   .navbar-container {
-    padding: 10px;
-    padding-right: 40px;
+    padding: 10px 40px;
   }
   .navbar-links li {
     margin: 8px 15px;
@@ -222,10 +221,6 @@
   }
 }
 @media screen and (max-width: 320px) {
-  .navbar-container {
-    padding: 10px;
-    padding-right: 20px;
-  }
   .navbar-links {
     width: 100%;
   }

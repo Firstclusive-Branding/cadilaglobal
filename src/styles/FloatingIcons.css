@@ -44,11 +44,11 @@
 @media screen and (max-width: 425px) {
   .floating-icon {
     padding: 8px;
-    width: 40px;
-    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
   }
 
   .icon-size {
-    font-size: 24px; /* Scales down on smaller screens */
+    font-size: 24px;
   }
 }
