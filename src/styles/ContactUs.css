@@ -122,6 +122,10 @@
   transform: scale(0.95);
 }
 
+.swal2-styled {
+  background-color: #0f6aad;
+}
+
 @media (max-width: 1024px) {
   .contact-us-content {
     flex-direction: column;

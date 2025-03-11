@@ -67,7 +67,13 @@ const Navbar = () => {
           onClick={handleServicesClick}
         >
           <p className="navbar-link navbar-services-link">
-            <span> SERVICES</span>
+            <Link
+              to="/services"
+              className="navbar-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              OUR SERVICES
+            </Link>
             <span className="navbar-down-arrow">
               <FaChevronDown />
             </span>
@@ -141,15 +147,15 @@ const Navbar = () => {
         </li>
         <li>
           <Link
-            to="/hire-talent"
+            to="/find-talent"
             className="navbar-link"
             onClick={() => setMenuOpen(false)}
           >
-            HIRE TALENT
+            FIND TALENT
           </Link>
         </li>
         <li>
-          <Link to="/careers" className="navbar-link">
+          <Link to="/find-jobs" className="navbar-link">
             FIND JOBS
           </Link>
         </li>

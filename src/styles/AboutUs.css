@@ -1,0 +1,7 @@
+.about-us-cover {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  object-position: center;
+}

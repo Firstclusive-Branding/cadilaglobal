@@ -24,11 +24,11 @@ const DirectHire = () => {
               Finding You The Leaders <br /> Of Tomorrow.
             </h2>
             <p className="direct-hire-description">
-              Cadila Global Solutions direct hire service leverages the vast
-              knowledge and experience of our team to identify and understand
-              your needs. Having the right team is crucial for any business.
-              However, recruitment is becoming a more intensive, time-consuming
-              process as a result.
+              Cadila Global direct hire service leverages the vast knowledge and
+              experience of our team to identify and understand your needs.
+              Having the right team is crucial for any business. However,
+              recruitment is becoming a more intensive, time-consuming process
+              as a result.
             </p>
             <button className="direct-hire-button">
               <Link to="/contact-us">LEARN MORE →</Link>

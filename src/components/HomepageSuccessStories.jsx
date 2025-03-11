@@ -10,14 +10,14 @@ const testimonials = [
     name: "Rebecca Swartz",
     role: "CANDIDATE",
     review:
-      "I was at a crossroads in my career and needed professional guidance to make a successful transition. CADILA GLOBAL SOLUTION not only understood my unique situation but also tailored their services to meet my specific needs.",
+      "I was at a crossroads in my career and needed professional guidance to make a successful transition. CADILA GLOBAL not only understood my unique situation but also tailored their services to meet my specific needs.",
   },
   {
     image: user2,
     name: "Jeffrey Montgomery",
     role: "CANDIDATE",
     review:
-      "I can't express my gratitude enough to CADILA GLOBAL SOLUTION for their invaluable support in my job search journey. From refining my resume to providing personalized interview and coaching.",
+      "I can't express my gratitude enough to CADILA GLOBAL for their invaluable support in my job search journey. From refining my resume to providing personalized interview and coaching.",
   },
 ];
 

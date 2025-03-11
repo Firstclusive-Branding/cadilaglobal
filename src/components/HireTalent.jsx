@@ -8,7 +8,7 @@ const HireTalent = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    formData.append("access_key", "f3e060e7-959a-401b-81a3-496fd05cb9fd");
+    formData.append("access_key", "fc37f492-6ce7-437f-934c-ff4b6878f7af");
     formData.append(
       "subject",
       "Hire Talent Form Submission from CadilaGlobal.com"
@@ -29,7 +29,7 @@ const HireTalent = () => {
     if (res.success) {
       Swal.fire({
         title: "Thanks for reaching out!",
-        text: "We'll get back to you soon!",
+        text: "We'll connect with you soon!",
         icon: "success",
         confirmButtonText: "OK",
       });
@@ -50,6 +50,7 @@ const HireTalent = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
       >
         <img src={Hiretalent} alt="Hire Talent" className="hire-talent-image" />
         <div className="hire-talent-content">

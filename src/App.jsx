@@ -20,6 +20,7 @@ import ConsultingServices from "./components/ConsultingServices";
 import ExecutiveHiring from "./components/ExecutiveHiring";
 import SpecializedHiring from "./components/SpecializedHiring";
 import HireTalent from "./components/HireTalent";
+import Services from "./components/Services";
 
 const AppLayout = () => {
   return (
@@ -41,8 +42,9 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Homepage /> },
       { path: "/contact-us", element: <ContactUs /> },
-      { path: "/careers", element: <Careers /> },
+      { path: "/find-jobs", element: <Careers /> },
       { path: "/about-us", element: <AboutUs /> },
+      { path: "/services", element: <Services /> },
       { path: "/services/permanent-hiring", element: <PermanentHiring /> },
       { path: "/services/temporary-hiring", element: <TemporaryHiring /> },
       { path: "/services/recruitment-process-outsourcing", element: <RPO /> },
@@ -51,7 +53,7 @@ const router = createBrowserRouter([
       { path: "/services/executive-hiring", element: <ExecutiveHiring /> },
       { path: "/services/specialized-hiring", element: <SpecializedHiring /> },
       { path: "/services/contract-hiring", element: <ContractHire /> },
-      { path: "/hire-talent", element: <HireTalent /> },
+      { path: "/find-talent", element: <HireTalent /> },
       { path: "*", element: <NotFound /> },
     ],
   },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/Homepage.css";
 import { motion } from "framer-motion";
 import Carousel from "./Carousel";
@@ -15,6 +15,7 @@ import HomepageJobApplyBanner from "./HomepageJobApplyBanner";
 import IndustriesWeServe from "./IndustriesWeServe";
 
 function Homepage() {
+  const industriesRef = useRef(null);
   return (
     <div className="homepage-container">
       <motion.div
@@ -23,7 +24,7 @@ function Homepage() {
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
-        <Carousel />
+        <Carousel industriesRef={industriesRef} />
       </motion.div>
 
       <motion.div
@@ -62,6 +63,7 @@ function Homepage() {
         <HomepageWhyPartnerWithUs />
       </motion.div>
       <motion.div
+        ref={industriesRef}
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}

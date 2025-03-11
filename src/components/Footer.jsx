@@ -18,7 +18,7 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>CADILA GLOBAL SOLUTION</h3>
+          <h3>CADILA GLOBAL</h3>
           <p>
             With 10+ years of experience, we connect top talent with leading
             companies in engineering, IT, healthcare, finance and more. Our
@@ -33,7 +33,11 @@ const Footer = () => {
             >
               <FaFacebookF className="footer-icon" />
             </a>
-            <a href="#">
+            <a
+              href="https://x.com/cadilaglobal/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BsTwitterX className="footer-icon" />
             </a>
             <a
@@ -68,10 +72,18 @@ const Footer = () => {
             <li>
               <FaCaretRight className="arrow-icon" />
               <Link to="/contact-us">Contact</Link>
+            </li>{" "}
+            <li>
+              <FaCaretRight className="arrow-icon" />
+              <Link to="/services">Our Services</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <Link to="/careers">Careers</Link>
+              <Link to="/find-talent">Find Talent</Link>
+            </li>
+            <li>
+              <FaCaretRight className="arrow-icon" />
+              <Link to="/find-jobs">Find Jobs</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
@@ -147,6 +159,7 @@ const Footer = () => {
         <p>
           MADE WITH <FaHeart className="heart-icon" /> BY
           <a
+            className="firstclusive-link"
             href="https://firstclusive.com"
             target="_blank"
             rel="noopener noreferrer"

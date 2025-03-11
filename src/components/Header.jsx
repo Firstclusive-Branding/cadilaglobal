@@ -31,7 +31,11 @@ const Header = () => {
         >
           <FaFacebookF className="custom-social-icon" />
         </a>
-        <a href="#">
+        <a
+          href="https://x.com/cadilaglobal/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <BsTwitterX className="custom-social-icon" />
         </a>
         <a
