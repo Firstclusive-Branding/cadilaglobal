@@ -20,7 +20,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <Carousel />
@@ -29,7 +29,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <CounterStats />
@@ -38,7 +38,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <HomepageAboutUs />
@@ -47,7 +47,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <HomepageWhatWeDo />
@@ -56,7 +56,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <HomepageWhyPartnerWithUs />
@@ -64,7 +64,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <IndustriesWeServe />
@@ -73,7 +73,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <JobCarousel />
@@ -82,7 +82,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <ClientSuccessStories />
@@ -90,7 +90,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <HomepageSuccessStories />
@@ -99,7 +99,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <HiringMadeEasy />
@@ -108,7 +108,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <EmployerBenefits />
@@ -117,7 +117,7 @@ function Homepage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.6 }}
       >
         <HomepageJobApplyBanner />

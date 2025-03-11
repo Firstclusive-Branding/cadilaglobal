@@ -1,12 +1,49 @@
 import React from "react";
 import "../styles/ContactUs.css";
-import contactUsImage from "../assets/Contact Us assets/contact-us.jpg";
 import { IoLocationOutline } from "react-icons/io5";
 import { BiPhoneCall } from "react-icons/bi";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2";
+import contactUsImage from "../assets/Contact Us assets/contact-us.jpg";
 
 const ContactUs = () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    formData.append("access_key", "f3e060e7-959a-401b-81a3-496fd05cb9fd");
+    formData.append("subject", "Contact Form Submission from CadilaGlobal.com");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      Swal.fire({
+        title: "Thanks for reaching out!",
+        text: "We'll get back to you soon!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+      event.target.reset();
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        confirmButtonText: "Try Again",
+      });
+    }
+  };
+
   return (
     <div className="contact-us-container">
       <motion.div
@@ -25,7 +62,6 @@ const ContactUs = () => {
         <div className="contact-us-content">
           <div className="contact-us-info">
             <h2 className="contact-us-title">Contact Us</h2>
-
             <h3 className="contact-us-subtitle">Let's talk with us</h3>
             <p className="contact-us-description">
               Questions, comments, or suggestions? Simply fill in the form and
@@ -50,18 +86,20 @@ const ContactUs = () => {
           </div>
 
           <div className="contact-us-form">
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={onSubmit}>
               <div className="contact-form-name-group">
                 <input
                   type="text"
                   className="contact-form-input"
                   placeholder="First Name*"
+                  name="first_name"
                   required
                 />
                 <input
                   type="text"
                   className="contact-form-input"
                   placeholder="Last Name*"
+                  name="last_name"
                   required
                 />
               </div>
@@ -69,17 +107,20 @@ const ContactUs = () => {
                 type="email"
                 className="contact-form-input"
                 placeholder="Email*"
+                name="email"
                 required
               />
               <input
                 type="tel"
                 className="contact-form-input"
                 placeholder="Phone Number*"
+                name="phone"
                 required
               />
               <textarea
                 className="contact-form-textarea"
                 placeholder="Your message..."
+                name="message"
                 required
               ></textarea>
               <button type="submit" className="contact-form-button">

@@ -99,6 +99,9 @@
   background: linear-gradient(to right, #0a4f8b, #073f6b);
 }
 
+.hire-talent-form button:active {
+  transform: scale(0.95);
+}
 @media (max-width: 1024px) {
   .hire-talent-content {
     flex-direction: column;
