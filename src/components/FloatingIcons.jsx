@@ -14,7 +14,14 @@ const FloatingIcons = () => {
     script.setAttribute("crossorigin", "*");
     document.body.appendChild(script);
 
+    const checkTawkLoaded = setInterval(() => {
+      if (window.Tawk_API) {
+        clearInterval(checkTawkLoaded);
+      }
+    }, 500);
+
     return () => {
+      clearInterval(checkTawkLoaded);
       document.body.removeChild(script);
     };
   }, []);
@@ -34,17 +41,13 @@ const FloatingIcons = () => {
   return (
     <div className="floating-icons-container">
       <a
-        href="https://wa.me/+18327579277"
+        href="https://wa.me/18327579277"
         target="_blank"
         rel="noopener noreferrer"
         className="floating-icon whatsapp"
       >
         <FaWhatsapp className="icon-size" />
       </a>
-
-      <button className="floating-icon chat" onClick={openChat}>
-        <FaComments className="icon-size" />
-      </button>
     </div>
   );
 };
