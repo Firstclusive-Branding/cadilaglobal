@@ -21,6 +21,9 @@ import ExecutiveHiring from "./components/ExecutiveHiring";
 import SpecializedHiring from "./components/SpecializedHiring";
 import HireTalent from "./components/HireTalent";
 import Services from "./components/Services";
+import JobForm from "./components/JobForm";
+import TermsAndCondition from "./components/TermsAndCondition";
+import PolicyPage from "./components/PolicyPage";
 
 const AppLayout = () => {
   return (
@@ -54,6 +57,9 @@ const router = createBrowserRouter([
       { path: "/services/specialized-hiring", element: <SpecializedHiring /> },
       { path: "/services/contract-hiring", element: <ContractHire /> },
       { path: "/find-talent", element: <HireTalent /> },
+      { path: "/find-jobs/apply", element: <JobForm /> },
+      { path: "/terms-and-conditions", element: <TermsAndCondition /> },
+      { path: "/privacy-policies", element: <PolicyPage /> },
       { path: "*", element: <NotFound /> },
     ],
   },

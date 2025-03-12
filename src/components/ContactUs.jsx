@@ -11,7 +11,7 @@ const ContactUs = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
-    formData.append("access_key", "fc37f492-6ce7-437f-934c-ff4b6878f7af");
+    formData.append("access_key", "2a53a327-68d0-450d-92b3-0d4ce175b269");
     formData.append("subject", "Contact Form Submission from CadilaGlobal.com");
 
     const object = Object.fromEntries(formData);

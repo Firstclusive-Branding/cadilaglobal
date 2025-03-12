@@ -87,11 +87,11 @@ const Footer = () => {
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <Link to="/">Terms & Conditions</Link>
+              <Link to="/terms-and-conditions">Terms & Conditions</Link>
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <Link to="/">Privacy Policy</Link>
+              <Link to="/privacy-policies">Privacy Policy</Link>
             </li>
           </ul>
         </div>

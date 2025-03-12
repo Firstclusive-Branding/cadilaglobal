@@ -8,15 +8,19 @@ import { Link } from "react-router-dom";
 
 function HomepageAboutUs() {
   return (
-    <section className="about-us-section" id="about-us">
+    <div className="about-us-section" id="about-us">
       <div className="about-us-container">
-        <div className="about-us-image">
-          <img src={aboutUsMainImg} alt="Team working" className="main-image" />
-          <div className="overlay-image">
+        <div className="homepage-about-us-image">
+          <img
+            src={aboutUsMainImg}
+            alt="Team working"
+            className="homepage-main-image"
+          />
+          <div className="homepage-overlay-image">
             <img src={aboutUsSubImg} alt="Discussion" />
           </div>
 
-          <div className="phone-box">
+          <div className="homepage-phone-box">
             <div className="phone-icon-container">
               <FaPhoneAlt className="phone-icon" />
             </div>
@@ -70,7 +74,7 @@ function HomepageAboutUs() {
           </Link>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

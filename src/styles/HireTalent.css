@@ -91,7 +91,6 @@
   font-weight: bold;
   cursor: pointer;
   border-radius: 6px;
-  transition: all 0.3s ease-in-out;
 }
 
 .hire-talent-form button:hover {

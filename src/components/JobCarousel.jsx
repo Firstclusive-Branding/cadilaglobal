@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
+import "../styles/JobCarousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "../styles/JobCarousel.css";
 import {
   FaMoneyBill,
   FaBuilding,
@@ -12,6 +12,7 @@ import {
   FaChevronRight,
   FaChevronLeft,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const jobListings = [
   {
@@ -153,9 +154,12 @@ const JobCarousel = () => {
                   </span>
                 </div>
                 <p className="job-carousel-description">{job.description}</p>
-                <button className="job-carousel-apply-button">
+                <Link
+                  to={`/find-jobs/apply?title=${job.title}&location=${job.location}`}
+                  className="job-carousel-apply-button"
+                >
                   Apply Now <FaArrowRight />
-                </button>
+                </Link>
               </div>
             </div>
           </SwiperSlide>
