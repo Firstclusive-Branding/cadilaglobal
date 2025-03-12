@@ -117,7 +117,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .contract-to-hire-heading {
     font-size: 24px;
   }

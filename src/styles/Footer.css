@@ -134,7 +134,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .footer-container {
     padding: 1.5rem 1rem;
   }

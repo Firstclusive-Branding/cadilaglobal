@@ -117,7 +117,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .consulting-services-heading {
     font-size: 24px;
   }

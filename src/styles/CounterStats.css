@@ -88,7 +88,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .counter-container {
     padding: 0px;
   }

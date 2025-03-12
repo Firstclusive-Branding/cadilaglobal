@@ -111,7 +111,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .it-staffing-heading {
     font-size: 24px;
   }

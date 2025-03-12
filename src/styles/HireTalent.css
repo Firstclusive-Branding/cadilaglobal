@@ -141,7 +141,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .hire-talent-subtitle {
     font-size: 0.9rem;
   }

@@ -174,7 +174,7 @@
   }
 }
 
-/* Mobile (425px) */
+/* Mobile (480px) */
 @media (max-width: 768px) {
   .about-us-section {
     padding: 30px 3%;
@@ -200,7 +200,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .about-us-container {
     gap: 2rem;
   }

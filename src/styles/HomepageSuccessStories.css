@@ -133,8 +133,8 @@
   }
 }
 
-/* 425px (Phones) */
-@media (max-width: 425px) {
+/* 480px (Phones) */
+@media (max-width: 480px) {
   .success-stories-container {
     padding: 2rem 1rem;
   }

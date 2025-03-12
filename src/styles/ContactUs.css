@@ -145,7 +145,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 480px) {
   .contact-us-content {
     padding: 20px;
     gap: 2rem;
