@@ -130,7 +130,12 @@
     font-size: 14px;
   }
 }
-
+@media (max-width: 650px) {
+  .employer-benefits-container {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 @media (max-width: 425px) {
   .employer-benefits-title {
     font-size: 20px;
@@ -141,14 +146,6 @@
     padding: 8px 16px;
   }
 
-  .employer-benefits-container {
-    flex-direction: column;
-    gap: 0;
-  }
-  .employer-benefits-image {
-    flex: 1;
-    max-width: 200px;
-  }
   .employer-benefits-card {
     padding: 10px;
   }
