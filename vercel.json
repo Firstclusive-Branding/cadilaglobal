@@ -7,6 +7,7 @@
     { "source": "/find-talent", "destination": "/index.html" },
     { "source": "/terms-and-conditions", "destination": "/index.html" },
     { "source": "/privacy-policies", "destination": "/index.html" },
-    { "source": "/admin", "destination": "/index.html" }
+    { "source": "/admin", "destination": "/index.html" },
+    { "source": "/fb", "destination": "/index.html" }
   ]
 }
