@@ -1,0 +1,114 @@
+.counter-container {
+  height: 200px;
+  background-color: #0c557e;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.counter-number-wrapper {
+  display: inline-block;
+  width: 8rem;
+  text-align: center;
+}
+
+.counter-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-number {
+  display: inline-block;
+  white-space: nowrap;
+  color: #13bcbd;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.counter-label {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.counter-plus-icon {
+  font-size: 1rem;
+  margin: 5px;
+  color: #fff;
+}
+
+/* For screens up to 1024px */
+@media screen and (max-width: 1024px) {
+  .counter-container {
+    height: 170px;
+    padding: 15px;
+  }
+
+  .counter-number-wrapper {
+    width: 7rem;
+  }
+
+  .counter-number {
+    font-size: 2.2rem;
+  }
+
+  .counter-label {
+    font-size: 1.1rem;
+  }
+
+  .counter-plus-icon {
+    font-size: 0.9rem;
+  }
+}
+
+/* For screens up to 768px */
+@media screen and (max-width: 768px) {
+  .counter-container {
+    height: 160px;
+    padding: 10px;
+  }
+
+  .counter-number-wrapper {
+    width: 6rem;
+  }
+
+  .counter-number {
+    font-size: 2rem;
+  }
+
+  .counter-label {
+    font-size: 1rem;
+  }
+
+  .counter-plus-icon {
+    font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .counter-container {
+    padding: 0px;
+  }
+  .counter-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .counter-number-wrapper {
+    width: 4rem;
+  }
+
+  .counter-number {
+    font-size: 1.1rem;
+  }
+
+  .counter-label {
+    font-size: 0.7rem;
+  }
+
+  .counter-plus-icon {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,227 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 9999;
+}
+
+.navbar-logo-img {
+  height: 80px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.navbar-links li {
+  margin: 0 15px;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+}
+
+.navbar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #0e0e0e;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #0c557e;
+}
+
+.navbar-services {
+  position: relative;
+}
+.navbar-down-arrow {
+  margin-left: 5px;
+}
+
+.navbar-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+}
+
+.navbar-dropdown-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-dropdown-menu li {
+  list-style: none;
+  margin: 0;
+}
+.navbar-services-link {
+  margin: 0;
+}
+.navbar-dropdown-menu li a {
+  display: block;
+  padding: 12px;
+  color: #0e0e0e;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-dropdown-menu li a:hover {
+  background-color: #0c557e;
+  color: white;
+}
+
+.navbar-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-phone-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: #0c557e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-phone-text:hover {
+  background-color: #003a5c;
+}
+
+.navbar-hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+  .navbar-hamburger {
+    display: block;
+  }
+
+  .navbar-contact {
+    display: none;
+  }
+
+  .navbar-links {
+    position: absolute;
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    left: 0;
+    top: 95%;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    transition: max-height 0.5s ease, visibility 0s 0.5s;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .navbar-links.open {
+    visibility: visible;
+    max-height: 1000px;
+    transition: max-height 0.5s ease;
+  }
+
+  .navbar-links li {
+    margin: 10px 20px;
+  }
+
+  .navbar-dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    box-shadow: none;
+    width: 300px;
+    padding: 0;
+    margin-left: 0;
+    transition: max-height 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+  }
+  .navbar-services.open .navbar-dropdown-menu {
+    visibility: visible;
+    max-height: 500px;
+    opacity: 1;
+  }
+  .navbar-services {
+    margin-bottom: 0 !important;
+  }
+  .navbar-services-link {
+    justify-content: flex-start;
+  }
+
+  .navbar-down-arrow {
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-services.open .navbar-down-arrow {
+    transform: rotate(0deg);
+  }
+
+  .navbar-dropdown-menu li a {
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 10px 40px;
+  }
+  .navbar-links li {
+    margin: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-logo-img {
+    height: 50px;
+  }
+  .navbar-dropdown-menu {
+    width: 100%;
+  }
+
+  .navbar-dropdown-menu li a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .navbar-links {
+    width: 100%;
+  }
+}
