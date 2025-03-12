@@ -1,0 +1,256 @@
+.about-us-section {
+  padding: 50px 5%;
+}
+
+.about-us-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.homepage-about-us-image {
+  position: relative;
+  width: 50%;
+}
+
+.homepage-main-image {
+  width: 100%;
+  border-radius: 10px;
+}
+.homepage-overlay-image {
+  position: absolute;
+  right: -10%;
+  bottom: -10%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  width: auto;
+  max-width: 40%;
+}
+
+.homepage-overlay-image img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  height: auto;
+}
+
+.homepage-phone-box {
+  display: flex;
+  padding: 10px 30px;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: -3%;
+  z-index: 3;
+}
+.homepage-phone-box h4 {
+  margin: 0;
+}
+.homepage-phone-box a {
+  color: #484848;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+.homepage-phone-box a:hover {
+  color: #13bcbd;
+}
+.phone-icon {
+  color: #13bcbd;
+  font-size: 20px;
+}
+.about-us-content {
+  margin-left: 20px;
+  width: 50%;
+}
+
+.about-title {
+  color: #008080;
+  font-weight: bold;
+}
+
+.about-us-section h2 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+.about-us-section p {
+  font-size: 16px;
+  color: #444;
+}
+
+.about-us-section blockquote {
+  font-style: italic;
+  color: #008080;
+  margin: 20px 0;
+  padding-left: 2px;
+  border-radius: 3px;
+  border-left: 5px #13bcbd solid;
+}
+
+.business-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+.business-info h4,
+.business-info p {
+  margin: 0;
+}
+.calendar-icon {
+  color: #fff;
+  background-color: #13bcbd;
+  padding: 10px;
+}
+.business-icon span {
+  font-size: 24px;
+}
+
+.about-us-button {
+  background-color: #0985a6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.about-us-button:hover {
+  background: #086f8a;
+}
+
+@media (max-width: 1024px) {
+  .about-us-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .homepage-overlay-image {
+    right: -5%;
+    bottom: -5%;
+    max-width: 40%;
+  }
+  .homepage-about-us-image {
+    width: 90%;
+  }
+
+  .about-us-content {
+    width: 100%;
+  }
+
+  .homepage-phone-box {
+    left: 10%;
+    bottom: 2%;
+    padding: 18px 40px;
+  }
+}
+
+/* Mobile (425px) */
+@media (max-width: 768px) {
+  .about-us-section {
+    padding: 30px 3%;
+  }
+
+  .about-us-section h2 {
+    font-size: 24px;
+  }
+
+  .about-us-section p {
+    font-size: 14px;
+  }
+
+  .business-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .homepage-phone-box {
+    left: 40%;
+    bottom: 2%;
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 425px) {
+  .about-us-container {
+    gap: 2rem;
+  }
+
+  .homepage-phone-box {
+    left: 10%;
+    bottom: -5%;
+    padding: 5px 15px;
+  }
+  .homepage-phone-box h4,
+  .homepage-phone-box a {
+    font-size: 12px;
+  }
+
+  .homepage-overlay-image {
+    right: -5%;
+    bottom: -10%;
+    padding: 5px;
+    max-width: 40%;
+  }
+
+  .homepage-overlay-image img {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    border-radius: 10px;
+  }
+  .about-us-content p {
+    margin-right: 10px;
+  }
+  .about-us-button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 320px) {
+  .homepage-phone-box {
+    left: 5%;
+    bottom: 5%;
+    padding: 3px 8px;
+  }
+  .homepage-phone-box h4,
+  .homepage-phone-box a {
+    font-size: 10px;
+  }
+
+  .homepage-overlay-image {
+    right: 0%;
+    bottom: -20%;
+    padding: 5px;
+    max-width: 45%;
+  }
+
+  .homepage-overlay-image img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    height: auto;
+  }
+}

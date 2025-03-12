@@ -1,0 +1,47 @@
+.custom-header {
+  background-color: #0c557e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 80px;
+}
+
+.custom-contact-info {
+  display: flex;
+  gap: 20px;
+}
+
+.custom-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.custom-header a {
+  text-decoration: none;
+  color: #fff;
+}
+.custom-icon {
+  font-size: 18px;
+}
+
+.custom-social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.custom-social-icon {
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.custom-info-item a:hover,
+.custom-social-icon:hover {
+  color: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-header {
+    display: none;
+  }
+}

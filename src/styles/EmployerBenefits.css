@@ -1,0 +1,166 @@
+.employer-benefits-section {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  padding: 40px;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  gap: 2rem;
+}
+
+.employer-benefits-content {
+  flex: 1;
+  max-width: 500px;
+  margin-right: 20px;
+}
+
+.employer-benefits-subtitle {
+  color: #12bdbd;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.employer-benefits-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.employer-benefits-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.employer-benefits-btn {
+  background-color: #0985a6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+  margin: auto;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+}
+.employer-benefits-btn:hover {
+  background-color: #086f8a;
+}
+.employer-benefits-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.employer-benefits-image {
+  flex: 1;
+  max-width: 400px;
+  text-align: center;
+}
+
+.employer-benefits-image img {
+  width: 100%;
+  height: auto;
+}
+
+.employer-benefits-cards {
+  flex: 1;
+  max-width: 300px;
+}
+
+.employer-benefits-card {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.employer-benefits-card:hover {
+  background-color: #0d557f;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .employer-benefits-section {
+    flex-direction: column;
+  }
+  .employer-benefits-title {
+    font-size: 2.5rem;
+  }
+  .employer-benefits-content,
+  .employer-benefits-image,
+  .employer-benefits-cards {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .employer-benefits-container {
+    width: 100%;
+  }
+  .employer-benefits-image {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .employer-benefits-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .employer-benefits-title {
+    font-size: 24px;
+  }
+
+  .employer-benefits-description {
+    font-size: 14px;
+  }
+
+  .employer-benefits-btn {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  .employer-benefits-title {
+    font-size: 20px;
+  }
+
+  .employer-benefits-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .employer-benefits-container {
+    flex-direction: column;
+    gap: 0;
+  }
+  .employer-benefits-image {
+    flex: 1;
+    max-width: 200px;
+  }
+  .employer-benefits-card {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .employer-benefits-title {
+    font-size: 18px;
+  }
+
+  .employer-benefits-btn {
+    font-size: 10px;
+    padding: 6px 12px;
+  }
+}
