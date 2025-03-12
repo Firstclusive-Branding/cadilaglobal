@@ -12,7 +12,7 @@ const AdminLogin = () => {
     e.preventDefault();
     if (email === "admin@cadilaglobal.com" && password === "admin123") {
       localStorage.setItem("adminAuthenticated", "true");
-      navigate("/admin/dashboard");
+      navigate("/fb/dashboard");
     } else {
       setError("Invalid email or password");
     }

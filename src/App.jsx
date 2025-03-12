@@ -82,7 +82,7 @@ const AdminRoute = ({ element }) => {
     setIsAuthenticated(authStatus);
 
     if (!authStatus) {
-      navigate("/admin");
+      navigate("/fb");
     }
   }, [navigate]);
 
@@ -115,12 +115,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/admin",
+    path: "/fb",
     children: [
       { index: true, element: <AdminLogin /> },
       {
         path: "*",
-        element: <Navigate to="/admin" replace />,
+        element: <Navigate to="/fb" replace />,
       },
       {
         element: <AdminLayout />,

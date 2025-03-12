@@ -62,7 +62,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 550px) {
   .industries-content h2 {
     font-size: 1.2rem;
   }

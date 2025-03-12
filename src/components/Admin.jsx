@@ -14,61 +14,67 @@ const Admin = () => {
   const navigate = useNavigate();
   const [username] = useState("Cadila Admin");
   const [isSidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleSignOut = () => {
     localStorage.removeItem("adminAuthenticated");
-    navigate("/admin");
+    navigate("/fb");
   };
 
   const toggleSidebar = () => {
     setSidebarCollapsed(!isSidebarCollapsed);
   };
 
+  // Handle screen resizing
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      if (window.innerWidth > 768) {
+        setSidebarCollapsed(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="admin-container">
       {/* Sidebar */}
-      <div className={`sidebar ${isSidebarCollapsed ? "collapsed" : ""}`}>
+      <div
+        className={`sidebar ${isSidebarCollapsed ? "collapsed" : ""} ${
+          isMobile ? "mobile" : ""
+        }`}
+      >
         <div className="sidebar-header">
-          <h3 className={`${isSidebarCollapsed ? "hidden" : ""}`}>
-            Admin Panel
-          </h3>
+          {!isSidebarCollapsed && <h3>Admin Panel</h3>}
           <button className="toggle-btn" onClick={toggleSidebar}>
             <FaBars />
           </button>
         </div>
-
         <div className="sidebar-menu">
           <ul>
             <li>
-              <NavLink to="/admin/dashboard" activeClassName="active">
-                <FaTachometerAlt />{" "}
-                <span className={isSidebarCollapsed ? "hidden" : ""}>
-                  Dashboard
-                </span>
+              <NavLink to="/fb/dashboard" activeClassName="active">
+                <FaTachometerAlt />
+                {!isSidebarCollapsed && <span>Dashboard</span>}
               </NavLink>
             </li>
             <li>
-              <NavLink to="/admin/content-management" activeClassName="active">
-                <FaClipboardList />{" "}
-                <span className={isSidebarCollapsed ? "hidden" : ""}>
-                  Content Management
-                </span>
+              <NavLink to="/fb/content-management" activeClassName="active">
+                <FaClipboardList />
+                {!isSidebarCollapsed && <span>Content Management</span>}
               </NavLink>
             </li>
             <li>
-              <NavLink to="/admin/careers" activeClassName="active">
-                <FaClipboardList />{" "}
-                <span className={isSidebarCollapsed ? "hidden" : ""}>
-                  Careers
-                </span>
+              <NavLink to="/fb/careers" activeClassName="active">
+                <FaClipboardList />
+                {!isSidebarCollapsed && <span>Careers</span>}
               </NavLink>
             </li>
             <li>
-              <NavLink to="/admin/job-applicants" activeClassName="active">
-                <FaClipboardList />{" "}
-                <span className={isSidebarCollapsed ? "hidden" : ""}>
-                  Manage Job Applicants
-                </span>
+              <NavLink to="/fb/job-applicants" activeClassName="active">
+                <FaClipboardList />
+                {!isSidebarCollapsed && <span>Manage Job Applicants</span>}
               </NavLink>
             </li>
           </ul>
@@ -78,6 +84,9 @@ const Admin = () => {
       {/* Content Area */}
       <div className="dashboard-container">
         <div className="admin-navbar">
+          <button className="toggle-btn mobile-toggle" onClick={toggleSidebar}>
+            <FaBars />
+          </button>
           <h1>Welcome, {username}</h1>
           <button className="logout-btn" onClick={handleSignOut}>
             <FaSignOutAlt /> Sign Out

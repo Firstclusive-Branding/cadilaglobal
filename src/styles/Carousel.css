@@ -131,7 +131,7 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 550px) {
   .carousel-container {
     height: 400px;
   }
