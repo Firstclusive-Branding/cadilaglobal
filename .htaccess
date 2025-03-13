@@ -19,7 +19,7 @@ RewriteRule ^ /index.html [QSA,L]
 
 # Leverage Browser Caching
 <IfModule mod_expires.c>
-    ExpiresActive Onz
+    ExpiresActive On
     ExpiresByType text/html "access 1 hour"
     ExpiresByType text/css "access 1 month"
     ExpiresByType application/javascript "access 1 month"
@@ -35,10 +35,11 @@ RewriteRule ^ /index.html [QSA,L]
     ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
 </IfModule>
 
-# Explicit MIME Types (Fix for Android CSS Not Loading)
+# Explicit MIME Types (Fix for Android and JS Loading Issues)
 <IfModule mod_mime.c>
     AddType text/css .css
     AddType application/javascript .js
+    AddType text/javascript .mjs
     AddType application/json .json
     AddType application/x-font-woff .woff
     AddType application/x-font-woff2 .woff2
@@ -50,8 +51,11 @@ AddDefaultCharset UTF-8
 # Prevent Caching Issues with CSS/JS
 <IfModule mod_headers.c>
     Header unset X-Content-Type-Options
-    <FilesMatch "\.(css|js)$">
+    <FilesMatch "\.(css)$">
         Header set Content-Type "text/css; charset=UTF-8"
+    </FilesMatch>
+    <FilesMatch "\.(js|mjs)$">
+        Header set Content-Type "application/javascript; charset=UTF-8"
     </FilesMatch>
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
