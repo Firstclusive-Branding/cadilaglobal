@@ -52,15 +52,15 @@ const TermsAndCondition = () => {
       <hr />
       <div className="terms-section">
         <h2>3. Terms of Service</h2>
+        <p>
+          The Terms of Service related to SMS communication must either be
+          included in the privacy policy or be a stand-alone document. The
+          information highlighted in yellow is something you need to edit and
+          make that accurate to your business needs. If the information is just
+          copied and pasted, it will be rejected. The document must include the
+          following:
+        </p>
         <ul>
-          <p>
-            The Terms of Service related to SMS communication must either be
-            included in the privacy policy or be a stand-alone document. The
-            information highlighted in yellow is something you need to edit and
-            make that accurate to your business needs. If the information is
-            just copied and pasted, it will be rejected. The document must
-            include the following:
-          </p>
           <li>
             <strong>Consent for SMS Communication:</strong> The information
             (Phone Numbers) obtained as part of the SMS consent process will not
