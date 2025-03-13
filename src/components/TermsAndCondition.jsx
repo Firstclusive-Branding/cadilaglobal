@@ -212,7 +212,7 @@ const TermsAndCondition = () => {
           contact:
         </p>
         <p>
-          Cadila Global Staffing Agency
+          Cadila Global
           <br />
           Email:{" "}
           <a href="mailto:info@cadilaglobal.com">info@cadilaglobal.com</a>
