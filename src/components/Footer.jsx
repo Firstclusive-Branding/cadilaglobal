@@ -9,6 +9,7 @@ import {
   FaLinkedinIn,
   FaHeart,
   FaCaretRight,
+  FaRegCopyright,
 } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { Link } from "react-router-dom";
@@ -91,7 +92,7 @@ const Footer = () => {
             </li>
             <li>
               <FaCaretRight className="arrow-icon" />
-              <Link to="/privacy-policies">Privacy Policy</Link>
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </li>
           </ul>
         </div>
@@ -157,6 +158,10 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p>
+          <FaRegCopyright className="footer-bottom-icon" />
+          2015-2025 Cadila Global LLC
+        </p>
+        <p className="footer-bottom-hidden">
           MADE WITH <FaHeart className="heart-icon" /> BY
           <a
             className="firstclusive-link"

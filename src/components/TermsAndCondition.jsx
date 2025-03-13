@@ -5,11 +5,11 @@ const TermsAndCondition = () => {
   return (
     <div className="terms-container">
       <div className="terms-header">
-        <h1>Terms and Conditions for Cadila Global Staffing Agency</h1>
+        <h1>Terms and Conditions </h1>
         <p>
-          Welcome to Cadila Global Staffing Agency. By accessing or using our
-          website and services, you agree to the following terms and conditions.
-          Please read them carefully.
+          Welcome to Cadila Global. By accessing or using our website and
+          services, you agree to the following terms and conditions. Please read
+          them carefully.
         </p>
       </div>
       <hr />
@@ -41,7 +41,7 @@ const TermsAndCondition = () => {
           </li>
           <li>
             <strong>Data Usage:</strong> Collected data is used in accordance
-            with our [Privacy Policy].
+            with our <a href="/privacy-policy"> Privacy Policy</a>.
           </li>
           <li>
             <strong>Data Protection:</strong> We implement measures to protect
@@ -51,25 +51,86 @@ const TermsAndCondition = () => {
       </div>
       <hr />
       <div className="terms-section">
-        <h2>3. Consent for SMS Communication</h2>
+        <h2>3. Terms of Service</h2>
         <ul>
+          <p>
+            The Terms of Service related to SMS communication must either be
+            included in the privacy policy or be a stand-alone document. The
+            information highlighted in yellow is something you need to edit and
+            make that accurate to your business needs. If the information is
+            just copied and pasted, it will be rejected. The document must
+            include the following:
+          </p>
           <li>
-            <strong>Agreement:</strong> By providing your mobile number, you
-            consent to receive SMS communications from Cadila Global related to
-            our services.
+            <strong>Consent for SMS Communication:</strong> The information
+            (Phone Numbers) obtained as part of the SMS consent process will not
+            be shared with third parties for marketing purposes.
           </li>
           <li>
-            <strong>Third-Party Sharing:</strong> Information obtained through
-            SMS consent will not be shared with third parties, except as
-            required by law.
+            <strong>Types of SMS Communications:</strong> If you have consented
+            to receive text messages from Cadila Global, you may receive
+            messages related to the following:
+            <ul>
+              <li>
+                <strong>To Clients:</strong> Follow-up after call
+              </li>
+              <li>
+                <strong>To Candidates:</strong> Follow-up after call
+              </li>
+            </ul>
           </li>
           <li>
-            <strong>Opt-Out:</strong> You may opt out of SMS communications at
-            any time by following the instructions in the messages or contacting
-            us directly.
+            <strong>Message Frequency:</strong> Message frequency may vary
+            depending on the type of communication. For example, you may receive
+            up to 1 SMS message related to follow-up after the call.
+          </li>
+          <li>
+            <strong>Potential Fees for SMS Messaging:</strong> Please note that
+            standard message and data rates may apply, depending on your
+            carrier’s pricing plan. These fees may vary if the message is sent
+            domestically or internationally.
+          </li>
+          <li>
+            <strong>Opt-In Method:</strong> You may opt-in to receive SMS
+            messages from Cadila Global in the following ways:
+            <ul>
+              <li>Verbally, during a conversation</li>
+              <li>By submitting an online form</li>
+              <li>By filling out a paper form</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Opt-Out Method:</strong> You can opt out of receiving SMS
+            messages at any time. To do so, simply reply "STOP" to any SMS
+            message you receive. Alternatively, you can contact us directly to
+            request removal from our messaging list.
+          </li>
+          <li>
+            <strong>Help:</strong> If you are experiencing any issues, you can
+            reply with the keyword HELP. Or, you can get help directly from us
+            at (832) 757-9277.
+          </li>
+          <li>
+            <strong>Additional Options:</strong> If you do not wish to receive
+            SMS messages, you can choose not to check the SMS consent box on our
+            forms.
+          </li>
+          <li>
+            <strong>Standard Messaging Disclosures:</strong>
+            <ul>
+              <li>Message and data rates may apply.</li>
+              <li>You can opt out at any time by texting "STOP."</li>
+              <li>
+                For assistance, text "HELP" or visit our{" "}
+                <a href="/privacy-policy">Privacy Policy</a> and{" "}
+                <a href="/terms-and-conditions">Terms and Conditions</a> pages.
+              </li>
+              <li>Message frequency may vary.</li>
+            </ul>
           </li>
         </ul>
       </div>
+
       <hr />
       <div className="terms-section">
         <h2>4. Types of SMS Communications</h2>

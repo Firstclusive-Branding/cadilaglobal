@@ -52,9 +52,9 @@ const PolicyPage = () => {
       <div className="privacy-section">
         <h2>3. Consent for SMS Communications</h2>
         <p>
-          By providing your mobile number, you consent to receive SMS messages
-          about job applications, onboarding, and employment updates. You may
-          opt out at any time by replying STOP.
+          Phone numbers collected with SMS consent, will not be sold, rented, or
+          shared with third parties or affiliates for marketing purposes under
+          any circumstances.
         </p>
       </div>
       <hr />

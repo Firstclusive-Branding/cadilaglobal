@@ -90,24 +90,26 @@
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.heart-icon {
-  color: #aef507;
-}
-
-.footer-bottom p a {
+.footer-bottom-hidden a {
   margin-left: 5px;
-  color: white;
+  color: #0d557f;
   text-decoration: none;
+  user-select: none;
+  cursor: default;
+}
+
+.footer-bottom-hidden {
+  margin-left: 5px;
+  color: #0d557f;
   font-weight: 700;
   transition: color 0.3s ease;
   letter-spacing: 2px;
-}
-
-.firstclusive-link:hover {
-  color: #aef507;
-  text-decoration: underline;
+  user-select: none;
 }
 @media (max-width: 1024px) {
   .footer-content {

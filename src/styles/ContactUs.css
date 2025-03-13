@@ -125,6 +125,36 @@
 .swal2-styled {
   background-color: #0f6aad;
 }
+.contact-form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.contact-form-checkbox input {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.checkbox-label a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 1024px) {
   .contact-us-content {

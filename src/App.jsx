@@ -110,7 +110,7 @@ const router = createBrowserRouter([
       { path: "find-talent", element: <HireTalent /> },
       { path: "find-jobs/apply", element: <JobForm /> },
       { path: "terms-and-conditions", element: <TermsAndCondition /> },
-      { path: "privacy-policies", element: <PolicyPage /> },
+      { path: "privacy-policy", element: <PolicyPage /> },
       { path: "*", element: <NotFound /> },
     ],
   },
