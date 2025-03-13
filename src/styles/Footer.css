@@ -90,9 +90,17 @@
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding-top: 1rem;
-  display: flex;
-  justify-content: center;
+}
+.footer-bottom-show {
+  display: inline-flex;
   align-items: center;
+  gap: 5px;
+}
+
+.footer-bottom-hidden {
+  color: #0d557f;
+  font-size: 1px;
+  user-select: none;
 }
 
 .footer-bottom-hidden a {
@@ -103,14 +111,6 @@
   cursor: default;
 }
 
-.footer-bottom-hidden {
-  margin-left: 5px;
-  color: #0d557f;
-  font-weight: 700;
-  transition: color 0.3s ease;
-  letter-spacing: 2px;
-  user-select: none;
-}
 @media (max-width: 1024px) {
   .footer-content {
     flex-wrap: wrap;

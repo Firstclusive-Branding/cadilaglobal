@@ -157,7 +157,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>
+        <p className="footer-bottom-show">
           <FaRegCopyright className="footer-bottom-icon" />
           2015-2025 Cadila Global LLC
         </p>

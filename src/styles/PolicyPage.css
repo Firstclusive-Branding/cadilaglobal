@@ -39,11 +39,20 @@
   margin-left: 20px;
 }
 
-.privacy-section ul li {
+.privacy-section ul li,
+.privacy-section p {
   margin-bottom: 8px;
   color: #444;
 }
 
+.privacy-section ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.privacy-section ul li a:hover {
+  text-decoration: underline;
+}
 .privacy-contact {
   text-align: left;
   margin-top: 20px;
@@ -94,7 +103,8 @@
     margin-left: 15px;
   }
 
-  .privacy-section ul li {
+  .privacy-section ul li,
+  .privacy-section p {
     font-size: 14px;
   }
 
@@ -125,7 +135,8 @@
     margin-left: 10px;
   }
 
-  .privacy-section ul li {
+  .privacy-section ul li,
+  .privacy-section p {
     font-size: 13px;
   }
 

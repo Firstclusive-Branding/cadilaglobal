@@ -20,7 +20,7 @@ const Header = () => {
         </div>
         <div className="custom-info-item">
           <FaPhone className="custom-icon" />
-          <a href="tel:+18327579277">+1 832 757 9277</a>
+          <a href="tel:+18327579277">+1 (832) 757-9277</a>
         </div>
       </div>
       <div className="custom-social-icons">

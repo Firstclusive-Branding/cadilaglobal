@@ -152,7 +152,8 @@ const ContactUs = () => {
                 <label htmlFor="termsCheckbox" className="checkbox-label">
                   By checking this box, you agree to receive SMS messages from
                   Cadila Global related to follow-ups. You may reply STOP to
-                  opt-out at any time. Reply HELP to (832) 757-9277 for
+                  opt-out at any time. Reply HELP to{" "}
+                  <a href="tel:+18327579277">+1 (832) 757-9277</a> for
                   assistance. Messages and data rates may apply. Message
                   frequency will vary. Learn more on our
                   <a href="/privacy-policy"> Privacy Policy</a> and

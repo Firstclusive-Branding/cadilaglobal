@@ -39,11 +39,19 @@
   margin-left: 20px;
 }
 
-.terms-section ul li {
+.terms-section ul li,
+.terms-section p {
   margin-bottom: 8px;
   color: #444;
 }
+.terms-section ul li a {
+  color: #007bff;
+  text-decoration: none;
+}
 
+.terms-section ul li a:hover {
+  text-decoration: underline;
+}
 .terms-contact {
   text-align: left;
   margin-top: 20px;
@@ -90,7 +98,8 @@
     margin-left: 15px;
   }
 
-  .terms-section ul li {
+  .terms-section ul li,
+  .terms-section p {
     font-size: 14px;
   }
 
@@ -121,7 +130,8 @@
     margin-left: 10px;
   }
 
-  .terms-section ul li {
+  .terms-section ul li,
+  .terms-section p {
     font-size: 13px;
   }
 
