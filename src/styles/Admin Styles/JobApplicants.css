@@ -1,0 +1,80 @@
+.job-applicants-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.job-applicants-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.job-applicants-search {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.job-applicants-search input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.job-applicants-error {
+  color: red;
+  text-align: center;
+}
+
+.job-applicants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.job-applicants-no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.job-applicants-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.job-applicants-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.job-applicants-pagination button {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.job-applicant-actions {
+  margin-top: 10px;
+}
+
+.delete-applicant-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.delete-applicant-btn:hover {
+  background-color: #c82333;
+}

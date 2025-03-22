@@ -1,0 +1,246 @@
+/* .admin-users-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.admin-users-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-users-search {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-users-search input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.admin-users-error {
+  color: red;
+  text-align: center;
+}
+
+.admin-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-users-no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.admin-users-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.role-badge {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.role-badge.manager {
+  background-color: #007bff;
+  color: white;
+}
+
+.role-badge.recruiter {
+  background-color: #28a745;
+  color: white;
+}
+
+.admin-users-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+
+.admin-users-pagination button {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+} */
+
+.admin-users-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.admin-users-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-users-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.admin-users-controls input,
+.admin-users-controls select {
+  width: 48%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.admin-users-error {
+  color: red;
+  text-align: center;
+}
+
+.admin-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-users-no-data {
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.admin-users-item {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.role-badge {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.role-badge.manager {
+  background-color: #007bff;
+  color: white;
+}
+
+.role-badge.recruiter {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Buttons */
+.admin-users-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.users-approve-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  margin-right: 8px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.users-approve-btn:disabled {
+  background-color: #a1d6a1;
+  cursor: not-allowed;
+}
+
+.users-reject-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.users-reject-btn:disabled {
+  background-color: #e49b9b;
+  cursor: not-allowed;
+}
+
+/* .users-approve-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.users-reject-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.users-approved-btn {
+  background-color: #007bff67;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: not-allowed;
+} */
+
+.admin-users-reset-password {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.admin-users-reset-password input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reset-password-btn {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.reset-password-btn:hover {
+  background-color: darkorange;
+}
+
+.update-password-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.update-password-btn:hover {
+  background-color: #0056b3;
+}

@@ -1,94 +1,93 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
-  useNavigate,
   useLocation,
   Navigate,
+  useNavigate,
 } from "react-router-dom";
+
 import "./App.css";
-import Header from "./components/Header";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
-import FloatingIcons from "./components/FloatingIcons";
+import Header from "./components/Mainpage/Header";
+import Navbar from "./components/Mainpage/Navbar";
+import Footer from "./components/Mainpage/Footer";
+import ScrollToTop from "./components/Mainpage/ScrollToTop";
+import FloatingIcons from "./components/Mainpage/FloatingIcons";
 
-// Pages
-import Homepage from "./components/Homepage";
-import ContactUs from "./components/ContactUs";
-import Careers from "./components/Careers";
-import AboutUs from "./components/AboutUs";
-import Services from "./components/Services";
-import HireTalent from "./components/HireTalent";
-import JobForm from "./components/JobForm";
-import TermsAndCondition from "./components/TermsAndCondition";
-import PolicyPage from "./components/PolicyPage";
-import NotFound from "./components/NotFound";
+// Main Pages
+import Homepage from "./components/Mainpage/Homepage";
+import ContactUs from "./components/Mainpage/ContactUs";
+import Careers from "./components/Mainpage/Careers";
+import AboutUs from "./components/Mainpage/AboutUs";
+import Services from "./components/Mainpage/Services";
+import HireTalent from "./components/Mainpage/HireTalent";
+import JobForm from "./components/Mainpage/JobForm";
+import TermsAndCondition from "./components/Mainpage/TermsAndCondition";
+import PolicyPage from "./components/Mainpage/PolicyPage";
+import NotFound from "./components/Mainpage/NotFound";
 
-// Services Pages
-import PermanentHiring from "./components/PermanentHiring";
-import TemporaryHiring from "./components/TemporaryHiring";
-import ContractHire from "./components/ContractHire";
-import RPO from "./components/RPO";
-import ContractToHire from "./components/ContractToHire";
-import ConsultingServices from "./components/ConsultingServices";
-import ExecutiveHiring from "./components/ExecutiveHiring";
-import SpecializedHiring from "./components/SpecializedHiring";
+// Service Pages
+import PermanentHiring from "./components/Mainpage/PermanentHiring";
+import TemporaryHiring from "./components/Mainpage/TemporaryHiring";
+import ContractHire from "./components/Mainpage/ContractHire";
+import RPO from "./components/Mainpage/RPO";
+import ContractToHire from "./components/Mainpage/ContractToHire";
+import ConsultingServices from "./components/Mainpage/ConsultingServices";
+import ExecutiveHiring from "./components/Mainpage/ExecutiveHiring";
+import SpecializedHiring from "./components/Mainpage/SpecializedHiring";
 
-// Admin Pages
-import Admin from "./components/Admin";
-import AdminLogin from "./components/AdminLogin";
-import AdminDashboard from "./components/AdminDashboard";
-import ContentManagement from "./components/ContentManagement";
-import ManageCareers from "./components/ManageCareers";
-import ManageJobApplicants from "./components/ManageJobApplicants";
+// Auth Pages
+import AdminLogin from "./components/Admin components/AdminLogin";
+import AdminSignup from "./components/Admin components/AdminSignup";
 
-// Main Website Layout
+// Dashboard Layouts & Pages
+import AdminLayout from "./components/Admin components/AdminLayout";
+import AdminDashboard from "./components/Admin components/AdminDashboard";
+import ManageJobs from "./components/Admin components/ManageJobs";
+import ManageJobApplicants from "./components/Admin components/ManageJobApplicants";
+import ManageManagers from "./components/Admin components/ManageManagers";
+import ManageRecruiters from "./components/Admin components/ManageRecruiters";
+import RecruiterForm from "./components/Admin components/RecruiterForm";
+import ContactForms from "./components/Admin components/ContactForms";
+import AdminUsers from "./components/Admin components/AdminUsers";
+
+// Route Protection
+const ProtectedRoute = ({ element, roleKey }) => {
+  const isAuthenticated = localStorage.getItem(roleKey) === "true";
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!isAuthenticated) navigate("/fb", { replace: true });
+  }, [isAuthenticated]);
+
+  return isAuthenticated ? (
+    element
+  ) : (
+    <div className="loading-screen">Loading...</div>
+  );
+};
+
+// Layout for Main Site
 const AppLayout = () => {
   const location = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
-    <div className="app-layout">
+    <>
       <Header />
       <Navbar />
       <ScrollToTop />
       <Outlet />
       <Footer />
       <FloatingIcons />
-    </div>
+    </>
   );
 };
 
-// Admin Panel Layout (Separate Design)
-const AdminLayout = () => {
-  return (
-    <Admin>
-      <Outlet />
-    </Admin>
-  );
-};
-
-const AdminRoute = ({ element }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const authStatus = localStorage.getItem("adminAuthenticated") === "true";
-    setIsAuthenticated(authStatus);
-
-    if (!authStatus) {
-      navigate("/fb");
-    }
-  }, [navigate]);
-
-  return isAuthenticated ? element : null;
-};
-// Define Routes
+// Router
 const router = createBrowserRouter([
   {
     path: "/",
@@ -101,12 +100,12 @@ const router = createBrowserRouter([
       { path: "services", element: <Services /> },
       { path: "services/permanent-hiring", element: <PermanentHiring /> },
       { path: "services/temporary-hiring", element: <TemporaryHiring /> },
-      { path: "services/recruitment-process-outsourcing", element: <RPO /> },
+      { path: "services/contract-hiring", element: <ContractHire /> },
       { path: "services/contract-to-hire", element: <ContractToHire /> },
+      { path: "services/recruitment-process-outsourcing", element: <RPO /> },
       { path: "services/consulting", element: <ConsultingServices /> },
       { path: "services/executive-hiring", element: <ExecutiveHiring /> },
       { path: "services/specialized-hiring", element: <SpecializedHiring /> },
-      { path: "services/contract-hiring", element: <ContractHire /> },
       { path: "find-talent", element: <HireTalent /> },
       { path: "find-jobs/apply", element: <JobForm /> },
       { path: "terms-and-conditions", element: <TermsAndCondition /> },
@@ -118,29 +117,190 @@ const router = createBrowserRouter([
     path: "/fb",
     children: [
       { index: true, element: <AdminLogin /> },
-      {
-        path: "*",
-        element: <Navigate to="/fb" replace />,
-      },
+      { path: "sign-up", element: <AdminSignup /> },
+      { path: "*", element: <Navigate to="/fb" replace /> },
       {
         element: <AdminLayout />,
         children: [
-          { index: true, element: <Navigate to="dashboard" replace /> },
+          // Dashboards
           {
-            path: "dashboard",
-            element: <AdminRoute element={<AdminDashboard />} />,
+            path: "admin-dashboard",
+            element: (
+              <ProtectedRoute
+                element={<AdminDashboard />}
+                roleKey="adminAuthenticated"
+              />
+            ),
           },
           {
-            path: "content-management",
-            element: <AdminRoute element={<ContentManagement />} />,
+            path: "manager-dashboard",
+            element: (
+              <ProtectedRoute
+                element={<AdminDashboard />}
+                roleKey="managerAuthenticated"
+              />
+            ),
           },
           {
-            path: "careers",
-            element: <AdminRoute element={<ManageCareers />} />,
+            path: "recruiter-dashboard",
+            element: (
+              <ProtectedRoute
+                element={<AdminDashboard />}
+                roleKey="recruiterAuthenticated"
+              />
+            ),
           },
+          {
+            path: "users",
+            element: (
+              <ProtectedRoute
+                element={<AdminUsers />}
+                roleKey="adminAuthenticated"
+              />
+            ),
+          },
+
+          // Job Postings - Accessible by all
+          // {
+          //   path: "jobs",
+          //   element: (
+          //     <ProtectedRoute
+          //       element={<ManageJobs />}
+          //       roleKey={
+          //         localStorage.getItem("adminAuthenticated") === "true"
+          //           ? "adminAuthenticated"
+          //           : localStorage.getItem("managerAuthenticated") === "true"
+          //           ? "managerAuthenticated"
+          //           : "recruiterAuthenticated"
+          //       }
+          //     />
+          //   ),
+
+          // },
+          {
+            path: "jobs",
+            element: (
+              <ProtectedRoute
+                element={
+                  <ManageJobs
+                    role={
+                      localStorage.getItem("adminAuthenticated") === "true"
+                        ? "Admin"
+                        : localStorage.getItem("managerAuthenticated") ===
+                          "true"
+                        ? "manager"
+                        : "recruiter"
+                    }
+                  />
+                }
+                roleKey={
+                  localStorage.getItem("adminAuthenticated") === "true"
+                    ? "adminAuthenticated"
+                    : localStorage.getItem("managerAuthenticated") === "true"
+                    ? "managerAuthenticated"
+                    : "recruiterAuthenticated"
+                }
+              />
+            ),
+          },
+
+          // Job Applicants - Accessible by all
+          // {
+          //   path: "job-applicants",
+          //   element: (
+          //     <ProtectedRoute
+          //       element={<ManageJobApplicants />}
+          //       roleKey={
+          //         localStorage.getItem("adminAuthenticated") === "true"
+          //           ? "adminAuthenticated"
+          //           : localStorage.getItem("managerAuthenticated") === "true"
+          //           ? "managerAuthenticated"
+          //           : "recruiterAuthenticated"
+          //       }
+          //     />
+          //   ),
+          // },
           {
             path: "job-applicants",
-            element: <AdminRoute element={<ManageJobApplicants />} />,
+            element: (
+              <ProtectedRoute
+                element={
+                  <ManageJobApplicants
+                    role={
+                      localStorage.getItem("adminAuthenticated") === "true"
+                        ? "Admin"
+                        : localStorage.getItem("managerAuthenticated") ===
+                          "true"
+                        ? "manager"
+                        : "recruiter"
+                    }
+                  />
+                }
+                roleKey={
+                  localStorage.getItem("adminAuthenticated") === "true"
+                    ? "adminAuthenticated"
+                    : localStorage.getItem("managerAuthenticated") === "true"
+                    ? "managerAuthenticated"
+                    : "recruiterAuthenticated"
+                }
+              />
+            ),
+          },
+
+          // Recruiter Forms - Admin & Manager only
+          {
+            path: "recruiter-forms",
+            element: (
+              <ProtectedRoute
+                element={<RecruiterForm />}
+                roleKey={
+                  localStorage.getItem("adminAuthenticated") === "true"
+                    ? "adminAuthenticated"
+                    : "managerAuthenticated"
+                }
+              />
+            ),
+          },
+
+          // Contact Forms - Admin & Manager only
+          {
+            path: "contact-forms",
+            element: (
+              <ProtectedRoute
+                element={<ContactForms />}
+                roleKey={
+                  localStorage.getItem("adminAuthenticated") === "true"
+                    ? "adminAuthenticated"
+                    : "managerAuthenticated"
+                }
+              />
+            ),
+          },
+
+          // Managers page - Only Admin
+          {
+            path: "managers",
+            element: (
+              <ProtectedRoute
+                element={<ManageManagers />}
+                roleKey="adminAuthenticated"
+              />
+            ),
+          },
+
+          // Recruiters page - Admin & Manager
+          {
+            path: "recruiters",
+            element: (
+              <ProtectedRoute
+                element={<ManageRecruiters />}
+                roleKey={
+                  localStorage.getItem("adminAuthenticated") === "true"
+                    ? "adminAuthenticated"
+                    : "managerAuthenticated"
+                }
+              />
+            ),
           },
         ],
       },
@@ -148,8 +308,5 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App = () => {
-  return <RouterProvider router={router} />;
-};
-
+const App = () => <RouterProvider router={router} />;
 export default App;

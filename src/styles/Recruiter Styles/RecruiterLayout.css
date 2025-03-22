@@ -1,0 +1,13 @@
+.recruiter-layout {
+  display: flex;
+}
+
+.recruiter-content {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.recruiter-page-content {
+  padding: 20px;
+}
