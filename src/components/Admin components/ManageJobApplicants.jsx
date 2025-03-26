@@ -1,154 +1,13 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-// import "../../styles/Admin Styles/JobApplicants.css";
-
-// const baseURL = "http://localhost:4000";
-
-// const ManageJobApplicants = () => {
-//   const [applicants, setApplicants] = useState([]);
-//   const [search, setSearch] = useState("");
-//   const [page, setPage] = useState(0);
-//   const [totalPages, setTotalPages] = useState(1);
-//   const [error, setError] = useState("");
-//   const [loading, setLoading] = useState(false);
-
-//   const getAuthHeaders = () => {
-//     const token = localStorage.getItem("token");
-//     return { headers: { Authorization: `Bearer ${token}` } };
-//   };
-
-//   const fetchApplicants = async () => {
-//     try {
-//       setLoading(true);
-//       const res = await axios.post(
-//         `${baseURL}/api/admin/jobapplicants/getall`,
-//         {
-//           pageno: page,
-//           search,
-//           sortby: { createdAt: "desc" },
-//         },
-//         getAuthHeaders()
-//       );
-//       setApplicants(res.data.data.applicants);
-//       setTotalPages(res.data.data.totalPages);
-//       setLoading(false);
-//     } catch (err) {
-//       setError("Failed to load job applicants.");
-//       setLoading(false);
-//     }
-//   };
-
-//   useEffect(() => {
-//     fetchApplicants();
-//   }, [page, search]);
-
-//   const handleDelete = async (_id) => {
-//     const confirmDelete = window.confirm(
-//       "Are you sure you want to delete this applicant?"
-//     );
-//     if (!confirmDelete) return;
-
-//     try {
-//       await axios.post(
-//         `${baseURL}/api/admin/jobapplicants/delete`,
-//         { _id },
-//         getAuthHeaders()
-//       );
-//       fetchApplicants();
-//     } catch (err) {
-//       alert("Error deleting applicant.");
-//     }
-//   };
-
-//   return (
-//     <div className="job-applicants-container">
-//       <h2 className="job-applicants-title">Manage Job Applicants</h2>
-
-//       <div className="job-applicants-search">
-//         <input
-//           type="text"
-//           placeholder="Search by name, email, or job title..."
-//           value={search}
-//           onChange={(e) => setSearch(e.target.value)}
-//         />
-//       </div>
-
-//       {error && <p className="job-applicants-error">{error}</p>}
-
-//       <div className="job-applicants-list">
-//         {loading ? (
-//           <p>Loading...</p>
-//         ) : applicants.length === 0 ? (
-//           <p className="job-applicants-no-data">No job applicants found.</p>
-//         ) : (
-//           applicants.map((applicant) => (
-//             <div key={applicant._id} className="job-applicants-item">
-//               <h4>{applicant.name}</h4>
-//               <p>
-//                 <strong>Email:</strong> {applicant.email}
-//               </p>
-//               <p>
-//                 <strong>Mobile:</strong> {applicant.mobile}
-//               </p>
-//               <p>
-//                 <strong>Experience:</strong> {applicant.yearofexperience}
-//               </p>
-//               <p>
-//                 <strong>Job Title:</strong> {applicant.jobtitle}
-//               </p>
-//               <p>
-//                 <strong>Location:</strong> {applicant.location}
-//               </p>
-//               <p>
-//                 <strong>Recruiter:</strong> {applicant.recruitername}
-//               </p>
-//               {applicant.coverletter && (
-//                 <p>
-//                   <strong>Cover Letter:</strong> {applicant.coverletter}
-//                 </p>
-//               )}
-
-//               <div className="job-applicant-actions">
-//                 <button
-//                   onClick={() => handleDelete(applicant._id)}
-//                   className="delete-applicant-btn"
-//                 >
-//                   Delete
-//                 </button>
-//               </div>
-//             </div>
-//           ))
-//         )}
-//       </div>
-
-//       <div className="job-applicants-pagination">
-//         <button
-//           onClick={() => setPage((p) => Math.max(p - 1, 0))}
-//           disabled={page === 0}
-//         >
-//           Previous
-//         </button>
-//         <span>
-//           Page {page + 1} of {totalPages}
-//         </span>
-//         <button
-//           onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))}
-//           disabled={page + 1 >= totalPages}
-//         >
-//           Next
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ManageJobApplicants;
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../../styles/Admin Styles/JobApplicants.css";
+import { FaFilePdf } from "react-icons/fa6";
+import { MdDelete } from "react-icons/md";
 
-const baseURL = "http://localhost:4000";
+const baseURL = import.meta.env.VITE_API_URL;
 
 const ManageJobApplicants = () => {
   const [applicants, setApplicants] = useState([]);
@@ -157,30 +16,69 @@ const ManageJobApplicants = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const encoded_token = localStorage.getItem("token");
 
-  // Get role from localStorage
-  const role = JSON.parse(localStorage.getItem("userData"))?.role || "admin";
-  const endpointPrefix = role === "manager" ? "manager" : "admin";
+  // const role = JSON.parse(localStorage.getItem("userData"))?.role || "Admin";
+  // const endpointPrefix = role === "manager" ? "manager" : "admin";
+
+  const role = JSON.parse(localStorage.getItem("userData"))?.role || "Admin";
+  let endpointPrefix = "admin";
+
+  if (role === "manager") endpointPrefix = "manager";
+  else if (role === "recruiter") endpointPrefix = "recruiter";
 
   const getAuthHeaders = () => {
     const token = localStorage.getItem("token");
     return { headers: { Authorization: `Bearer ${token}` } };
   };
 
+  // const fetchApplicants = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const res = await axios.post(
+  //       `${baseURL}/api/${endpointPrefix}/jobapplicants/getall`,
+  //       {
+  //         pageno: page,
+  //         search,
+  //         sortby: { createdAt: "desc" },
+  //       },
+  //       getAuthHeaders()
+  //     );
+  //     setApplicants(res.data.data.applicants);
+  //     setTotalPages(res.data.data.totalPages);
+  //     setLoading(false);
+  //   } catch (err) {
+  //     setError("Failed to load job applicants.");
+  //     setLoading(false);
+  //   }
+  // };
+
   const fetchApplicants = async () => {
     try {
       setLoading(true);
-      const res = await axios.post(
-        `${baseURL}/api/${endpointPrefix}/jobapplicants/getall`,
-        {
-          pageno: page,
-          search,
-          sortby: { createdAt: "desc" },
-        },
-        getAuthHeaders()
-      );
-      setApplicants(res.data.data.applicants);
-      setTotalPages(res.data.data.totalPages);
+      let res;
+
+      if (role === "recruiter") {
+        res = await axios.get(
+          `${baseURL}/api/recruiter/jobposting/viewjobform`,
+          getAuthHeaders()
+        );
+        setApplicants(res.data.data); // because data is directly an array
+        setTotalPages(1); // No pagination provided in recruiter endpoint
+      } else {
+        res = await axios.post(
+          `${baseURL}/api/${endpointPrefix}/jobapplicants/getall`,
+          {
+            pageno: page,
+            search,
+            sortby: { createdAt: "desc" },
+          },
+          getAuthHeaders()
+        );
+        setApplicants(res.data.data.applicants);
+        setTotalPages(res.data.data.totalPages);
+      }
+
       setLoading(false);
     } catch (err) {
       setError("Failed to load job applicants.");
@@ -193,10 +91,17 @@ const ManageJobApplicants = () => {
   }, [page, search]);
 
   const handleDelete = async (_id) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this applicant?"
-    );
-    if (!confirmDelete) return;
+    const confirmResult = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won’t be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (!confirmResult.isConfirmed) return;
 
     try {
       await axios.post(
@@ -204,9 +109,10 @@ const ManageJobApplicants = () => {
         { _id },
         getAuthHeaders()
       );
+      toast.success("Applicant deleted successfully!");
       fetchApplicants();
     } catch (err) {
-      alert("Error deleting applicant.");
+      toast.error("Error deleting applicant.");
     }
   };
 
@@ -217,7 +123,7 @@ const ManageJobApplicants = () => {
       <div className="job-applicants-search">
         <input
           type="text"
-          placeholder="Search by name, email, or job title..."
+          placeholder="Search by name or email..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -225,69 +131,98 @@ const ManageJobApplicants = () => {
 
       {error && <p className="job-applicants-error">{error}</p>}
 
-      <div className="job-applicants-list">
-        {loading ? (
-          <p>Loading...</p>
-        ) : applicants.length === 0 ? (
-          <p className="job-applicants-no-data">No job applicants found.</p>
-        ) : (
-          applicants.map((applicant) => (
-            <div key={applicant._id} className="job-applicants-item">
-              <h4>{applicant.name}</h4>
-              <p>
-                <strong>Email:</strong> {applicant.email}
-              </p>
-              <p>
-                <strong>Mobile:</strong> {applicant.mobile}
-              </p>
-              <p>
-                <strong>Experience:</strong> {applicant.yearofexperience}
-              </p>
-              <p>
-                <strong>Job Title:</strong> {applicant.jobtitle}
-              </p>
-              <p>
-                <strong>Location:</strong> {applicant.location}
-              </p>
-              <p>
-                <strong>Recruiter:</strong> {applicant.recruitername}
-              </p>
-              {applicant.coverletter && (
-                <p>
-                  <strong>Cover Letter:</strong> {applicant.coverletter}
-                </p>
-              )}
+      {loading ? (
+        <p>Loading...</p>
+      ) : applicants.length === 0 ? (
+        <p className="job-applicants-no-data">No job applicants found.</p>
+      ) : (
+        <div className="job-applicants-table-wrapper">
+          <table className="job-applicants-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Experience</th>
+                <th>Job Title</th>
+                <th>Location</th>
+                <th>Applied On</th>
+                {!role === "recruiter" && <th>Posted By</th>}
+                {!role === "recruiter" && <th>Role</th>}
+                <th>Resume</th>
+                {role === "Admin" && <th>Actions</th>}
+              </tr>
+            </thead>
+            <tbody>
+              {applicants.map((applicant) => (
+                <tr key={applicant._id}>
+                  <td>{applicant.name}</td>
+                  <td>
+                    <a
+                      href={`mailto:${applicant.email}`}
+                      style={{ color: "#0c7dbd", textDecoration: "none" }}
+                    >
+                      {applicant.email}
+                    </a>
+                  </td>
+                  <td>{applicant.mobile}</td>
+                  <td>{applicant.yearofexperience}</td>
+                  <td>{applicant.jobtitle}</td>
+                  <td>{applicant.location}</td>
+                  <td>{new Date(applicant.createdAt).toLocaleDateString()}</td>
 
-              <div className="job-applicant-actions">
-                <button
-                  onClick={() => handleDelete(applicant._id)}
-                  className="delete-applicant-btn"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))
-        )}
-      </div>
+                  {!role === "recruiter" && <td>{applicant.recruiteremail}</td>}
+                  {!role === "recruiter" && <td>{applicant.recruiterrole}</td>}
+                  <td>
+                    {applicant.resume ? (
+                      <a
+                        href={`${baseURL}/api/pdf/${applicant.resume}?token=Bearer ${encoded_token}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                      >
+                        <FaFilePdf size={25} color="#114769" />
+                      </a>
+                    ) : (
+                      "-"
+                    )}
+                  </td>
+                  {role === "Admin" ? (
+                    <td>
+                      <button
+                        onClick={() => handleDelete(applicant._id)}
+                        className="applicant-delete-btn"
+                      >
+                        <MdDelete size={25} />
+                      </button>
+                    </td>
+                  ) : null}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
-      <div className="job-applicants-pagination">
-        <button
-          onClick={() => setPage((p) => Math.max(p - 1, 0))}
-          disabled={page === 0}
-        >
-          Previous
-        </button>
-        <span>
-          Page {page + 1} of {totalPages}
-        </span>
-        <button
-          onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))}
-          disabled={page + 1 >= totalPages}
-        >
-          Next
-        </button>
-      </div>
+      {role !== "recruiter" && (
+        <div className="job-applicants-pagination">
+          <button
+            onClick={() => setPage((p) => Math.max(p - 1, 0))}
+            disabled={page === 0}
+          >
+            Previous
+          </button>
+          <span>
+            Page {page + 1} of {totalPages}
+          </span>
+          <button
+            onClick={() => setPage((p) => Math.min(p + 1, totalPages - 1))}
+            disabled={page + 1 >= totalPages}
+          >
+            Next
+          </button>
+        </div>
+      )}
     </div>
   );
 };

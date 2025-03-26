@@ -44,9 +44,11 @@
   background-color: #0985a6;
   color: #fff;
 }
+
 .job-carousel-cards {
   padding-bottom: 2.5rem;
 }
+
 .job-carousel-card {
   background: white;
   min-height: 300px;
@@ -56,12 +58,6 @@
   text-align: left;
 }
 
-.job-carousel-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
 .job-carousel-content {
   padding: 15px;
 }
@@ -69,31 +65,35 @@
 .job-carousel-title {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .job-carousel-details {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   font-size: 14px;
   color: #555;
   margin-bottom: 10px;
-  padding: 10px 40px;
+  padding: 10px 30px;
   border-top: 1px solid #0e0e0e4b;
   border-bottom: 1px solid #0e0e0e4b;
 }
+
 .job-carousel-details span {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  flex: 1 1 30%;
 }
+
 .job-carousel-details-icon {
-  font-size: 24px;
+  font-size: 20px;
   color: #006a87;
 }
+
 .job-carousel-description {
   font-size: 14px;
   color: #666;
@@ -118,9 +118,11 @@
   margin-top: 2rem;
   transition: background-color 0.3s;
 }
+
 .job-carousel-apply-button:hover {
   background-color: #006a87;
 }
+
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -141,15 +143,15 @@
   .job-carousel {
     padding: 40px 60px;
   }
+
   .job-carousel-nav-buttons {
     margin-right: 2rem;
   }
+
   .job-carousel-card {
     min-height: 350px;
   }
-  .job-carousel-details {
-    padding: 10px 0;
-  }
+
   .job-carousel-title {
     font-size: 1.5rem;
   }
@@ -160,29 +162,33 @@
     min-height: 320px;
     margin: auto;
   }
+
   .job-carousel-title {
     font-size: 1.5rem;
   }
-  .job-carousel-details {
-    padding: 10px 20px;
-  }
+
   .job-carousel-nav-buttons {
     display: none;
   }
+
   .job-carousel-apply-button {
     padding: 10px 15px;
   }
 }
+
 @media screen and (max-width: 480px) {
   .job-carousel {
     padding: 40px;
   }
+
   .job-carousel-header {
     flex-direction: column;
   }
+
   .job-carousel-title {
     font-size: 1.4rem;
   }
+
   .job-carousel-card {
     min-height: 300px;
     margin: auto;
@@ -193,18 +199,12 @@
   .job-carousel {
     padding: 40px 20px;
   }
+
   .job-carousel-subtitle {
     font-size: 0.8rem;
   }
+
   .job-carousel-title {
     font-size: 1.2rem;
   }
-  /* .job-carousel-nav-buttons {
-    margin-right: 0;
-  } */
-
-  /* .job-carousel-nav-buttons button {
-    padding: 10px 35px;
-    font-size: 18px;
-  } */
 }

@@ -4,7 +4,7 @@ import "../../styles/Admin Styles/AdminNavbar.css";
 
 const AdminNavbar = ({ role }) => {
   const navigate = useNavigate();
-  const [firstname, setFirstname] = useState("");
+  const [firstName, setFirstName] = useState("");
 
   const roleSettings = {
     Admin: { authKey: "adminAuthenticated", className: "admin" },
@@ -14,8 +14,10 @@ const AdminNavbar = ({ role }) => {
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("userData"));
+    setFirstName(userData.firstname);
+
     if (userData?.role === role) {
-      setFirstname(userData.firstname);
+      setFirstName(userData.firstname);
     }
   }, [role]);
 
@@ -24,7 +26,7 @@ const AdminNavbar = ({ role }) => {
     return null;
   }
 
-  const { authKey, className } = roleSettings[role];
+  const authKey = roleSettings[role];
 
   const handleSignOut = (e) => {
     e.preventDefault(true);
@@ -40,7 +42,7 @@ const AdminNavbar = ({ role }) => {
 
   return (
     <div className="admin-navbar">
-      <h2 className="admin-title">Welcome {firstname}</h2>
+      <h2 className="admin-title">Welcome {firstName}</h2>
       <div className="admin-nav-items">
         <button className="admin-signout" onClick={handleSignOut}>
           Sign Out

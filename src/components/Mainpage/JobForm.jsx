@@ -4,20 +4,20 @@ import "../../styles/Mainpage Styles/JobForm.css";
 import Swal from "sweetalert2";
 import jobFormImage from "../../assets/Job form assets/job-form.jpg";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const JobForm = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const jobTitle = queryParams.get("title") || "";
   const jobLocation = queryParams.get("location") || "";
+  const jobId = queryParams.get("jobid") || "";
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    jobDetails: `${jobTitle} - ${jobLocation}`,
-    experience: "",
     contact: "",
-    coverLetter: "",
+    experience: "",
     resume: null,
   });
 
@@ -30,39 +30,64 @@ const JobForm = () => {
     }
   };
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    const formDataToSend = new FormData(event.target);
-    formDataToSend.append("access_key", "2a53a327-68d0-450d-92b3-0d4ce175b269");
-    formDataToSend.append(
-      "subject",
-      `Job Application for ${jobTitle} at ${jobLocation}`
-    );
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formDataToSend,
-    }).then((res) => res.json());
+    if (!formData.resume) {
+      Swal.fire("Please upload your CV", "", "warning");
+      return;
+    }
 
-    if (res.success) {
+    try {
+      // Step 1: Submit applicant basic info
+      const createRes = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/user/jobapplicants/create`,
+        {
+          jobid: jobId,
+          name: formData.name,
+          email: formData.email,
+          mobile: formData.contact,
+          yearofexperience: formData.experience,
+        }
+      );
+
+      const applicantId = createRes.data.data._id;
+
+      // Step 2: Upload resume
+      const cvForm = new FormData();
+      cvForm.append("resume", formData.resume);
+
+      await axios.post(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/user/jobapplicants/upload/${applicantId}`,
+        cvForm,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      // Success message
       Swal.fire({
         title: "Application Submitted!",
-        text: "We have received your application. We'll get in touch soon!",
+        text: "We have received your application.",
         icon: "success",
         confirmButtonText: "OK",
       });
-      event.target.reset();
+
+      // Reset form
       setFormData({
         name: "",
         email: "",
-        jobDetails: `${jobTitle} - ${jobLocation}`,
-        experience: "",
         contact: "",
-        coverLetter: "",
+        experience: "",
         resume: null,
       });
-    } else {
-      console.error("Web3Forms Error:", res);
+      e.target.reset();
+    } catch (err) {
+      console.error("Application error:", err);
       Swal.fire({
         icon: "error",
         title: "Submission Failed",
@@ -85,12 +110,12 @@ const JobForm = () => {
         </div>
         <div className="job-form-content">
           <h2>Apply for This Job</h2>
-          <p>Fill in your details and submit your application.</p>
+          <p>Fill in your details and upload your CV.</p>
           <form onSubmit={onSubmit} className="job-form">
             <input
               type="text"
               name="jobDetails"
-              value={formData.jobDetails}
+              value={`${jobTitle} - ${jobLocation}`}
               disabled
             />
             <input
@@ -115,19 +140,19 @@ const JobForm = () => {
               required
             />
             <input
-              type="text"
+              type="number"
               name="experience"
               placeholder="Years of Experience"
               onChange={handleChange}
               required
             />
-            <textarea
-              name="coverLetter"
-              placeholder="Write a brief cover letter"
+            <input
+              type="file"
+              name="resume"
+              accept=".pdf,.doc,.docx"
               onChange={handleChange}
               required
             />
-
             <button type="submit">Submit Application</button>
           </form>
         </div>

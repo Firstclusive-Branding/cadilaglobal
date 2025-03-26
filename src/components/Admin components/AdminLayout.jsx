@@ -7,7 +7,6 @@ import "../../styles/Admin Styles/AdminLayout.css";
 const AdminLayout = () => {
   const storedUser = localStorage.getItem("userData");
   const role = storedUser ? JSON.parse(storedUser).role.toLowerCase() : "guest";
-
   return (
     <div className="admin-layout">
       <AdminSidebar role={role} />

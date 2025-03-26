@@ -7,6 +7,11 @@ import {
   Navigate,
   useNavigate,
 } from "react-router-dom";
+import ReactModal from "react-modal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+ReactModal.setAppElement("#root");
 
 import "./App.css";
 import Header from "./components/Mainpage/Header";
@@ -51,6 +56,7 @@ import ManageRecruiters from "./components/Admin components/ManageRecruiters";
 import RecruiterForm from "./components/Admin components/RecruiterForm";
 import ContactForms from "./components/Admin components/ContactForms";
 import AdminUsers from "./components/Admin components/AdminUsers";
+import ForgotPassword from "./components/Admin components/ForgotPassword";
 
 // Route Protection
 const ProtectedRoute = ({ element, roleKey }) => {
@@ -118,6 +124,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <AdminLogin /> },
       { path: "sign-up", element: <AdminSignup /> },
+      { path: "password-reset", element: <ForgotPassword /> },
       { path: "*", element: <Navigate to="/fb" replace /> },
       {
         element: <AdminLayout />,
@@ -150,33 +157,34 @@ const router = createBrowserRouter([
               />
             ),
           },
+
           {
             path: "users",
             element: (
               <ProtectedRoute
-                element={<AdminUsers />}
-                roleKey="adminAuthenticated"
+                element={
+                  <AdminUsers
+                    role={
+                      localStorage.getItem("adminAuthenticated") === "true"
+                        ? "Admin"
+                        : localStorage.getItem("managerAuthenticated") ===
+                          "true"
+                        ? "manager"
+                        : "recruiter"
+                    }
+                  />
+                }
+                roleKey={
+                  localStorage.getItem("adminAuthenticated") === "true"
+                    ? "adminAuthenticated"
+                    : localStorage.getItem("managerAuthenticated") === "true"
+                    ? "managerAuthenticated"
+                    : "recruiterAuthenticated"
+                }
               />
             ),
           },
 
-          // Job Postings - Accessible by all
-          // {
-          //   path: "jobs",
-          //   element: (
-          //     <ProtectedRoute
-          //       element={<ManageJobs />}
-          //       roleKey={
-          //         localStorage.getItem("adminAuthenticated") === "true"
-          //           ? "adminAuthenticated"
-          //           : localStorage.getItem("managerAuthenticated") === "true"
-          //           ? "managerAuthenticated"
-          //           : "recruiterAuthenticated"
-          //       }
-          //     />
-          //   ),
-
-          // },
           {
             path: "jobs",
             element: (
@@ -204,22 +212,6 @@ const router = createBrowserRouter([
             ),
           },
 
-          // Job Applicants - Accessible by all
-          // {
-          //   path: "job-applicants",
-          //   element: (
-          //     <ProtectedRoute
-          //       element={<ManageJobApplicants />}
-          //       roleKey={
-          //         localStorage.getItem("adminAuthenticated") === "true"
-          //           ? "adminAuthenticated"
-          //           : localStorage.getItem("managerAuthenticated") === "true"
-          //           ? "managerAuthenticated"
-          //           : "recruiterAuthenticated"
-          //       }
-          //     />
-          //   ),
-          // },
           {
             path: "job-applicants",
             element: (
@@ -276,37 +268,26 @@ const router = createBrowserRouter([
               />
             ),
           },
-
-          // Managers page - Only Admin
-          {
-            path: "managers",
-            element: (
-              <ProtectedRoute
-                element={<ManageManagers />}
-                roleKey="adminAuthenticated"
-              />
-            ),
-          },
-
-          // Recruiters page - Admin & Manager
-          {
-            path: "recruiters",
-            element: (
-              <ProtectedRoute
-                element={<ManageRecruiters />}
-                roleKey={
-                  localStorage.getItem("adminAuthenticated") === "true"
-                    ? "adminAuthenticated"
-                    : "managerAuthenticated"
-                }
-              />
-            ),
-          },
         ],
       },
     ],
   },
 ]);
 
-const App = () => <RouterProvider router={router} />;
+const App = () => (
+  <>
+    <RouterProvider router={router} />
+    <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={false}
+      newestOnTop
+      closeOnClick
+      draggable
+      pauseOnFocusLoss
+      pauseOnHover={false}
+      theme="colored"
+    />
+  </>
+);
 export default App;

@@ -6,7 +6,6 @@ import AdminSidebar from "../Admin components/AdminSidebar";
 const RecruiterLayout = ({ role }) => {
   return (
     <div className="recruiter-layout">
-      {/* <RecruiterSidebar /> */}
       <AdminSidebar role={role} />
 
       <div className="recruiter-content">

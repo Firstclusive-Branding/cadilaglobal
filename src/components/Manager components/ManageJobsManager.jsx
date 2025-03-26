@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../../styles/Admin Styles/ManageJobs.css";
 
-const baseURL = "http://localhost:4000";
+const baseURL = import.meta.env.VITE_API_URL;
 
 const ManageJobs = () => {
   const [jobs, setJobs] = useState([]);

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 import "../../styles/Admin Styles/RecruiterForm.css";
 
-const baseURL = "http://localhost:4000";
+const baseURL = import.meta.env.VITE_API_URL;
 
 const RecruiterForm = () => {
   const [entries, setEntries] = useState([]);
@@ -11,6 +13,8 @@ const RecruiterForm = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [error, setError] = useState("");
 
+  const role = JSON.parse(localStorage.getItem("userData"))?.role;
+
   const getAuthHeaders = () => {
     const token = localStorage.getItem("token");
     return { headers: { Authorization: `Bearer ${token}` } };
@@ -18,8 +22,13 @@ const RecruiterForm = () => {
 
   const fetchEntries = async () => {
     try {
+      const route =
+        role === "manager"
+          ? `${baseURL}/api/manager/dashboard/getalltalent/`
+          : `${baseURL}/api/admin/hiretalent/`;
+
       const res = await axios.post(
-        `${baseURL}/api/admin/hiretalent/`,
+        route,
         {
           pageno: page,
           search,
@@ -39,26 +48,39 @@ const RecruiterForm = () => {
   }, [page, search]);
 
   const handleDelete = async (_id) => {
+    const confirmResult = await Swal.fire({
+      title: "Are you sure?",
+      text: "This entry will be deleted permanently!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    });
+
+    if (!confirmResult.isConfirmed) return;
+
     try {
       await axios.post(
-        `${baseURL}/api/admin/talenthire/delete`,
+        `${baseURL}/api/admin/hiretalent/delete`,
         { _id },
         getAuthHeaders()
       );
+      toast.success("Recruiter form deleted successfully!");
       fetchEntries();
     } catch (err) {
-      setError("Failed to delete entry.");
+      toast.error("Failed to delete entry.");
     }
   };
 
   return (
     <div className="recruiter-form-container">
-      <h2 className="recruiter-form-title">Recruiter Form Submissions</h2>
+      <h2 className="recruiter-form-title">Find Talent Form Submission</h2>
 
       <div className="recruiter-form-search">
         <input
           type="text"
-          placeholder="Search by company name, job role, email, or mobile..."
+          placeholder="Search by company, role, email or mobile..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -66,36 +88,45 @@ const RecruiterForm = () => {
 
       {error && <p className="recruiter-form-error">{error}</p>}
 
-      <div className="recruiter-form-list">
-        {entries.length === 0 ? (
-          <p className="recruiter-form-no-data">No entries found.</p>
-        ) : (
-          entries.map((entry) => (
-            <div key={entry._id} className="recruiter-form-item">
-              <h4>{entry.companyname}</h4>
-              <p>
-                <strong>Job Role:</strong> {entry.jobrole}
-              </p>
-              <p>
-                <strong>Email:</strong> {entry.email}
-              </p>
-              <p>
-                <strong>Mobile:</strong> {entry.mobile}
-              </p>
-              <p>
-                <strong>Created:</strong>{" "}
-                {new Date(entry.createdAt).toLocaleString()}
-              </p>
-              <button
-                className="recruiter-form-delete-btn"
-                onClick={() => handleDelete(entry._id)}
-              >
-                Delete
-              </button>
-            </div>
-          ))
-        )}
-      </div>
+      {entries.length === 0 ? (
+        <p className="recruiter-form-no-data">No entries found.</p>
+      ) : (
+        <div className="recruiter-form-table-wrapper">
+          <table className="recruiter-form-table">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Job Role</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Created</th>
+                {role === "Admin" && <th>Actions</th>}
+              </tr>
+            </thead>
+            <tbody>
+              {entries.map((entry) => (
+                <tr key={entry._id}>
+                  <td>{entry.companyname}</td>
+                  <td>{entry.jobrole}</td>
+                  <td>{entry.email}</td>
+                  <td>{entry.mobile}</td>
+                  <td>{new Date(entry.createdAt).toLocaleDateString()}</td>
+                  {role === "Admin" && (
+                    <td>
+                      <button
+                        className="recruiter-form-delete-btn"
+                        onClick={() => handleDelete(entry._id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       <div className="recruiter-form-pagination">
         <button

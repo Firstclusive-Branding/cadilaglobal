@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../../styles/Admin Styles/AdminLogin.css";
 import { IoMdRefresh } from "react-icons/io";
+import { toast } from "react-toastify";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -12,7 +13,9 @@ const AdminLogin = () => {
   const [captchaText, setCaptchaText] = useState("");
   const [userCaptchaInput, setUserCaptchaInput] = useState("");
   const canvasRef = useRef(null);
-  const baseURL = "http://localhost:4000";
+
+  const baseURL = import.meta.env.VITE_API_URL;
+
   const generateCaptchaText = () => {
     const chars =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -76,7 +79,7 @@ const AdminLogin = () => {
 
     // Optional CAPTCHA check
     // if (userCaptchaInput !== captchaText) {
-    //   setError("CAPTCHA verification failed. Ensure the case matches.");
+    //   toast.error("CAPTCHA verification failed. Ensure the case matches.");
     //   return;
     // }
 
@@ -85,22 +88,20 @@ const AdminLogin = () => {
         email,
         password,
       });
-
       const { encoded_token, public_token } = response.data.data;
 
-      // Decode the public token or use backend response to get role/email if needed
       const base64Payload = public_token.split(".")[1];
       const payload = JSON.parse(atob(base64Payload));
-      const { email: userEmail, role } = payload;
+      const { email: userEmail, role, firstname } = payload;
 
       localStorage.setItem("userRole", role);
+
       localStorage.setItem(
         "userData",
-        JSON.stringify({ email: userEmail, role })
+        JSON.stringify({ email: userEmail, role, firstname })
       );
       localStorage.setItem("token", encoded_token);
 
-      // Role-based navigation
       switch (role) {
         case "Admin":
           localStorage.setItem("adminAuthenticated", "true");
@@ -119,13 +120,13 @@ const AdminLogin = () => {
           navigate("/");
           break;
         default:
-          setError("Invalid user role");
+          toast.error("Invalid user role");
       }
       window.location.reload();
     } catch (err) {
       const msg =
         err?.response?.data?.message || "Something went wrong. Try again.";
-      setError(msg);
+      toast.error(msg);
     }
   };
 
@@ -138,7 +139,6 @@ const AdminLogin = () => {
             <input
               type="email"
               value={email}
-              // value="admin@cadilaglobal.com"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Email"
               required
@@ -147,12 +147,14 @@ const AdminLogin = () => {
           <div className="admin-login-input-group">
             <input
               type="password"
-              // value="1234"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               required
             />
+            <p className="forgot-password-link">
+              <Link to="password-reset">Forgot Password?</Link>
+            </p>
           </div>
 
           <div className="admin-login-captcha">
@@ -184,6 +186,8 @@ const AdminLogin = () => {
             <button type="submit" className="admin-login-btn">
               Login
             </button>
+          </div>
+          <div className="admin-sign-up-container">
             <p className="admin-sign-up">
               Don't have an account? <Link to="sign-up">Sign Up</Link>
             </p>

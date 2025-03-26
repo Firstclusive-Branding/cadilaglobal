@@ -11,6 +11,8 @@ import {
 import "../../styles/Admin Styles/AdminSidebar.css";
 
 const AdminSidebar = ({ role }) => {
+  const isAdmin = role === "admin";
+
   return (
     <div className={`universal-sidebar ${role}-sidebar`}>
       <h2 className="sidebar-logo">
@@ -46,19 +48,25 @@ const AdminSidebar = ({ role }) => {
           <>
             <li>
               <Link to="/fb/contact-forms">
-                <FaEnvelope /> Contact Form Submissions
+                <FaEnvelope /> Contact Us Form
               </Link>
             </li>
             <li>
               <Link to="/fb/recruiter-forms">
-                <FaUserTie /> Recruiter Form Submissions
+                <FaUserTie /> Find Talent Form
+              </Link>
+            </li>
+            <li>
+              <Link to="/fb/users">
+                <FaUserFriends />
+                {isAdmin ? "Users" : "Recruiters"}
               </Link>
             </li>
           </>
         )}
 
         {/* Only Admin */}
-        {role === "admin" && (
+        {/* {role === "admin" && (
           <>
             <li>
               <Link to="/fb/users">
@@ -66,16 +74,16 @@ const AdminSidebar = ({ role }) => {
               </Link>
             </li>
           </>
-        )}
+        )} */}
 
         {/* Only Manager */}
-        {role === "manager" && (
+        {/* {role === "manager" && (
           <li>
             <Link to="/fb/recruiters">
               <FaUserFriends /> Recruiters
             </Link>
           </li>
-        )}
+        )} */}
       </ul>
     </div>
   );
