@@ -34,12 +34,6 @@
   flex: 0 0 30%;
 }
 
-.admin-users-error {
-  color: red;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
 .admin-users-table-wrapper {
   overflow-x: auto;
 }
@@ -76,15 +70,14 @@
   text-transform: capitalize;
   font-size: 12px;
 }
-
 .role-badge.manager {
-  background-color: #e0f0ff;
+  background-color: #d0e7ff;
   color: #0056b3;
 }
 
 .role-badge.recruiter {
-  background-color: #f0f8ff;
-  color: #007acc;
+  background-color: #fff0e0;
+  color: #cc5a00;
 }
 
 .users-approve-btn,
@@ -92,9 +85,7 @@
 .reset-password-btn,
 .update-password-btn,
 .cancel-password-btn,
-.edit-btn,
 .save-btn,
-.delete-btn,
 .add-user-btn,
 .update-btn,
 .cancel-btn {
@@ -123,8 +114,21 @@
   background-color: #6c757d;
 }
 
+.edit-btn,
 .delete-btn {
-  background-color: #c82333;
+  border: none;
+  cursor: pointer;
+  color: #007acc;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  background-color: #c5c5c5;
+}
+.delete-btn {
+  color: #c82333;
 }
 
 .users-approve-btn:disabled,

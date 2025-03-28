@@ -23,6 +23,7 @@ const ManageJobApplicants = () => {
 
   const role = JSON.parse(localStorage.getItem("userData"))?.role || "Admin";
   let endpointPrefix = "admin";
+  console.log("role", role);
 
   if (role === "manager") endpointPrefix = "manager";
   else if (role === "recruiter") endpointPrefix = "recruiter";
@@ -31,27 +32,6 @@ const ManageJobApplicants = () => {
     const token = localStorage.getItem("token");
     return { headers: { Authorization: `Bearer ${token}` } };
   };
-
-  // const fetchApplicants = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const res = await axios.post(
-  //       `${baseURL}/api/${endpointPrefix}/jobapplicants/getall`,
-  //       {
-  //         pageno: page,
-  //         search,
-  //         sortby: { createdAt: "desc" },
-  //       },
-  //       getAuthHeaders()
-  //     );
-  //     setApplicants(res.data.data.applicants);
-  //     setTotalPages(res.data.data.totalPages);
-  //     setLoading(false);
-  //   } catch (err) {
-  //     setError("Failed to load job applicants.");
-  //     setLoading(false);
-  //   }
-  // };
 
   const fetchApplicants = async () => {
     try {
@@ -63,8 +43,8 @@ const ManageJobApplicants = () => {
           `${baseURL}/api/recruiter/jobposting/viewjobform`,
           getAuthHeaders()
         );
-        setApplicants(res.data.data); // because data is directly an array
-        setTotalPages(1); // No pagination provided in recruiter endpoint
+        setApplicants(res.data.data);
+        setTotalPages(1);
       } else {
         res = await axios.post(
           `${baseURL}/api/${endpointPrefix}/jobapplicants/getall`,
@@ -147,8 +127,8 @@ const ManageJobApplicants = () => {
                 <th>Job Title</th>
                 <th>Location</th>
                 <th>Applied On</th>
-                {!role === "recruiter" && <th>Posted By</th>}
-                {!role === "recruiter" && <th>Role</th>}
+                {role !== "recruiter" && <th>Posted By</th>}
+                {role !== "recruiter" && <th>Role</th>}
                 <th>Resume</th>
                 {role === "Admin" && <th>Actions</th>}
               </tr>
@@ -171,8 +151,14 @@ const ManageJobApplicants = () => {
                   <td>{applicant.location}</td>
                   <td>{new Date(applicant.createdAt).toLocaleDateString()}</td>
 
-                  {!role === "recruiter" && <td>{applicant.recruiteremail}</td>}
-                  {!role === "recruiter" && <td>{applicant.recruiterrole}</td>}
+                  {role !== "recruiter" && <td>{applicant.postedBy}</td>}
+                  {role !== "recruiter" && (
+                    <td>
+                      <span className={`role-badge ${applicant.role}`}>
+                        {applicant.role}
+                      </span>
+                    </td>
+                  )}
                   <td>
                     {applicant.resume ? (
                       <a

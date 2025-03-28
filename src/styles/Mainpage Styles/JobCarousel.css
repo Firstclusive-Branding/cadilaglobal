@@ -1,4 +1,4 @@
-.job-carousel {
+/* .job-carousel {
   background-color: #f9f9f9;
   padding: 40px 120px;
 }
@@ -191,6 +191,235 @@
 
   .job-carousel-card {
     min-height: 300px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .job-carousel {
+    padding: 40px 20px;
+  }
+
+  .job-carousel-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .job-carousel-title {
+    font-size: 1.2rem;
+  }
+} */
+
+.job-carousel {
+  background-color: #f9f9f9;
+  padding: 40px 120px;
+}
+
+.job-carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.job-carousel-subtitle {
+  color: #12bdbd;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.job-carousel-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+  flex: 1;
+  margin: 0;
+}
+
+.job-carousel-nav-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: 5rem;
+}
+
+.job-carousel-nav-buttons button {
+  background-color: #fff;
+  color: #0e0e0e;
+  box-shadow: 0 0 1px #0985a6;
+  border: none;
+  padding: 20px 45px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.job-carousel-nav-buttons button:hover {
+  background-color: #0985a6;
+  color: #fff;
+}
+
+.job-carousel-cards {
+  padding-bottom: 2.5rem;
+}
+
+.job-carousel-card {
+  background: white;
+  min-height: 330px;
+  max-height: 330px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  overflow: hidden;
+}
+
+.job-carousel-content {
+  padding: 15px;
+  flex-grow: 1;
+}
+
+.job-carousel-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.job-carousel-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  padding: 10px 30px;
+  border-top: 1px solid #0e0e0e4b;
+  border-bottom: 1px solid #0e0e0e4b;
+}
+
+.job-carousel-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1 1 30%;
+}
+
+.job-carousel-details-icon {
+  font-size: 20px;
+  color: #006a87;
+}
+
+.job-carousel-description {
+  font-size: 14px;
+  color: #666;
+  margin: 15px 0 5px 0;
+}
+
+.job-carousel-see-more {
+  color: #0985a6;
+  font-weight: 600;
+  margin-left: 5px;
+  text-decoration: underline;
+  font-size: 13px;
+}
+
+.job-carousel-footer {
+  padding: 15px;
+  margin-top: auto;
+}
+
+.job-carousel-apply-button {
+  position: absolute;
+  bottom: 5%;
+  left: 7.5%;
+  width: 75%;
+  background-color: #0985a6;
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+
+.job-carousel-apply-button:hover {
+  background-color: #006a87;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  opacity: 1;
+  border-radius: 0px;
+  transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out,
+    height 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #0985a6;
+  width: 14px;
+  height: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+  .job-carousel {
+    padding: 40px 60px;
+  }
+
+  .job-carousel-nav-buttons {
+    margin-right: 2rem;
+  }
+
+  .job-carousel-title {
+    font-size: 1.5rem;
+  }
+
+  .job-carousel-card {
+    min-height: 450px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .job-carousel-card {
+    min-height: 400px;
+    margin: auto;
+  }
+
+  .job-carousel-nav-buttons {
+    display: none;
+  }
+
+  .job-carousel-apply-button {
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .job-carousel {
+    padding: 40px;
+  }
+
+  .job-carousel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .job-carousel-title {
+    font-size: 1.4rem;
+  }
+
+  .job-carousel-card {
+    min-height: 420px;
     margin: auto;
   }
 }

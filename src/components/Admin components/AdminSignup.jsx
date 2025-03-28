@@ -156,8 +156,8 @@ function AdminSignup() {
         password,
       });
 
-      setSuccessMessage(response.data.message || "Successfully signed up.");
-      toast.success(response.data.message || "Successfully signed up.");
+      // setSuccessMessage(response.data.message || "Successfully signed up.");
+      toast.success("Successfully signed up. Redirecting to login...");
 
       // Reset form
       setFormData({
@@ -188,9 +188,9 @@ function AdminSignup() {
     <div className="admin-signup-wrapper">
       <div className="admin-signup-box">
         <h2 className="admin-signup-title">Sign Up</h2>
-        {successMessage && (
+        {/* {successMessage && (
           <div className="signup-success-message">{successMessage}</div>
-        )}
+        )} */}
         <form onSubmit={handleSubmit}>
           <div className="signup-input-group">
             <input

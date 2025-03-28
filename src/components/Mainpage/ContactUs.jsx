@@ -201,6 +201,8 @@ const ContactUs = () => {
 
     const formData = new FormData(event.target);
 
+    console.log("Sending termsaccepted:", isChecked);
+
     const res = await fetch(
       `${import.meta.env.VITE_API_URL}/api/user/contactus/create`,
       {
@@ -214,6 +216,7 @@ const ContactUs = () => {
           email: formData.get("email"),
           mobile: formData.get("phone"),
           message: formData.get("message"),
+          termsaccepted: isChecked,
         }),
       }
     );

@@ -75,8 +75,12 @@
   cursor: pointer;
   padding: 4px;
   margin: 0 4px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
-
+.jobs-action-btns:hover {
+  background-color: #c5c5c5;
+}
 .jobs-edit-button svg {
   color: #007bff;
   transition: color 0.2s ease;
@@ -214,6 +218,11 @@
 
 .modal-close-btn:hover {
   color: #004aad;
+}
+
+.location-options {
+  margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .admin-job-modal-form input,

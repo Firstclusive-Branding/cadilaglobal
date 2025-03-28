@@ -199,29 +199,3 @@ canvas {
 .captcha-container button:hover {
   background-color: #1e2b38;
 }
-
-/* Responsive Design */
-@media screen and (max-width: 480px) {
-  .admin-login-box {
-    max-width: 90%;
-    padding: 20px;
-  }
-
-  .admin-login-title {
-    font-size: 22px;
-  }
-
-  .admin-login-input-group input {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .admin-login-btn {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .captcha-input {
-    font-size: 14px;
-  }
-}

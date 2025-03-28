@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import "../../styles/Admin Styles/RecruiterForm.css";
+import { MdDelete } from "react-icons/md";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -117,7 +118,7 @@ const RecruiterForm = () => {
                         className="recruiter-form-delete-btn"
                         onClick={() => handleDelete(entry._id)}
                       >
-                        Delete
+                        <MdDelete size={25} style={{ display: "flex" }} />
                       </button>
                     </td>
                   )}

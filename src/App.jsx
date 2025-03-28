@@ -51,8 +51,6 @@ import AdminLayout from "./components/Admin components/AdminLayout";
 import AdminDashboard from "./components/Admin components/AdminDashboard";
 import ManageJobs from "./components/Admin components/ManageJobs";
 import ManageJobApplicants from "./components/Admin components/ManageJobApplicants";
-import ManageManagers from "./components/Admin components/ManageManagers";
-import ManageRecruiters from "./components/Admin components/ManageRecruiters";
 import RecruiterForm from "./components/Admin components/RecruiterForm";
 import ContactForms from "./components/Admin components/ContactForms";
 import AdminUsers from "./components/Admin components/AdminUsers";

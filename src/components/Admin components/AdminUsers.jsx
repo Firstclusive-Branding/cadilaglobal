@@ -137,7 +137,8 @@ const AdminUsers = ({ role }) => {
       setEditingUser(null);
       setEditForm({});
     } catch (err) {
-      toast.error("Failed to update user.");
+      const msg = err?.response?.data?.message || "Something went wrong.";
+      toast.error(msg);
     }
   };
 
@@ -301,8 +302,8 @@ const AdminUsers = ({ role }) => {
               <th>Role</th>
               <th>Joined</th>
               <th>Status</th>
-              <th>Actions</th>
               <th>Password</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -389,39 +390,7 @@ const AdminUsers = ({ role }) => {
                       {loading === user._id ? "Rejecting..." : "Deny"}
                     </button>
                   </td>
-                  <td>
-                    {editingUser === user._id ? (
-                      <>
-                        <button
-                          className="update-btn"
-                          onClick={handleEditSubmit}
-                        >
-                          Save
-                        </button>
-                        <button
-                          className="cancel-btn"
-                          onClick={() => setEditingUser(null)}
-                        >
-                          Cancel
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <button
-                          className="edit-btn"
-                          onClick={() => handleEditToggle(user)}
-                        >
-                          <MdEdit size={20} style={{ display: "flex" }} />
-                        </button>
-                        <button
-                          className="delete-btn"
-                          onClick={() => handleDelete(user._id)}
-                        >
-                          <MdDelete size={20} style={{ display: "flex" }} />
-                        </button>
-                      </>
-                    )}
-                  </td>
+
                   <td>
                     {resettingUser === user._id ? (
                       <>
@@ -455,6 +424,39 @@ const AdminUsers = ({ role }) => {
                       >
                         Reset
                       </button>
+                    )}
+                  </td>
+                  <td>
+                    {editingUser === user._id ? (
+                      <>
+                        <button
+                          className="update-btn"
+                          onClick={handleEditSubmit}
+                        >
+                          Save
+                        </button>
+                        <button
+                          className="cancel-btn"
+                          onClick={() => setEditingUser(null)}
+                        >
+                          Cancel
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <button
+                          className="edit-btn"
+                          onClick={() => handleEditToggle(user)}
+                        >
+                          <MdEdit size={25} style={{ display: "flex" }} />
+                        </button>
+                        <button
+                          className="delete-btn"
+                          onClick={() => handleDelete(user._id)}
+                        >
+                          <MdDelete size={25} style={{ display: "flex" }} />
+                        </button>
+                      </>
                     )}
                   </td>
                 </tr>

@@ -4,6 +4,8 @@ import "../../styles/Admin Styles/ManageJobs.css";
 import { MdEdit, MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import { Country, State } from "country-state-city";
+import Select from "react-select";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -22,6 +24,19 @@ const ManageJobs = ({ role }) => {
   const [search, setSearch] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(null);
+  const [countries, setCountries] = useState([]);
+  const [states, setStates] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedState, setSelectedState] = useState("");
+
+  const countryOptions = countries.map((c) => ({
+    value: c.name,
+    label: c.name,
+  }));
+  const stateOptions = states.map((s) => ({
+    value: s.name,
+    label: s.name,
+  }));
 
   const isAdmin = role === "Admin";
   const isManager = role === "manager";
@@ -63,6 +78,24 @@ const ManageJobs = ({ role }) => {
     fetchJobs();
   }, [page, search]);
 
+  useEffect(() => {
+    const allCountries = Country.getAllCountries();
+    setCountries(allCountries);
+  }, []);
+
+  useEffect(() => {
+    if (selectedCountry && countries.length) {
+      const found = countries.find((c) => c.name === selectedCountry);
+      const isoCode = found?.isoCode;
+      if (isoCode) {
+        const allStates = State.getStatesOfCountry(isoCode);
+        setStates(allStates);
+      } else {
+        setStates([]);
+      }
+    }
+  }, [selectedCountry, countries]);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -86,22 +119,31 @@ const ManageJobs = ({ role }) => {
     const payload = editingJobId ? { _id: editingJobId, ...form } : form;
 
     try {
-      await axios.post(
+      const response = await axios.post(
         `${baseURL}/api/${endpointPrefix}/jobposting/${endpoint}`,
         payload,
         getAuthHeaders()
       );
       closeModal();
       fetchJobs();
-      toast.success(
-        `Job ${editingJobId ? "updated" : "created"} successfully!`
-      );
+      const msg = "Job updated successfully.";
+      toast.success(msg);
     } catch (err) {
       toast.error("Failed to submit the job.");
     }
   };
 
   const handleEdit = (job) => {
+    const [state = "", country = ""] = job.location
+      ? job.location.split(",").map((s) => s.trim())
+      : ["", ""];
+
+    const matchedCountry = countries.find((c) => c.name === country);
+    const isoCode = matchedCountry?.isoCode || "";
+
+    const matchedStates = isoCode ? State.getStatesOfCountry(isoCode) : [];
+    const validState = matchedStates.find((s) => s.name === state) ? state : "";
+
     setForm({
       jobtitle: job.jobtitle,
       experience: job.experience,
@@ -109,8 +151,14 @@ const ManageJobs = ({ role }) => {
       location: job.location,
       jobdescription: job.jobdescription,
     });
+
+    setSelectedCountry(country);
+    setSelectedState(validState);
+    setStates(matchedStates);
     setEditingJobId(job._id);
-    openModal();
+
+    // Open modal at the end
+    setTimeout(() => openModal(), 0);
   };
 
   const handleDelete = async (_id) => {
@@ -197,13 +245,25 @@ const ManageJobs = ({ role }) => {
         <tbody>
           {jobs.map((job) => (
             <tr key={job._id}>
-              <td>{job.jobtitle}</td>
+              <td style={{ maxWidth: "150px" }}>{job.jobtitle}</td>
               <td>{job.experience}</td>
               <td>{job.salary}</td>
               <td style={{ maxWidth: "150px" }}>{job.location}</td>
-              <td style={{ maxWidth: "300px" }}>{job.jobdescription}</td>
+              <td
+                style={{ maxWidth: "300px", textAlign: "left" }}
+                title={job.jobdescription}
+              >
+                {job.jobdescription.length > 150
+                  ? job.jobdescription.slice(0, 150) + "..."
+                  : job.jobdescription}
+              </td>
+
               {!isRecruiter && <td>{job.email}</td>}
-              {!isRecruiter && <td>{job.role}</td>}
+              {!isRecruiter && (
+                <td>
+                  <span className={`role-badge ${job.role}`}>{job.role}</span>
+                </td>
+              )}
               <td>{new Date(job.updatedAt).toLocaleDateString()}</td>
               {!isRecruiter ? (
                 <td>
@@ -297,36 +357,87 @@ const ManageJobs = ({ role }) => {
                 required
               />
               <input
-                type="text"
+                type="number"
                 name="experience"
                 value={form.experience}
                 onChange={handleChange}
-                placeholder="Experience"
+                placeholder="Experience (in years)"
                 required
               />
               <input
-                type="text"
+                type="number"
                 name="salary"
                 value={form.salary}
                 onChange={handleChange}
                 placeholder="Salary"
                 required
               />
-              <input
-                type="text"
-                name="location"
-                value={form.location}
-                onChange={handleChange}
-                placeholder="Location"
-                required
+
+              <Select
+                className="location-options"
+                options={countryOptions}
+                value={countryOptions.find((c) => c.value === selectedCountry)}
+                onChange={(selected) => {
+                  setSelectedCountry(selected.value);
+                  if (form.location.includes(",")) {
+                    const state = form.location.split(",")[0].trim();
+                    setForm({
+                      ...form,
+                      location: `${state}, ${selected.value}`,
+                    });
+                  } else {
+                    setForm({ ...form, location: `, ${selected.value}` });
+                  }
+                }}
+                placeholder="Select Country"
+                menuPlacement="auto"
+                menuShouldScrollIntoView
+                styles={{
+                  menu: (provided) => ({
+                    ...provided,
+                    maxHeight: "250px",
+                    overflowY: "auto",
+                  }),
+                }}
               />
+
+              <Select
+                className="location-options"
+                options={stateOptions}
+                value={stateOptions.find((s) => s.value === selectedState)}
+                onChange={(selected) => {
+                  setSelectedState(selected.value);
+                  if (form.location.includes(",")) {
+                    const country = form.location.split(",")[1]?.trim() || "";
+                    setForm({
+                      ...form,
+                      location: `${selected.value}, ${country}`,
+                    });
+                  } else {
+                    setForm({ ...form, location: `${selected.value},` });
+                  }
+                }}
+                placeholder="Select State"
+                menuPlacement="auto"
+                menuShouldScrollIntoView
+                styles={{
+                  menu: (provided) => ({
+                    ...provided,
+                    maxHeight: "250px",
+                    overflowY: "auto",
+                  }),
+                }}
+              />
+
               <textarea
                 name="jobdescription"
                 value={form.jobdescription}
                 onChange={handleChange}
                 placeholder="Job Description"
+                rows={10}
                 required
               />
+
               <button type="submit" className="submit-user-btn">
                 {editingJobId ? "Update Job" : "Post Job"}
               </button>

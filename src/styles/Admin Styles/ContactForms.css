@@ -63,8 +63,12 @@
   color: #c82333;
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
 }
-
+.contact-delete-btn:hover {
+  background-color: #c5c5c5;
+}
 .contact-forms-pagination {
   margin-top: 20px;
   display: flex;
