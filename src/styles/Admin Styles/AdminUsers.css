@@ -70,14 +70,19 @@
   text-transform: capitalize;
   font-size: 12px;
 }
+.role-badge.Admin {
+  background-color: #dbe4fd;
+  color: #002260;
+}
+
 .role-badge.manager {
-  background-color: #d0e7ff;
-  color: #0056b3;
+  background-color: #e0f7ff;
+  color: #0077aa;
 }
 
 .role-badge.recruiter {
-  background-color: #fff0e0;
-  color: #cc5a00;
+  background-color: #fff4e6;
+  color: #cc6600;
 }
 
 .users-approve-btn,
