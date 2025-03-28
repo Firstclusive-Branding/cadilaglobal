@@ -77,7 +77,7 @@ const Careers = () => {
                 {job.experience}
               </span>
               <span>
-                <FaMoneyCheckAlt size={20} className="careers-icon" />
+                <FaMoneyCheckAlt size={20} className="careers-icon" />$
                 {job.salary}
               </span>
               <span>
