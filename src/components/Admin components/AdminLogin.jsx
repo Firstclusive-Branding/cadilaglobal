@@ -15,6 +15,7 @@ const AdminLogin = () => {
   const canvasRef = useRef(null);
 
   const baseURL = import.meta.env.VITE_API_URL;
+  console.log("API BASE URL:", import.meta.env.VITE_API_URL);
 
   const generateCaptchaText = () => {
     const chars =
@@ -77,7 +78,6 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // Optional CAPTCHA check
     if (userCaptchaInput !== captchaText) {
       toast.error("CAPTCHA verification failed. Ensure the case matches.");
       return;
