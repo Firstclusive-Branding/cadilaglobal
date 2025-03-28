@@ -203,7 +203,9 @@
   position: relative;
   animation: fadeIn 0.3s ease-in-out;
 }
-
+.admin-job-modal-content h3 {
+  margin-top: 0;
+}
 .modal-close-btn {
   position: absolute;
   top: 12px;
@@ -237,7 +239,13 @@
   color: #333;
   box-sizing: border-box;
 }
-
+.experience-range-group {
+  display: flex;
+}
+.experience-to {
+  display: flex;
+  margin: 2% 10px;
+}
 .admin-job-modal-form textarea {
   resize: vertical;
 }

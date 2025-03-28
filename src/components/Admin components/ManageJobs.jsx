@@ -6,18 +6,29 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import { Country, State } from "country-state-city";
 import Select from "react-select";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
 const ManageJobs = ({ role }) => {
   const [jobs, setJobs] = useState([]);
+  // const [form, setForm] = useState({
+  //   jobtitle: "",
+  //   experience: "",
+  //   salary: "",
+  //   location: "",
+  //   jobdescription: "",
+  // });
   const [form, setForm] = useState({
     jobtitle: "",
     experience: "",
+    experienceMin: "",
+    experienceMax: "",
     salary: "",
     location: "",
     jobdescription: "",
   });
+
   const [editingJobId, setEditingJobId] = useState(null);
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
@@ -107,6 +118,8 @@ const ManageJobs = ({ role }) => {
       jobtitle: "",
       experience: "",
       salary: "",
+      minSalary: "",
+      maxSalary: "",
       location: "",
       jobdescription: "",
     });
@@ -116,7 +129,12 @@ const ManageJobs = ({ role }) => {
   const handleCreateOrUpdate = async (e) => {
     e.preventDefault();
     const endpoint = editingJobId ? "update" : "create";
-    const payload = editingJobId ? { _id: editingJobId, ...form } : form;
+    const experienceFormatted = `${form.experienceMin}-${form.experienceMax} years`;
+    const payload = editingJobId
+      ? { _id: editingJobId, ...form, experience: experienceFormatted }
+      : { ...form, experience: experienceFormatted };
+
+    // const payload = editingJobId ? { _id: editingJobId, ...form } : form;
 
     try {
       const response = await axios.post(
@@ -137,16 +155,27 @@ const ManageJobs = ({ role }) => {
     const [state = "", country = ""] = job.location
       ? job.location.split(",").map((s) => s.trim())
       : ["", ""];
-
+    const [minExp = "", maxExp = ""] = job.experience
+      ? job.experience.replace(" years", "").split("-")
+      : ["", ""];
     const matchedCountry = countries.find((c) => c.name === country);
     const isoCode = matchedCountry?.isoCode || "";
 
     const matchedStates = isoCode ? State.getStatesOfCountry(isoCode) : [];
     const validState = matchedStates.find((s) => s.name === state) ? state : "";
 
+    // setForm({
+    //   jobtitle: job.jobtitle,
+    //   experience: job.experience,
+    //   salary: job.salary,
+    //   location: job.location,
+    //   jobdescription: job.jobdescription,
+    // });
     setForm({
       jobtitle: job.jobtitle,
       experience: job.experience,
+      experienceMin: minExp,
+      experienceMax: maxExp,
       salary: job.salary,
       location: job.location,
       jobdescription: job.jobdescription,
@@ -157,7 +186,6 @@ const ManageJobs = ({ role }) => {
     setStates(matchedStates);
     setEditingJobId(job._id);
 
-    // Open modal at the end
     setTimeout(() => openModal(), 0);
   };
 
@@ -247,7 +275,7 @@ const ManageJobs = ({ role }) => {
             <tr key={job._id}>
               <td style={{ maxWidth: "150px" }}>{job.jobtitle}</td>
               <td>{job.experience}</td>
-              <td>{job.salary}</td>
+              <td>${job.salary}</td>
               <td style={{ maxWidth: "150px" }}>{job.location}</td>
               <td
                 style={{ maxWidth: "300px", textAlign: "left" }}
@@ -341,7 +369,7 @@ const ManageJobs = ({ role }) => {
         <div className="admin-job-modal-overlay">
           <div className="admin-job-modal-content">
             <button className="modal-close-btn" onClick={closeModal}>
-              &times;
+              <IoIosCloseCircleOutline size={30} />
             </button>
             <h3>{editingJobId ? "Edit Job" : "Post a New Job"}</h3>
             <form
@@ -356,14 +384,34 @@ const ManageJobs = ({ role }) => {
                 placeholder="Job Title"
                 required
               />
-              <input
+              {/* <input
                 type="number"
                 name="experience"
                 value={form.experience}
                 onChange={handleChange}
                 placeholder="Experience (in years)"
                 required
-              />
+              /> */}
+              <div className="experience-range-group">
+                <input
+                  type="number"
+                  name="experienceMin"
+                  value={form.experienceMin}
+                  onChange={handleChange}
+                  placeholder="Min Experience"
+                  required
+                />
+                <span className="experience-to"> - </span>
+                <input
+                  type="number"
+                  name="experienceMax"
+                  value={form.experienceMax}
+                  onChange={handleChange}
+                  placeholder="Max Experience"
+                  required
+                />
+              </div>
+
               <input
                 type="number"
                 name="salary"
