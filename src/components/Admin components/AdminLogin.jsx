@@ -78,10 +78,10 @@ const AdminLogin = () => {
     e.preventDefault();
 
     // Optional CAPTCHA check
-    // if (userCaptchaInput !== captchaText) {
-    //   toast.error("CAPTCHA verification failed. Ensure the case matches.");
-    //   return;
-    // }
+    if (userCaptchaInput !== captchaText) {
+      toast.error("CAPTCHA verification failed. Ensure the case matches.");
+      return;
+    }
 
     try {
       const response = await axios.post(`${baseURL}/api/auth/signin`, {
@@ -169,14 +169,14 @@ const AdminLogin = () => {
                   <IoMdRefresh size={30} />
                 </button>
               </div>
-              {/* <input
+              <input
                 type="text"
                 value={userCaptchaInput}
                 onChange={(e) => setUserCaptchaInput(e.target.value)}
                 placeholder="Enter CAPTCHA text"
                 className="captcha-input"
                 required
-              /> */}
+              />
             </div>
           </div>
 
