@@ -162,7 +162,7 @@ const ManageJobApplicants = () => {
                   <td>
                     {applicant.resume ? (
                       <a
-                        href={`${baseURL}/api/pdf/${applicant.resume}?token=Bearer ${encoded_token}`}
+                        href={`${baseURL}/api/admin/viewpdf/${applicant._id}?token=Bearer ${encoded_token}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         download

@@ -56,8 +56,7 @@ const JobForm = () => {
       // Step 2: Upload resume
       const cvForm = new FormData();
       cvForm.append("resume", formData.resume);
-
-      await axios.post(
+      const uploadRes = await axios.post(
         `${
           import.meta.env.VITE_API_URL
         }/api/user/jobapplicants/upload/${applicantId}`,
@@ -68,6 +67,7 @@ const JobForm = () => {
           },
         }
       );
+      console.log(uploadRes);
 
       // Success message
       Swal.fire({
