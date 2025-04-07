@@ -22,7 +22,7 @@ const AdminNavbar = ({ role }) => {
   }, [role]);
 
   if (!roleSettings[role]) {
-    console.error("Invalid role provided to AdminNavbar:", role);
+    console.error("Invalid role:", role);
     return null;
   }
 

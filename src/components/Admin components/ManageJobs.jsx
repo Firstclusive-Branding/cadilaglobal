@@ -12,13 +12,7 @@ const baseURL = import.meta.env.VITE_API_URL;
 
 const ManageJobs = ({ role }) => {
   const [jobs, setJobs] = useState([]);
-  // const [form, setForm] = useState({
-  //   jobtitle: "",
-  //   experience: "",
-  //   salary: "",
-  //   location: "",
-  //   jobdescription: "",
-  // });
+
   const [form, setForm] = useState({
     jobtitle: "",
     experience: "",
@@ -134,8 +128,6 @@ const ManageJobs = ({ role }) => {
       ? { _id: editingJobId, ...form, experience: experienceFormatted }
       : { ...form, experience: experienceFormatted };
 
-    // const payload = editingJobId ? { _id: editingJobId, ...form } : form;
-
     try {
       const response = await axios.post(
         `${baseURL}/api/${endpointPrefix}/jobposting/${endpoint}`,
@@ -164,13 +156,6 @@ const ManageJobs = ({ role }) => {
     const matchedStates = isoCode ? State.getStatesOfCountry(isoCode) : [];
     const validState = matchedStates.find((s) => s.name === state) ? state : "";
 
-    // setForm({
-    //   jobtitle: job.jobtitle,
-    //   experience: job.experience,
-    //   salary: job.salary,
-    //   location: job.location,
-    //   jobdescription: job.jobdescription,
-    // });
     setForm({
       jobtitle: job.jobtitle,
       experience: job.experience,
@@ -384,14 +369,7 @@ const ManageJobs = ({ role }) => {
                 placeholder="Job Title"
                 required
               />
-              {/* <input
-                type="number"
-                name="experience"
-                value={form.experience}
-                onChange={handleChange}
-                placeholder="Experience (in years)"
-                required
-              /> */}
+
               <div className="experience-range-group">
                 <input
                   type="number"
@@ -482,7 +460,7 @@ const ManageJobs = ({ role }) => {
                 value={form.jobdescription}
                 onChange={handleChange}
                 placeholder="Job Description"
-                rows={10}
+                rows={7}
                 required
               />
 
