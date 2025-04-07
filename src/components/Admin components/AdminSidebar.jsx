@@ -9,19 +9,21 @@ import {
   FaUserFriends,
 } from "react-icons/fa";
 import "../../styles/Admin Styles/AdminSidebar.css";
+import Logo from "../../assets/Logo.png";
 
 const AdminSidebar = ({ role }) => {
   const isAdmin = role === "admin";
 
   return (
     <div className={`universal-sidebar ${role}-sidebar`}>
-      <h2 className="sidebar-logo">
+      {/* <h2 className="sidebar-logo">
         {role === "admin"
           ? "Admin Panel"
           : role === "manager"
           ? "Manager Panel"
           : "Recruiter Panel"}
-      </h2>
+      </h2> */}
+      <img src={Logo} alt={Logo} />
 
       <ul>
         {/* Common Links */}

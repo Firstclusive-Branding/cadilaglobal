@@ -9,6 +9,7 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [captchaText, setCaptchaText] = useState("");
   const [userCaptchaInput, setUserCaptchaInput] = useState("");
@@ -82,6 +83,7 @@ const AdminLogin = () => {
       return;
     }
 
+    setLoading(true);
     try {
       const response = await axios.post(`${baseURL}/api/auth/signin`, {
         email,
@@ -94,7 +96,6 @@ const AdminLogin = () => {
       const { email: userEmail, role, firstname } = payload;
 
       localStorage.setItem("userRole", role);
-
       localStorage.setItem(
         "userData",
         JSON.stringify({ email: userEmail, role, firstname })
@@ -121,11 +122,14 @@ const AdminLogin = () => {
         default:
           toast.error("Invalid user role");
       }
+
       window.location.reload();
     } catch (err) {
       const msg =
         err?.response?.data?.message || "Something went wrong. Try again.";
       toast.error(msg);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -182,8 +186,18 @@ const AdminLogin = () => {
           {error && <p className="admin-login-error">{error}</p>}
 
           <div className="admin-login-actions">
-            <button type="submit" className="admin-login-btn">
-              Login
+            <button
+              type="submit"
+              className="admin-login-btn"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="admin-login-spinner" />
+                </>
+              ) : (
+                "Login"
+              )}
             </button>
           </div>
           <div className="admin-sign-up-container">

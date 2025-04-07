@@ -5,10 +5,13 @@ import AdminNavbar from "./AdminNavbar";
 import "../../styles/Admin Styles/AdminLayout.css";
 
 const AdminLayout = () => {
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 768);
+  const [isDesktop, setIsDesktop] = useState(
+    window.innerWidth >= 768 && window.innerHeight >= 500
+  );
 
   useEffect(() => {
-    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    const handleResize = () =>
+      setIsDesktop(window.innerWidth >= 768 && window.innerHeight >= 500);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);

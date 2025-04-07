@@ -5,7 +5,12 @@
   padding: 20px;
   color: white;
 }
-
+.universal-sidebar img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  /* filter: drop-shadow(0px 0px 0px #ffffff); */
+}
 .universal-sidebar-logo {
   font-size: 22px;
   font-weight: bold;
