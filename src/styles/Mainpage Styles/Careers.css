@@ -66,10 +66,17 @@
 }
 
 .careers-description {
+<<<<<<< HEAD
   white-space: pre-wrap;
   word-wrap: break-word;
   overflow-wrap: break-word;
   font-family: inherit;
+=======
+  white-space: pre-wrap; /* enables wrapping inside <pre> */
+  word-wrap: break-word; /* breaks long words */
+  overflow-wrap: break-word;
+  font-family: inherit; /* optional: match body font */
+>>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
   font-size: 15px;
   color: #444;
 }
@@ -94,6 +101,7 @@
   background-color: #094469;
 }
 
+<<<<<<< HEAD
 .careers-spinner-container {
   display: flex;
   justify-content: center;
@@ -119,6 +127,8 @@
   }
 }
 
+=======
+>>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
 /* For screens <= 1024px */
 @media (max-width: 1024px) {
   .careers-container {

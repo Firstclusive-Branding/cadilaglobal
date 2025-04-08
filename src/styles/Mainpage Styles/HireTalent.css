@@ -100,6 +100,7 @@
 .hire-talent-form button:active {
   transform: scale(0.95);
 }
+<<<<<<< HEAD
 
 .hire-talent-form button .spinner {
   width: 16px;
@@ -140,6 +141,8 @@
 .hire-talent-checkbox-label a:hover {
   text-decoration: underline;
 }
+=======
+>>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
 .swal2-styled {
   background-color: #0f6aad;
 }
