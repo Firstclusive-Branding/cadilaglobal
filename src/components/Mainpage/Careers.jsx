@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-=======
-// import React from "react";
-// import { motion } from "framer-motion";
-// import JobCarousel from "./JobCarousel";
-
-// function Careers() {
-//   return (
-//     <div style={{ backgroundColor: "#F9F9F9" }}>
-//       <motion.div
-//         initial={{ opacity: 0, y: 100 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         viewport={{ once: true }}
-//         transition={{ duration: 0.6 }}
-//       >
-//         <JobCarousel />
-//       </motion.div>
-//     </div>
-//   );
-// }
-
-// export default Careers;
->>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
 import React, { useEffect, useState } from "react";
 import "../../styles/Mainpage Styles/Careers.css";
 import { FaBriefcase, FaMoneyCheckAlt } from "react-icons/fa";
@@ -32,7 +9,6 @@ import axios from "axios";
 const Careers = () => {
   const [jobListings, setJobListings] = useState([]);
   const location = useLocation();
-<<<<<<< HEAD
   const [loading, setLoading] = useState(true);
 
   const fetchJobs = async () => {
@@ -55,27 +31,6 @@ const Careers = () => {
     fetchJobs();
   }, []);
 
-=======
-
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/api/user/jobs/getall`
-        );
-        const { data } = response.data;
-        const approvedJobs = data.filter((job) => job.approved === true);
-        setJobListings(approvedJobs);
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-      }
-    };
-
-    fetchJobs();
-  }, []);
-
-  // Auto-scroll to job section if URL has hash
->>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
   useEffect(() => {
     if (location.hash) {
       const jobId = location.hash.substring(1);
@@ -83,18 +38,11 @@ const Careers = () => {
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: "smooth", block: "start" });
-<<<<<<< HEAD
         }, 200);
       }
     }
   }, [location, jobListings]);
-=======
-        }, 200); // Delay ensures DOM is rendered
-      }
-    }
-  }, [location, jobListings]);
 
->>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
   return (
     <div className="careers-container">
       <div className="careers-header">
@@ -102,7 +50,6 @@ const Careers = () => {
         <h2 className="careers-title">Join Our Team</h2>
       </div>
 
-<<<<<<< HEAD
       {loading ? (
         <div className="careers-spinner-container">
           <div className="careers-spinner"></div>
@@ -137,36 +84,6 @@ const Careers = () => {
           ))}
         </div>
       )}
-=======
-      <div className="careers-list">
-        {jobListings.map((job, index) => (
-          <div className="careers-card" id={job._id} key={job._id || index}>
-            <h3 className="careers-jobtitle">{job.jobtitle}</h3>
-            <div className="careers-details">
-              <span>
-                <FaBriefcase size={20} className="careers-icon" />
-                {job.experience}
-              </span>
-              <span>
-                <FaMoneyCheckAlt size={20} className="careers-icon" />$
-                {job.salary}
-              </span>
-              <span>
-                <FaLocationDot size={20} className="careers-icon" />
-                {job.location}
-              </span>
-            </div>
-            <pre className="careers-description">{job.jobdescription}</pre>
-            <Link
-              to={`/find-jobs/apply?title=${job.jobtitle}&location=${job.location}&jobid=${job._id}`}
-              className="careers-apply-button"
-            >
-              Apply Now <FaArrowRight />
-            </Link>
-          </div>
-        ))}
-      </div>
->>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
     </div>
   );
 };

@@ -104,7 +104,6 @@
   }
 }
 
-<<<<<<< HEAD
 .job-form-checkbox {
   margin-bottom: 15px;
   /* display: flex; */
@@ -130,8 +129,6 @@
   text-decoration: underline;
 }
 
-=======
->>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
 @media (max-width: 1024px) {
   .job-form-container {
     padding: 0;

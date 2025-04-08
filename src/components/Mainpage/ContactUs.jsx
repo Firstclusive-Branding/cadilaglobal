@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // import React, { useState } from "react";
 // import "../../styles/Mainpage Styles/ContactUs.css";
 // import { IoLocationOutline } from "react-icons/io5";
@@ -14,6 +12,7 @@
 
 //   const onSubmit = async (event) => {
 //     event.preventDefault();
+
 //     if (!isChecked) {
 //       Swal.fire({
 //         icon: "warning",
@@ -25,26 +24,28 @@
 //     }
 
 //     const formData = new FormData(event.target);
-//     formData.append("access_key", "2a53a327-68d0-450d-92b3-0d4ce175b269");
-//     formData.append("subject", "Contact Form Submission from CadilaGlobal.com");
-//     formData.append(
-//       "consent",
-//       "User agreed to receive SMS messages related to follow-ups."
+
+//     console.log("Sending termsaccepted:", isChecked);
+
+//     const res = await fetch(
+//       `${import.meta.env.VITE_API_URL}/api/user/contactus/create`,
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//           firstname: formData.get("first_name"),
+//           lastname: formData.get("last_name"),
+//           email: formData.get("email"),
+//           mobile: formData.get("phone"),
+//           message: formData.get("message"),
+//           termsaccepted: isChecked,
+//         }),
+//       }
 //     );
 
-//     const object = Object.fromEntries(formData);
-//     const json = JSON.stringify(object);
-
-//     const res = await fetch("https://api.web3forms.com/submit", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Accept: "application/json",
-//       },
-//       body: json,
-//     }).then((res) => res.json());
-
-//     if (res.success) {
+//     if (res.ok) {
 //       Swal.fire({
 //         title: "Thanks for reaching out!",
 //         text: "We'll connect with you soon!",
@@ -153,13 +154,13 @@
 //                 />
 //                 <label htmlFor="termsCheckbox" className="checkbox-label">
 //                   By checking this box, you agree to receive SMS messages from
-//                   Cadila Global related to follow-ups. You may reply STOP to
+//                   Cadila Global related to follow ups. You may reply STOP to
 //                   opt-out at any time. Reply HELP to{" "}
 //                   <a href="tel:+18327579277">+1 (832) 757-9277</a> for
 //                   assistance. Messages and data rates may apply. Message
-//                   frequency will vary. Learn more on our
-//                   <a href="/privacy-policy"> Privacy Policy</a> and
-//                   <a href="/terms-and-conditions"> Terms & Conditions</a>.
+//                   frequency will vary. Learn more on our{" "}
+//                   <a href="/privacy-policy">Privacy Policy</a> page and{" "}
+//                   <a href="/terms-and-conditions">Terms & Conditions</a>.
 //                 </label>
 //               </div>
 
@@ -176,7 +177,6 @@
 
 // export default ContactUs;
 
->>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
 import React, { useState } from "react";
 import "../../styles/Mainpage Styles/ContactUs.css";
 import { IoLocationOutline } from "react-icons/io5";
@@ -188,6 +188,7 @@ import contactUsImage from "../../assets/Contact Us assets/contact-us.jpg";
 
 const ContactUs = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -203,43 +204,48 @@ const ContactUs = () => {
     }
 
     const formData = new FormData(event.target);
+    setLoading(true);
 
-    console.log("Sending termsaccepted:", isChecked);
+    try {
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/user/contactus/create`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            firstname: formData.get("first_name"),
+            lastname: formData.get("last_name"),
+            email: formData.get("email"),
+            mobile: formData.get("phone"),
+            message: formData.get("message"),
+            termsaccepted: isChecked,
+          }),
+        }
+      );
 
-    const res = await fetch(
-      `${import.meta.env.VITE_API_URL}/api/user/contactus/create`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          firstname: formData.get("first_name"),
-          lastname: formData.get("last_name"),
-          email: formData.get("email"),
-          mobile: formData.get("phone"),
-          message: formData.get("message"),
-          termsaccepted: isChecked,
-        }),
+      if (res.ok) {
+        Swal.fire({
+          title: "Thanks for reaching out!",
+          text: "We'll connect with you soon!",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        event.target.reset();
+        setIsChecked(false);
+      } else {
+        throw new Error("API response not OK");
       }
-    );
-
-    if (res.ok) {
-      Swal.fire({
-        title: "Thanks for reaching out!",
-        text: "We'll connect with you soon!",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-      event.target.reset();
-      setIsChecked(false);
-    } else {
+    } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "Something went wrong!",
         confirmButtonText: "Try Again",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -293,6 +299,7 @@ const ContactUs = () => {
                   placeholder="First Name*"
                   name="first_name"
                   required
+                  disabled={loading}
                 />
                 <input
                   type="text"
@@ -300,6 +307,7 @@ const ContactUs = () => {
                   placeholder="Last Name*"
                   name="last_name"
                   required
+                  disabled={loading}
                 />
               </div>
               <input
@@ -308,6 +316,7 @@ const ContactUs = () => {
                 placeholder="Email*"
                 name="email"
                 required
+                disabled={loading}
               />
               <input
                 type="tel"
@@ -315,12 +324,14 @@ const ContactUs = () => {
                 placeholder="Phone Number*"
                 name="phone"
                 required
+                disabled={loading}
               />
               <textarea
                 className="contact-form-textarea"
                 placeholder="Your message..."
                 name="message"
                 required
+                disabled={loading}
               ></textarea>
 
               <div className="contact-form-checkbox">
@@ -330,10 +341,10 @@ const ContactUs = () => {
                   checked={isChecked}
                   onChange={() => setIsChecked(!isChecked)}
                   required
+                  disabled={loading}
                 />
                 <label htmlFor="termsCheckbox" className="checkbox-label">
                   By checking this box, you agree to receive SMS messages from
-<<<<<<< HEAD
                   Cadila Global related to follow ups. You may reply STOP to
                   opt-out at any time. Reply HELP to{" "}
                   <a href="tel:+18327579277">+1 (832) 757-9277</a> for
@@ -341,20 +352,19 @@ const ContactUs = () => {
                   frequency will vary. Learn more on our{" "}
                   <a href="/privacy-policy">Privacy Policy</a> page and{" "}
                   <a href="/terms-and-conditions">Terms & Conditions</a>.
-=======
-                  Cadila Global related to follow-ups. You may reply STOP to
-                  opt-out at any time. Reply HELP to{" "}
-                  <a href="tel:+18327579277">+1 (832) 757-9277</a> for
-                  assistance. Messages and data rates may apply. Message
-                  frequency will vary. Learn more on our
-                  <a href="/privacy-policy"> Privacy Policy</a> and
-                  <a href="/terms-and-conditions"> Terms & Conditions</a>.
->>>>>>> 591cd4e84ce226b18e1c89eaf91f3f0f8281833f
                 </label>
               </div>
 
-              <button type="submit" className="contact-form-button">
-                Send Message
+              <button
+                type="submit"
+                className="contact-form-button"
+                disabled={loading}
+              >
+                {loading ? (
+                  <span className="contact-form-spinner"></span>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </form>
           </div>
