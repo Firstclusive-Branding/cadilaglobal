@@ -92,3 +92,6 @@
   background-color: #b0c4de;
   cursor: not-allowed;
 }
+.job-applicant-pdf-link {
+  cursor: pointer !important;
+}

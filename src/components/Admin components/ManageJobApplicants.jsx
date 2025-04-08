@@ -19,9 +19,6 @@ const ManageJobApplicants = () => {
   const encoded_token = localStorage.getItem("token");
   const [resumeLinks, setResumeLinks] = useState({});
 
-  // const role = JSON.parse(localStorage.getItem("userData"))?.role || "Admin";
-  // const endpointPrefix = role === "manager" ? "manager" : "admin";
-
   const role = JSON.parse(localStorage.getItem("userData"))?.role || "Admin";
   let endpointPrefix = "admin";
   console.log("role", role);
@@ -177,16 +174,17 @@ const ManageJobApplicants = () => {
                   <td>
                     {applicant.resume ? (
                       <a
+                        className="job-applicant-pdf-link"
                         href={resumeLinks[applicant._id]}
                         target="_blank"
                         rel="noopener noreferrer"
                         download
                         onClick={async (e) => {
                           if (!resumeLinks[applicant._id]) {
-                            e.preventDefault(); // prevent empty download
+                            e.preventDefault();
                             try {
                               const response = await fetch(
-                                `${baseURL}/api/admin/viewpdf/${applicant._id}`,
+                                `${baseURL}/api/user/viewpdf/${applicant._id}`,
                                 {
                                   headers: {
                                     Authorization: `Bearer ${encoded_token}`,
@@ -199,7 +197,6 @@ const ManageJobApplicants = () => {
                                   ...prev,
                                   [applicant._id]: data.data.resume,
                                 }));
-                                // Open the link in a new tab manually
                                 window.open(data.data.resume, "_blank");
                               } else {
                                 toast.error("Resume not found.");
