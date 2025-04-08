@@ -4,8 +4,8 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../../styles/Admin Styles/JobApplicants.css";
-import { FaFilePdf } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
+import { FaFileAlt } from "react-icons/fa";
 
 const baseURL = import.meta.env.VITE_API_URL;
 
@@ -157,20 +157,7 @@ const ManageJobApplicants = () => {
                       </span>
                     </td>
                   )}
-                  {/* <td>
-                    {applicant.resume ? (
-                      <a
-                        href={`${baseURL}/api/pdf/${applicant._id}?token=Bearer ${encoded_token}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        download
-                      >
-                        <FaFilePdf size={25} color="#114769" />
-                      </a>
-                    ) : (
-                      "-"
-                    )}
-                  </td> */}
+
                   <td>
                     {applicant.resume ? (
                       <a
@@ -208,7 +195,7 @@ const ManageJobApplicants = () => {
                           }
                         }}
                       >
-                        <FaFilePdf size={25} color="#114769" />
+                        <FaFileAlt size={25} color="#114769" />
                       </a>
                     ) : (
                       "-"
