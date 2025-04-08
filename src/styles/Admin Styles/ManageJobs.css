@@ -1,0 +1,279 @@
+.manage-jobs-container {
+  margin: auto;
+  color: #333;
+}
+
+.manage-jobs-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.manage-jobs-controls {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.manage-jobs-controls input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 0 0 60%;
+  background-color: #f9f9f9;
+}
+
+.post-job-button {
+  background-color: #007acc;
+  color: white;
+  padding: 8px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-jobs-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.jobs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.jobs-table th,
+.jobs-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.jobs-table th {
+  background-color: #f0f7ff;
+  color: #003366;
+  font-weight: 600;
+}
+
+.jobs-table td {
+  color: #333;
+  vertical-align: middle;
+}
+
+.jobs-table td button {
+  margin: 2px;
+}
+
+.jobs-action-btns {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 4px;
+  margin: 0 4px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+.jobs-action-btns:hover {
+  background-color: #c5c5c5;
+}
+.jobs-edit-button svg {
+  color: #007bff;
+  transition: color 0.2s ease;
+}
+
+.jobs-edit-button:hover svg {
+  color: #0056b3;
+}
+
+.jobs-delete-button svg {
+  color: #dc3545;
+  transition: color 0.2s ease;
+}
+
+.jobs-delete-button:hover svg {
+  color: #a71d2a;
+}
+
+.job-approve-btn,
+.job-reject-btn {
+  border: none;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  color: #fff;
+}
+
+.job-approve-btn {
+  background-color: #28a745;
+}
+
+.job-approve-btn:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.job-reject-btn {
+  background-color: #dc3545;
+}
+
+.job-reject-btn:hover:not(:disabled) {
+  background-color: #c82333;
+}
+
+.job-approve-btn:disabled,
+.job-reject-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.job-status-badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.approved-badge {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.not-approved-badge {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.manage-jobs-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.manage-jobs-pagination button {
+  background-color: #0056b3;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s;
+}
+
+.manage-jobs-pagination button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+/* Modal */
+.admin-job-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.admin-job-modal-content {
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 12px;
+  width: 480px;
+  max-width: 90%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.admin-job-modal-content h3 {
+  margin-top: 0;
+}
+.modal-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  color: #004aad;
+}
+
+.location-options {
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.admin-job-modal-form input,
+.admin-job-modal-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  box-sizing: border-box;
+}
+.experience-range-group {
+  display: flex;
+}
+.experience-to {
+  display: flex;
+  margin: 2% 10px;
+}
+.admin-job-modal-form textarea {
+  resize: vertical;
+}
+
+.submit-user-btn {
+  background-color: #004aad;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-user-btn:hover {
+  background-color: #00357f;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

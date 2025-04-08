@@ -1,0 +1,94 @@
+.contact-forms-container {
+  margin: auto;
+  color: #333;
+}
+
+.contact-forms-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.contact-forms-search {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.contact-forms-search input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  background-color: #f9f9f9;
+}
+
+.contact-forms-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-forms-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.contact-forms-table-wrapper {
+  overflow-x: auto;
+}
+
+.contact-forms-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.contact-forms-table th,
+.contact-forms-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.contact-forms-table th {
+  background-color: #f0f7ff;
+  color: #003366;
+  font-weight: 600;
+}
+
+.contact-delete-btn {
+  color: #c82333;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+.contact-delete-btn:hover {
+  background-color: #c5c5c5;
+}
+.contact-forms-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-forms-pagination button {
+  background-color: #0056b3;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s;
+}
+
+.contact-forms-pagination button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}

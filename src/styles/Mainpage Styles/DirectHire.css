@@ -1,0 +1,120 @@
+.direct-hire-container {
+  background-color: #f9f9f9;
+  padding: 60px 5%;
+}
+
+.direct-hire-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.direct-hire-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.direct-hire-title {
+  color: #12bdbd;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.direct-hire-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.direct-hire-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.direct-hire-button {
+  background-color: #0985a6;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.direct-hire-button a {
+  text-decoration: none;
+  color: #fff;
+}
+.direct-hire-button:hover {
+  opacity: 0.9;
+}
+
+.direct-hire-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.direct-hire-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .direct-hire-heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .direct-hire-container {
+    padding: 0;
+  }
+  .direct-hire-content {
+    flex-direction: column-reverse;
+  }
+
+  .direct-hire-text {
+    max-width: 100%;
+  }
+
+  .direct-hire-image {
+    width: 100%;
+  }
+
+  .direct-hire-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  .direct-hire-text {
+    padding: 20px;
+  }
+  .direct-hire-heading {
+    font-size: 26px;
+  }
+
+  .direct-hire-description {
+    font-size: 15px;
+  }
+
+  .direct-hire-button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .direct-hire-heading {
+    font-size: 24px;
+  }
+  .direct-hire-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

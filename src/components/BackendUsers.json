@@ -1,0 +1,202 @@
+{
+  "users": [
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566981"
+      },
+      "firstname": "admin",
+      "lastname": "admin",
+      "mobile": "+1 (832) 757-9277",
+      "email": "admin@cadilaglobal.com",
+      "password": "1234",
+      "role": "Admin",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566982"
+      },
+      "firstname": "Manager1",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9278",
+      "email": "manager1@cadilaglobal.com",
+      "password": "Manager@1",
+      "role": "Manager",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566983"
+      },
+      "firstname": "Manager2",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9279",
+      "email": "manager2@cadilaglobal.com",
+      "password": "Manager@2",
+      "role": "Manager",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566984"
+      },
+      "firstname": "Manager3",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9280",
+      "email": "manager3@cadilaglobal.com",
+      "password": "Manager@3",
+      "role": "Manager",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566985"
+      },
+      "firstname": "Manager4",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9281",
+      "email": "manager4@cadilaglobal.com",
+      "password": "Manager@4",
+      "role": "Manager",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566986"
+      },
+      "firstname": "Manager5",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9282",
+      "email": "manager5@cadilaglobal.com",
+      "password": "Manager@5",
+      "role": "Manager",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566987"
+      },
+      "firstname": "Recruiter1",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9283",
+      "email": "recruiter1@cadilaglobal.com",
+      "password": "Recruiter@1",
+      "role": "Recruiter",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566988"
+      },
+      "firstname": "Recruiter2",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9284",
+      "email": "recruiter2@cadilaglobal.com",
+      "password": "Recruiter@2",
+      "role": "Recruiter",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566989"
+      },
+      "firstname": "Recruiter3",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9285",
+      "email": "recruiter3@cadilaglobal.com",
+      "password": "Recruiter@3",
+      "role": "Recruiter",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566990"
+      },
+      "firstname": "Recruiter4",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9286",
+      "email": "recruiter4@cadilaglobal.com",
+      "password": "Recruiter@4",
+      "role": "Recruiter",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "67d2772ddfdc49fb03566991"
+      },
+      "firstname": "Recruiter5",
+      "lastname": "User",
+      "mobile": "+1 (832) 757-9287",
+      "email": "recruiter5@cadilaglobal.com",
+      "password": "Recruiter@5",
+      "role": "Recruiter",
+      "approved": true,
+      "createdAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      },
+      "updatedAt": {
+        "$date": "2025-03-13T11:41:57.149Z"
+      }
+    }
+  ]
+}

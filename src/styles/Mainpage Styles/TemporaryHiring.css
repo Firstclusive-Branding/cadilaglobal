@@ -1,0 +1,125 @@
+.temporary-hiring-container {
+  background-color: #f4f4f4;
+  padding: 60px 5%;
+}
+
+.temporary-hiring-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.temporary-hiring-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.temporary-hiring-title {
+  color: #12bdbd;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.temporary-hiring-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.temporary-hiring-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.temporary-hiring-button {
+  background-color: #0985a6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+  margin: auto;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+}
+
+.temporary-hiring-button:hover {
+  background-color: #086f8a;
+}
+
+.temporary-hiring-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.temporary-hiring-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .temporary-hiring-heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .temporary-hiring-container {
+    padding: 0;
+  }
+  .temporary-hiring-content {
+    flex-direction: column-reverse;
+  }
+
+  .temporary-hiring-text {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .temporary-hiring-image {
+    width: 100%;
+  }
+
+  .temporary-hiring-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .temporary-hiring-heading {
+    font-size: 26px;
+  }
+
+  .temporary-hiring-description {
+    font-size: 15px;
+  }
+
+  .temporary-hiring-button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .temporary-hiring-heading {
+    font-size: 24px;
+  }
+  .temporary-hiring-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}

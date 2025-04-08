@@ -1,0 +1,94 @@
+.recruiter-form-container {
+  margin: auto;
+  color: #333;
+}
+
+.recruiter-form-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.recruiter-form-search {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.recruiter-form-search input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  background-color: #f9f9f9;
+}
+
+.recruiter-form-error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.recruiter-form-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.recruiter-form-table-wrapper {
+  overflow-x: auto;
+}
+
+.recruiter-form-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.recruiter-form-table th,
+.recruiter-form-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.recruiter-form-table th {
+  background-color: #f0f7ff;
+  color: #003366;
+  font-weight: 600;
+}
+
+.recruiter-form-delete-btn {
+  border: none;
+  color: #c82333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+.recruiter-form-delete-btn:hover {
+  background-color: #c5c5c5;
+}
+.recruiter-form-pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.recruiter-form-pagination button {
+  background-color: #0056b3;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.3s;
+}
+
+.recruiter-form-pagination button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}

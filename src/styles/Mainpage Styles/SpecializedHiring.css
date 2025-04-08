@@ -1,0 +1,128 @@
+.specialized-hiring-container {
+  background-color: #f9f9f9;
+  padding: 60px 5%;
+}
+
+.specialized-hiring-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.specialized-hiring-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.specialized-hiring-title {
+  color: #12bdbd;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.specialized-hiring-heading {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.specialized-hiring-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.specialized-hiring-button {
+  background-color: #0985a6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+  margin: auto;
+  margin-top: 2rem;
+  transition: background-color 0.3s;
+}
+
+.specialized-hiring-button:hover {
+  background-color: #086f8a;
+}
+
+.specialized-hiring-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.specialized-hiring-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .specialized-hiring-heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .specialized-hiring-container {
+    padding: 0;
+  }
+  .specialized-hiring-content {
+    flex-direction: column-reverse;
+  }
+
+  .specialized-hiring-text {
+    max-width: 100%;
+  }
+
+  .specialized-hiring-image {
+    width: 100%;
+  }
+
+  .specialized-hiring-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .specialized-hiring-text {
+    padding: 20px;
+  }
+
+  .specialized-hiring-heading {
+    font-size: 26px;
+  }
+
+  .specialized-hiring-description {
+    font-size: 15px;
+  }
+
+  .specialized-hiring-button {
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialized-hiring-heading {
+    font-size: 24px;
+  }
+  .specialized-hiring-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
