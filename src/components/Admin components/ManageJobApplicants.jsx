@@ -17,6 +17,7 @@ const ManageJobApplicants = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const encoded_token = localStorage.getItem("token");
+  const [resumeLinks, setResumeLinks] = useState({});
 
   // const role = JSON.parse(localStorage.getItem("userData"))?.role || "Admin";
   // const endpointPrefix = role === "manager" ? "manager" : "admin";
@@ -159,10 +160,10 @@ const ManageJobApplicants = () => {
                       </span>
                     </td>
                   )}
-                  <td>
+                  {/* <td>
                     {applicant.resume ? (
                       <a
-                        href={`${baseURL}/api/admin/viewpdf/${applicant._id}?token=Bearer ${encoded_token}`}
+                        href={`${baseURL}/api/pdf/${applicant._id}?token=Bearer ${encoded_token}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         download
@@ -172,7 +173,51 @@ const ManageJobApplicants = () => {
                     ) : (
                       "-"
                     )}
+                  </td> */}
+                  <td>
+                    {applicant.resume ? (
+                      <a
+                        href={resumeLinks[applicant._id]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        download
+                        onClick={async (e) => {
+                          if (!resumeLinks[applicant._id]) {
+                            e.preventDefault(); // prevent empty download
+                            try {
+                              const response = await fetch(
+                                `${baseURL}/api/admin/viewpdf/${applicant._id}`,
+                                {
+                                  headers: {
+                                    Authorization: `Bearer ${encoded_token}`,
+                                  },
+                                }
+                              );
+                              const data = await response.json();
+                              if (data?.status === 200 && data?.data?.resume) {
+                                setResumeLinks((prev) => ({
+                                  ...prev,
+                                  [applicant._id]: data.data.resume,
+                                }));
+                                // Open the link in a new tab manually
+                                window.open(data.data.resume, "_blank");
+                              } else {
+                                toast.error("Resume not found.");
+                              }
+                            } catch (err) {
+                              console.error("Error fetching resume", err);
+                              toast.error("Failed to fetch resume.");
+                            }
+                          }
+                        }}
+                      >
+                        <FaFilePdf size={25} color="#114769" />
+                      </a>
+                    ) : (
+                      "-"
+                    )}
                   </td>
+
                   {role === "Admin" ? (
                     <td>
                       <button
