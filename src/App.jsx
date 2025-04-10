@@ -62,7 +62,7 @@ const ProtectedRoute = ({ element, roleKey }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!isAuthenticated) navigate("/fb", { replace: true });
+    if (!isAuthenticated) navigate("/admin", { replace: true });
   }, [isAuthenticated]);
 
   return isAuthenticated ? (
@@ -118,12 +118,12 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/fb",
+    path: "/admin",
     children: [
       { index: true, element: <AdminLogin /> },
       { path: "sign-up", element: <AdminSignup /> },
       { path: "password-reset", element: <ForgotPassword /> },
-      { path: "*", element: <Navigate to="/fb" replace /> },
+      { path: "*", element: <Navigate to="/admin" replace /> },
       {
         element: <AdminLayout />,
         children: [

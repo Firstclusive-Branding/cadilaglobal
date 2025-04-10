@@ -174,7 +174,7 @@ function AdminSignup() {
 
       // Navigate to login after delay
       setTimeout(() => {
-        navigate("/fb");
+        navigate("/admin");
       }, 3000);
     } catch (err) {
       const msg =
@@ -324,7 +324,7 @@ function AdminSignup() {
         </form>
 
         <p className="admin-sign-up-login">
-          Already have an account? <Link to="/fb">Login</Link>
+          Already have an account? <Link to="/admin">Login</Link>
         </p>
       </div>
     </div>

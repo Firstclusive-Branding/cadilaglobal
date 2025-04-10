@@ -37,7 +37,7 @@ const AdminNavbar = ({ role }) => {
     localStorage.removeItem("userAuthenticated");
     localStorage.removeItem("userData");
     localStorage.removeItem("userRole");
-    navigate("/fb");
+    navigate("/admin");
   };
 
   return (

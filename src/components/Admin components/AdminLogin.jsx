@@ -105,15 +105,15 @@ const AdminLogin = () => {
       switch (role) {
         case "Admin":
           localStorage.setItem("adminAuthenticated", "true");
-          navigate("/fb/admin-dashboard");
+          navigate("/admin/admin-dashboard");
           break;
         case "manager":
           localStorage.setItem("managerAuthenticated", "true");
-          navigate("/fb/manager-dashboard");
+          navigate("/admin/manager-dashboard");
           break;
         case "recruiter":
           localStorage.setItem("recruiterAuthenticated", "true");
-          navigate("/fb/recruiter-dashboard");
+          navigate("/admin/recruiter-dashboard");
           break;
         case "user":
           localStorage.setItem("userAuthenticated", "true");

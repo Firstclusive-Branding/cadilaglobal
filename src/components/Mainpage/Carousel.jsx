@@ -1,8 +1,9 @@
 import React from "react";
 import "../../styles/Mainpage Styles/Carousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper/modules";
+import { EffectFade, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
+import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import humanResource from "../../assets/homepage assets/carousel/human-resource.jpg";
 import softwareIndustry from "../../assets/homepage assets/carousel/software-industry.jpg";
@@ -50,11 +51,13 @@ const Carousel = ({ industriesRef }) => {
   return (
     <div className="carousel-container">
       <Swiper
-        modules={[Pagination, Autoplay]}
-        spaceBetween={10}
+        modules={[EffectFade, Autoplay, Pagination]}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
         slidesPerView={1}
         loop={true}
         pagination={{ clickable: true }}
+        speed={2000}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         className="swiper-container"
       >
@@ -66,7 +69,9 @@ const Carousel = ({ industriesRef }) => {
             >
               <div className="carousel-content">
                 <h3 className="carousel-heading">{slide.heading}</h3>
-                <h2 className="carousel-title">{slide.title}</h2>
+                <div className="carousel-title-container">
+                  <h2 className="carousel-title">{slide.title}</h2>
+                </div>
                 <p className="carousel-description">{slide.description}</p>
                 <hr />
                 {slide.link === "#industries-we-serve" ? (

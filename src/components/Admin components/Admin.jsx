@@ -18,7 +18,7 @@ const Admin = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem("adminAuthenticated");
-    navigate("/fb");
+    navigate("/admin");
   };
 
   const toggleSidebar = () => {
@@ -54,31 +54,31 @@ const Admin = () => {
         <div className="sidebar-menu">
           <ul>
             <li>
-              <NavLink to="/fb/dashboard" activeClassName="active">
+              <NavLink to="/admin/dashboard" activeClassName="active">
                 <FaTachometerAlt />
                 {!isSidebarCollapsed && <span>Dashboard</span>}
               </NavLink>
             </li>
             <li>
-              <NavLink to="/fb/content-management" activeClassName="active">
+              <NavLink to="/admin/content-management" activeClassName="active">
                 <FaClipboardList />
                 {!isSidebarCollapsed && <span>Content Management</span>}
               </NavLink>
             </li>
             <li>
-              <NavLink to="/fb/careers" activeClassName="active">
+              <NavLink to="/admin/careers" activeClassName="active">
                 <FaClipboardList />
                 {!isSidebarCollapsed && <span>Careers</span>}
               </NavLink>
             </li>
             <li>
-              <NavLink to="/fb/job-applicants" activeClassName="active">
+              <NavLink to="/admin/job-applicants" activeClassName="active">
                 <FaClipboardList />
                 {!isSidebarCollapsed && <span>Manage Job Applicants</span>}
               </NavLink>
             </li>{" "}
             <li>
-              <NavLink to="/fb/jobs" activeClassName="active">
+              <NavLink to="/admin/jobs" activeClassName="active">
                 <FaClipboardList />
                 {!isSidebarCollapsed && <span>Manage Jobs</span>}
               </NavLink>

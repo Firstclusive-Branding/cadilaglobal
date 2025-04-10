@@ -28,18 +28,18 @@ const AdminSidebar = ({ role }) => {
       <ul>
         {/* Common Links */}
         <li>
-          <Link to={`/fb/${role}-dashboard`}>
+          <Link to={`/admin/${role}-dashboard`}>
             <FaTachometerAlt /> Dashboard
           </Link>
         </li>
         <li>
-          <Link to="/fb/jobs">
+          <Link to="/admin/jobs">
             <FaBriefcase />{" "}
             {role === "recruiter" ? "My Job Postings" : "Job Postings"}
           </Link>
         </li>
         <li>
-          <Link to="/fb/job-applicants">
+          <Link to="/admin/job-applicants">
             <FaUsers />{" "}
             {role === "recruiter" ? "My Job Applicants" : "Job Applicants"}
           </Link>
@@ -49,17 +49,17 @@ const AdminSidebar = ({ role }) => {
         {role !== "recruiter" && (
           <>
             <li>
-              <Link to="/fb/contact-forms">
+              <Link to="/admin/contact-forms">
                 <FaEnvelope /> Contact Us Form
               </Link>
             </li>
             <li>
-              <Link to="/fb/recruiter-forms">
+              <Link to="/admin/recruiter-forms">
                 <FaUserTie /> Find Talent Form
               </Link>
             </li>
             <li>
-              <Link to="/fb/users">
+              <Link to="/admin/users">
                 <FaUserFriends />
                 {isAdmin ? "Users" : "Recruiters"}
               </Link>
@@ -71,7 +71,7 @@ const AdminSidebar = ({ role }) => {
         {/* {role === "admin" && (
           <>
             <li>
-              <Link to="/fb/users">
+              <Link to="/admin/users">
                 <FaUserFriends /> Users
               </Link>
             </li>
@@ -81,7 +81,7 @@ const AdminSidebar = ({ role }) => {
         {/* Only Manager */}
         {/* {role === "manager" && (
           <li>
-            <Link to="/fb/recruiters">
+            <Link to="/admin/recruiters">
               <FaUserFriends /> Recruiters
             </Link>
           </li>

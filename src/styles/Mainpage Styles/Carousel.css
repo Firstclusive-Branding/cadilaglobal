@@ -36,9 +36,6 @@
   margin-left: 5rem;
   border-radius: 8px;
   z-index: 2;
-  transform: translateX(40px);
-  animation: slideSide 1s ease forwards;
-  animation-delay: 0.3s;
 }
 
 .carousel-heading {
@@ -46,13 +43,23 @@
   filter: drop-shadow(1px 1px 5px black);
   margin: 0;
   text-transform: uppercase;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideSide 1s ease forwards;
+  animation-delay: 0.3s;
 }
-
+.carousel-title-container {
+  overflow: hidden;
+}
 .carousel-title {
   font-size: 56px;
   font-weight: 700;
   filter: drop-shadow(1px 1px 5px black);
   margin: 0;
+  opacity: 0;
+  transform: scale(1.5);
+  animation: scaleUp 1s ease forwards;
+  animation-delay: 0.5s;
 }
 
 .carousel-description {
@@ -61,6 +68,10 @@
   filter: drop-shadow(1px 1px 5px black);
   color: #dedede;
   margin: 10px 0;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: slideSide 1s ease forwards;
+  animation-delay: 0.8s;
 }
 .carousel-slide hr {
   margin: 20px 0;
@@ -68,7 +79,6 @@
   height: 2px;
   border: none;
 }
-
 .carousel-button {
   display: inline-block;
   background-color: #0985a6;
@@ -77,21 +87,28 @@
   text-decoration: none;
   z-index: 2;
   transition: background-color 0.3s;
+  opacity: 0;
+  transform: scale(1.5);
+  animation: scaleUp 1s ease forwards;
+  animation-delay: 0.8s;
 }
 
 .carousel-button:hover {
   background-color: #006480;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  color: #fff;
-  padding: 0 50px;
+@keyframes slideSide {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  color: #9b9b9b;
+@keyframes scaleUp {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .swiper-pagination-bullet {
   background: white;
@@ -101,12 +118,6 @@
 .swiper-pagination-bullet-active {
   background: #0c557e;
   opacity: 1;
-}
-
-@keyframes slideSide {
-  to {
-    transform: translateX(0);
-  }
 }
 
 @media screen and (max-width: 768px) {
