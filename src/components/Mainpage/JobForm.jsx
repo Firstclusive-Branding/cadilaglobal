@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../../styles/Mainpage Styles/JobForm.css";
 import Swal from "sweetalert2";
@@ -12,6 +12,10 @@ const JobForm = () => {
   const jobTitle = queryParams.get("title") || "";
   const jobLocation = queryParams.get("location") || "";
   const jobId = queryParams.get("jobid") || "";
+
+  useEffect(() => {
+    document.title = `Job Application for ${jobTitle} - Cadila Global`;
+  }, []);
 
   const [formData, setFormData] = useState({
     name: "",

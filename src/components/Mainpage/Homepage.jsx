@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "../../styles/Mainpage Styles/Homepage.css";
 import { motion } from "framer-motion";
 import Carousel from "./Carousel";
@@ -16,6 +16,10 @@ import IndustriesWeServe from "./IndustriesWeServe";
 
 function Homepage() {
   const industriesRef = useRef(null);
+
+  useEffect(() => {
+    document.title = `Cadila Global`;
+  }, []);
   return (
     <div className="homepage-container">
       <motion.div

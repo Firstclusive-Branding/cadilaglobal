@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/AboutUs.css";
 import aboutUsMainImg from "../../assets/homepage assets/homepage-about-us-1.jpg";
 import aboutUsSubImg from "../../assets/homepage assets/homepage-about-us-2.png";
@@ -7,6 +7,10 @@ import aboutUsCover from "../../assets/About Us/about-us1.jpg";
 import { motion } from "framer-motion";
 
 function HomepageAboutUs() {
+  useEffect(() => {
+    document.title = `About Us - Cadila Global`;
+  }, []);
+
   return (
     <section className="about-us">
       <img src={aboutUsCover} alt="about us" className="about-us-cover" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/PermanentHiring.css";
 import permanenthiringImage from "../../assets/services assets/permanent-hiring.png";
 import { Link } from "react-router-dom";
@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const PermanentHiring = () => {
+  useEffect(() => {
+    document.title = `Permanent Hiring - Cadila Global`;
+  }, []);
+
   return (
     <section className="permanent-hiring-container">
       <motion.div

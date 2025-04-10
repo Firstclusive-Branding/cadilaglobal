@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/TemporaryHiring.css";
-import temporaryHiringImage from "../../assets/services assets/temporary-hiring.jpg";
+import temporaryHiringImage from "../../assets/services assets/temporary-hiring.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const TemporaryHiring = () => {
+  useEffect(() => {
+    document.title = `Temporary Hiring - Cadila Global`;
+  }, []);
+
   return (
     <section className="temporary-hiring-container">
       <motion.div

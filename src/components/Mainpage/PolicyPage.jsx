@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/PolicyPage.css";
 
 const PolicyPage = () => {
+  useEffect(() => {
+    document.title = `Privacy Policy - Cadila Global`;
+  }, []);
   return (
     <div className="privacy-container">
       <div className="privacy-header">

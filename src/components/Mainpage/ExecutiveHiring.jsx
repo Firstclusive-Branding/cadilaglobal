@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/ExecutiveHiring.css";
-import executiveHiringImage from "../../assets/services assets/executive-hiring.jpg";
+import executiveHiringImage from "../../assets/services assets/executive-hiring.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const ExecutiveHiring = () => {
+  useEffect(() => {
+    document.title = `Executive Hiring - Cadila Global`;
+  }, []);
+
   return (
     <section className="executive-hiring-container">
       <motion.div

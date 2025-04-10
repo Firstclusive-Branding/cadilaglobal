@@ -7,6 +7,10 @@ import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const Careers = () => {
+  useEffect(() => {
+    document.title = `Find Jobs - Cadila Global`;
+  }, []);
+
   const [jobListings, setJobListings] = useState([]);
   const location = useLocation();
   const [loading, setLoading] = useState(true);

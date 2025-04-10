@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/ContractHire.css";
 import contractHireImage from "../../assets/services assets/contract-hire.png";
 import { Link } from "react-router-dom";
@@ -6,6 +6,10 @@ import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const ContractHire = () => {
+  useEffect(() => {
+    document.title = `Contract Hiring - Cadila Global`;
+  }, []);
+
   return (
     <section className="contract-hire-container">
       <motion.div

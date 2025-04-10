@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/ConsultingServices.css";
-import consultingServicesImage from "../../assets/services assets/consulting-services.jpg";
+import consultingServicesImage from "../../assets/services assets/consulting-services.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const ConsultingServices = () => {
+  useEffect(() => {
+    document.title = `Consulting Services - Cadila Global`;
+  }, []);
+
   return (
     <section className="consulting-services-container">
       <motion.div

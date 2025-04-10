@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/SpecializedHiring.css";
-import specializedHiringImage from "../../assets/services assets/specialized-hiring.jpg";
+import specializedHiringImage from "../../assets/services assets/specialized-hiring.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const SpecializedHiring = () => {
+  useEffect(() => {
+    document.title = `Specialized Hiring - Cadila Global`;
+  }, []);
+
   return (
     <section className="specialized-hiring-container">
       <motion.div

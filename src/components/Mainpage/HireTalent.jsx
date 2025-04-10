@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/Mainpage Styles/HireTalent.css";
 import Hiretalent from "../../assets/hire talent assets/hire-talent.jpg";
 import { motion } from "framer-motion";
@@ -7,6 +7,10 @@ import Swal from "sweetalert2";
 const HireTalent = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    document.title = `Find Talent - Cadila Global`;
+  }, []);
 
   const onSubmit = async (event) => {
     event.preventDefault();

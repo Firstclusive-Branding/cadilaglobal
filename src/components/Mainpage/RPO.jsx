@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/RPO.css";
-import rpoImage from "../../assets/services assets/recruitment-process-outsourcing.jpg";
+import rpoImage from "../../assets/services assets/recruitment-process-outsourcing.png";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const RPO = () => {
+  useEffect(() => {
+    document.title = `Recruitment Process Outsourcing - Cadila Global`;
+  }, []);
+
   return (
     <section className="rpo-container">
       <motion.div

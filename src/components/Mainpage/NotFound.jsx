@@ -1,8 +1,12 @@
-import React from "react";
-import "../../styles/Mainpage Styles/NotFound.css"; // Import external CSS
-import notFoundImage from "../../assets/not-found.png"; // Adjust path if needed
+import React, { useEffect } from "react";
+import "../../styles/Mainpage Styles/NotFound.css";
+import notFoundImage from "../../assets/not-found.png";
 
 const NotFound = () => {
+  useEffect(() => {
+    document.title = `Page not found - Cadila Global`;
+  }, []);
+
   return (
     <div className="not-found-container">
       <img

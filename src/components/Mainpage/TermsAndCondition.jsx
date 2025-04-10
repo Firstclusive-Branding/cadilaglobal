@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/TermsAndCondition.css";
 
 const TermsAndCondition = () => {
+  useEffect(() => {
+    document.title = `Terms and Conditions - Cadila Global`;
+  }, []);
+
   return (
     <div className="terms-container">
       <div className="terms-header">

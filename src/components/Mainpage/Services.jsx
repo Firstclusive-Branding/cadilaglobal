@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "../../styles/Mainpage Styles/Services.css";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -49,6 +49,10 @@ const staffingSolutions = [
 ];
 
 const Services = () => {
+  useEffect(() => {
+    document.title = `Services - Cadila Global`;
+  }, []);
+
   return (
     <div className="our-services-container">
       <img src={servicesImg} alt="Our Services" className="services-image" />
