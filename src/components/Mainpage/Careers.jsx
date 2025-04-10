@@ -68,10 +68,13 @@ const Careers = () => {
                   <FaBriefcase size={20} className="careers-icon" />
                   {job.experience}
                 </span>
-                <span>
-                  <FaMoneyCheckAlt size={20} className="careers-icon" />$
-                  {job.salary}
-                </span>
+                {job?.salary && job.salary.trim() !== "" && (
+                  <span>
+                    <FaMoneyCheckAlt size={20} className="careers-icon" />$
+                    {job.salary}
+                  </span>
+                )}
+
                 <span>
                   <FaLocationDot size={20} className="careers-icon" />
                   {job.location}

@@ -36,6 +36,9 @@
   margin-left: 5rem;
   border-radius: 8px;
   z-index: 2;
+  transform: translateX(40px);
+  animation: slideSide 1s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .carousel-heading {
@@ -43,9 +46,6 @@
   filter: drop-shadow(1px 1px 5px black);
   margin: 0;
   text-transform: uppercase;
-  transform: translateX(-40px);
-  animation: slideSide 1s ease forwards;
-  animation-delay: 0.3s;
 }
 
 .carousel-title {
@@ -53,9 +53,6 @@
   font-weight: 700;
   filter: drop-shadow(1px 1px 5px black);
   margin: 0;
-  transform: translateX(40px);
-  animation: slideSide 1s ease forwards;
-  animation-delay: 0.3s;
 }
 
 .carousel-description {
@@ -64,9 +61,6 @@
   filter: drop-shadow(1px 1px 5px black);
   color: #dedede;
   margin: 10px 0;
-  transform: translateX(-40px);
-  animation: slideSide 1s ease forwards;
-  animation-delay: 0.3s;
 }
 .carousel-slide hr {
   margin: 20px 0;
@@ -83,9 +77,6 @@
   text-decoration: none;
   z-index: 2;
   transition: background-color 0.3s;
-  transform: scale(0.5);
-  animation: scaleUp 1s ease forwards;
-  animation-delay: 0.3s;
 }
 
 .carousel-button:hover {
@@ -115,12 +106,6 @@
 @keyframes slideSide {
   to {
     transform: translateX(0);
-  }
-}
-
-@keyframes scaleUp {
-  to {
-    transform: scale(1);
   }
 }
 

@@ -4,7 +4,7 @@ import "../../styles/Admin Styles/ManageJobs.css";
 import { MdEdit, MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
-import { Country, State } from "country-state-city";
+import { Country, State, City } from "country-state-city";
 import Select from "react-select";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
@@ -31,8 +31,10 @@ const ManageJobs = ({ role }) => {
   const [loading, setLoading] = useState(null);
   const [countries, setCountries] = useState([]);
   const [states, setStates] = useState([]);
+  const [cities, setCities] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedState, setSelectedState] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
 
   const countryOptions = countries.map((c) => ({
     value: c.name,
@@ -101,22 +103,56 @@ const ManageJobs = ({ role }) => {
     }
   }, [selectedCountry, countries]);
 
+  useEffect(() => {
+    if (selectedCountry && selectedState && countries.length && states.length) {
+      const countryObj = countries.find((c) => c.name === selectedCountry);
+      const stateObj = states.find((s) => s.name === selectedState);
+
+      if (countryObj?.isoCode && stateObj?.isoCode) {
+        const allCities = City.getCitiesOfState(
+          countryObj.isoCode,
+          stateObj.isoCode
+        );
+        setCities(allCities);
+      } else {
+        setCities([]);
+      }
+    }
+  }, [selectedCountry, selectedState, countries, states]);
+
+  useEffect(() => {
+    if (selectedCountry && selectedState && selectedCity) {
+      setForm((prev) => ({
+        ...prev,
+        location: `${selectedCity}, ${selectedState}, ${selectedCountry}`,
+      }));
+    }
+  }, [selectedCountry, selectedState, selectedCity]);
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const openModal = () => setIsModalOpen(true);
+
   const closeModal = () => {
     setIsModalOpen(false);
+
     setForm({
       jobtitle: "",
       experience: "",
+      experienceMin: "",
+      experienceMax: "",
       salary: "",
-      minSalary: "",
-      maxSalary: "",
       location: "",
       jobdescription: "",
     });
+
+    setSelectedCountry("");
+    setSelectedState("");
+    setSelectedCity("");
+    setStates([]);
+    setCities([]);
     setEditingJobId(null);
   };
 
@@ -144,17 +180,39 @@ const ManageJobs = ({ role }) => {
   };
 
   const handleEdit = (job) => {
-    const [state = "", country = ""] = job.location
+    const locationParts = job.location
       ? job.location.split(",").map((s) => s.trim())
-      : ["", ""];
+      : [];
+
+    let city = "";
+    let state = "";
+    let country = "";
+
+    if (locationParts.length === 3) {
+      [city, state, country] = locationParts;
+    } else if (locationParts.length === 2) {
+      [state, country] = locationParts;
+    } else if (locationParts.length === 1) {
+      [country] = locationParts;
+    }
+
     const [minExp = "", maxExp = ""] = job.experience
       ? job.experience.replace(" years", "").split("-")
       : ["", ""];
-    const matchedCountry = countries.find((c) => c.name === country);
-    const isoCode = matchedCountry?.isoCode || "";
 
-    const matchedStates = isoCode ? State.getStatesOfCountry(isoCode) : [];
-    const validState = matchedStates.find((s) => s.name === state) ? state : "";
+    const matchedCountry = countries.find((c) => c.name === country);
+    const countryCode = matchedCountry?.isoCode || "";
+
+    const matchedStates = countryCode
+      ? State.getStatesOfCountry(countryCode)
+      : [];
+    const matchedState = matchedStates.find((s) => s.name === state);
+    const stateCode = matchedState?.isoCode || "";
+
+    const matchedCities =
+      countryCode && stateCode
+        ? City.getCitiesOfState(countryCode, stateCode)
+        : [];
 
     setForm({
       jobtitle: job.jobtitle,
@@ -167,8 +225,10 @@ const ManageJobs = ({ role }) => {
     });
 
     setSelectedCountry(country);
-    setSelectedState(validState);
+    setSelectedState(state);
+    setSelectedCity(city);
     setStates(matchedStates);
+    setCities(matchedCities);
     setEditingJobId(job._id);
 
     setTimeout(() => openModal(), 0);
@@ -245,7 +305,7 @@ const ManageJobs = ({ role }) => {
           <tr>
             <th>Title</th>
             <th>Experience</th>
-            <th>Salary</th>
+            <th>Salary($)</th>
             <th>Location</th>
             <th>Description</th>
             {!isRecruiter && <th>Posted By</th>}
@@ -260,7 +320,7 @@ const ManageJobs = ({ role }) => {
             <tr key={job._id}>
               <td style={{ maxWidth: "150px" }}>{job.jobtitle}</td>
               <td>{job.experience}</td>
-              <td>${job.salary}</td>
+              <td>{!job?.salary ? "-" : job.salary}</td>
               <td style={{ maxWidth: "150px" }}>{job.location}</td>
               <td
                 style={{ maxWidth: "300px", textAlign: "left" }}
@@ -366,7 +426,7 @@ const ManageJobs = ({ role }) => {
                 name="jobtitle"
                 value={form.jobtitle}
                 onChange={handleChange}
-                placeholder="Job Title"
+                placeholder="Job Title *"
                 required
               />
 
@@ -376,7 +436,7 @@ const ManageJobs = ({ role }) => {
                   name="experienceMin"
                   value={form.experienceMin}
                   onChange={handleChange}
-                  placeholder="Min Experience"
+                  placeholder="Min Experience *"
                   required
                 />
                 <span className="experience-to"> - </span>
@@ -385,7 +445,7 @@ const ManageJobs = ({ role }) => {
                   name="experienceMax"
                   value={form.experienceMax}
                   onChange={handleChange}
-                  placeholder="Max Experience"
+                  placeholder="Max Experience *"
                   required
                 />
               </div>
@@ -396,13 +456,13 @@ const ManageJobs = ({ role }) => {
                 value={form.salary}
                 onChange={handleChange}
                 placeholder="Salary"
-                required
               />
 
               <Select
                 className="location-options"
                 options={countryOptions}
                 value={countryOptions.find((c) => c.value === selectedCountry)}
+                required
                 onChange={(selected) => {
                   setSelectedCountry(selected.value);
                   if (form.location.includes(",")) {
@@ -415,7 +475,7 @@ const ManageJobs = ({ role }) => {
                     setForm({ ...form, location: `, ${selected.value}` });
                   }
                 }}
-                placeholder="Select Country"
+                placeholder="Select Country *"
                 menuPlacement="auto"
                 menuShouldScrollIntoView
                 styles={{
@@ -430,6 +490,7 @@ const ManageJobs = ({ role }) => {
               <Select
                 className="location-options"
                 options={stateOptions}
+                required
                 value={stateOptions.find((s) => s.value === selectedState)}
                 onChange={(selected) => {
                   setSelectedState(selected.value);
@@ -443,7 +504,37 @@ const ManageJobs = ({ role }) => {
                     setForm({ ...form, location: `${selected.value},` });
                   }
                 }}
-                placeholder="Select State"
+                placeholder="Select State *"
+                menuPlacement="auto"
+                menuShouldScrollIntoView
+                styles={{
+                  menu: (provided) => ({
+                    ...provided,
+                    maxHeight: "250px",
+                    overflowY: "auto",
+                  }),
+                }}
+              />
+              <Select
+                className="location-options"
+                options={cities.map((city) => ({
+                  value: city.name,
+                  label: city.name,
+                }))}
+                value={
+                  cities.find((c) => c.name === selectedCity)
+                    ? { value: selectedCity, label: selectedCity }
+                    : null
+                }
+                onChange={(selected) => {
+                  setSelectedCity(selected.value);
+                  setForm((prev) => ({
+                    ...prev,
+                    location: `${selected.value}, ${selectedState}, ${selectedCountry}`,
+                  }));
+                }}
+                placeholder="Select City"
+                isDisabled={cities.length === 0}
                 menuPlacement="auto"
                 menuShouldScrollIntoView
                 styles={{
@@ -459,7 +550,7 @@ const ManageJobs = ({ role }) => {
                 name="jobdescription"
                 value={form.jobdescription}
                 onChange={handleChange}
-                placeholder="Job Description"
+                placeholder="Job Description *"
                 rows={7}
                 required
               />
