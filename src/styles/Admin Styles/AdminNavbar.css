@@ -1,4 +1,4 @@
-.admin-navbar {
+/* .admin-navbar {
   background-color: #2c3e50;
   color: #ffffff;
   display: flex;
@@ -29,4 +29,29 @@
   color: #ffffff;
   background-color: #ffffff20;
   border: 1px solid #fff;
+} */
+
+.admin-navbar {
+  background-color: #2c3e50;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.admin-nav-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-clock {
+  font-weight: bold;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  font-family: monospace;
+  min-width: 300px;
+  text-align: right;
 }

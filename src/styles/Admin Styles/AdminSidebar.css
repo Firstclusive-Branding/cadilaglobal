@@ -5,11 +5,14 @@
   padding: 20px;
   padding-top: 8px;
   color: white;
+  position: relative;
 }
 .universal-sidebar img {
   width: 100%;
   height: auto;
   margin-bottom: 20px;
+  filter: drop-shadow(0 0 0 white) drop-shadow(0 0 1px white)
+    drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
 }
 .universal-sidebar-logo {
   font-size: 22px;
@@ -23,16 +26,16 @@
   padding: 0;
 }
 
-.universal-sidebar ul li {
-  margin: 15px 0;
-}
-
 .universal-sidebar ul li a {
   text-decoration: none;
   color: white;
   display: flex;
   align-items: center;
   font-size: 16px;
+  padding: 15px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
 }
 
 .universal-sidebar ul li a svg {
@@ -40,5 +43,37 @@
 }
 
 .universal-sidebar ul li a:hover {
+  color: #f1c40f;
+  background-color: #ffffff44;
+}
+.sidebar-sign-out-link:hover {
+  background-color: #ff000044 !important;
+}
+.sidebar-user-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+}
+.sidebar-user-container img {
+  height: 50px;
+  width: auto;
+}
+.sidebar-user-container div {
+  display: flex;
+  gap: 1rem;
+  padding: 0 20px;
+  padding-top: 20px;
+  margin: 0 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.sidebar-user-container div:hover {
+  background-color: #ffffff44;
+}
+
+.sidebar-user-container div:hover p {
   color: #f1c40f;
 }

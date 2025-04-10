@@ -4,6 +4,7 @@ import axios from "axios";
 import "../../styles/Admin Styles/AdminLogin.css";
 import { IoMdRefresh } from "react-icons/io";
 import { toast } from "react-toastify";
+import logo from "../../assets/Logo.png";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -135,6 +136,9 @@ const AdminLogin = () => {
 
   return (
     <div className="admin-login-container">
+      <div className="admin-login-logo-container">
+        <img src={logo} alt="logo" />
+      </div>
       <div className="admin-login-box">
         <h2 className="admin-login-title">Login</h2>
         <form onSubmit={handleLogin} className="admin-form">

@@ -21,7 +21,6 @@ const ManageJobApplicants = () => {
 
   const role = JSON.parse(localStorage.getItem("userData"))?.role || "Admin";
   let endpointPrefix = "admin";
-  console.log("role", role);
 
   if (role === "manager") endpointPrefix = "manager";
   else if (role === "recruiter") endpointPrefix = "recruiter";
@@ -189,7 +188,6 @@ const ManageJobApplicants = () => {
                                 toast.error("Resume not found.");
                               }
                             } catch (err) {
-                              console.error("Error fetching resume", err);
                               toast.error("Failed to fetch resume.");
                             }
                           }
