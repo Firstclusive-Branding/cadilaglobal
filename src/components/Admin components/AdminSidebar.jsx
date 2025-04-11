@@ -73,7 +73,6 @@ const AdminSidebar = ({ role }) => {
           </Link>
         </li>
 
-        {/* Admin & Manager */}
         {role !== "recruiter" && (
           <>
             <li>
@@ -94,17 +93,17 @@ const AdminSidebar = ({ role }) => {
             </li>
           </>
         )}
-
-        <li onClick={handleSignOut}>
-          <a className="sidebar-sign-out-link">
-            <FaSignOutAlt /> Sign Out
-          </a>
-        </li>
       </ul>
+
       <div className="sidebar-user-container">
-        <div>
+        <div className="sidebar-user">
           <img src={profilePic} alt="profile pic placeholder" />
           <p>{firstName}</p>
+        </div>
+        <div className="sidebar-sign-out-container">
+          <a className="sidebar-sign-out" onClick={handleSignOut}>
+            <FaSignOutAlt /> Sign Out
+          </a>
         </div>
       </div>
     </div>
