@@ -96,11 +96,9 @@ const TermsAndCondition = () => {
           </li>
           <li>
             <strong>Opt-In Method:</strong> You may opt-in to receive SMS
-            messages from Cadila Global in the following ways:
+            messages from Cadila Global in the following way:
             <ul>
-              <li>Verbally, during a conversation</li>
-              <li>By submitting an online form</li>
-              <li>By filling out a paper form</li>
+              <li>By submitting an online form.</li>
             </ul>
           </li>
           <li>
@@ -209,7 +207,7 @@ const TermsAndCondition = () => {
         </p>
       </div>
       <hr />
-      <div className="terms-contact">
+      <div className="terms-section">
         <h2>9. Contact Us</h2>
         <p>
           For questions or concerns regarding these Terms and Conditions, please

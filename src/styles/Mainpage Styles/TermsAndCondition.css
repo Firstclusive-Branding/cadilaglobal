@@ -53,22 +53,6 @@
 .terms-section ul li a:hover {
   text-decoration: underline;
 }
-.terms-contact {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.terms-contact p {
-  color: #555;
-}
-.terms-contact p a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.terms-contact p a:hover {
-  text-decoration: underline;
-}
 
 .terms-updated {
   text-align: center;
@@ -103,13 +87,8 @@
   .terms-section p {
     font-size: 14px;
   }
-
-  .terms-contact p {
-    font-size: 14px;
-  }
 }
 
-/* Mobile devices (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .terms-container {
     padding: 10px;
@@ -134,10 +113,6 @@
   .terms-section ul li,
   .terms-section p {
     font-size: 13px;
-  }
-
-  .terms-contact p {
-    font-size: 12px;
   }
 
   .terms-updated {

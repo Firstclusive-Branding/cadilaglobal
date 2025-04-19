@@ -115,8 +115,21 @@ const PolicyPage = () => {
         </p>
       </div>
       <hr />
-      <div className="privacy-contact">
-        <h2>10. Contact Us</h2>
+      <div className="privacy-section">
+        <h2>10. Standard Messaging Disclosures</h2>
+        <ul>
+          <li>Message and data rates may apply.</li>
+          <li>You can opt out at any time by texting ‘STOP’.</li>
+          <li>
+            For assistance, text ‘HELP’ or visit our Privacy Policy and Terms
+            and Conditions pages.
+          </li>
+          <li>Message frequency may vary.</li>
+        </ul>
+      </div>
+      <hr />
+      <div className="privacy-section">
+        <h2>11. Contact Us</h2>
         <p>For any privacy concerns, contact:</p>
         <p>
           Cadila Global

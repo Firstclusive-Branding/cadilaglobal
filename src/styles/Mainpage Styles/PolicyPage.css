@@ -54,23 +54,6 @@
 .privacy-section ul li a:hover {
   text-decoration: underline;
 }
-.privacy-contact {
-  text-align: left;
-  margin-top: 20px;
-}
-
-.privacy-contact p {
-  color: #555;
-}
-
-.privacy-contact p a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.privacy-contact p a:hover {
-  text-decoration: underline;
-}
 
 .privacy-updated {
   text-align: center;
@@ -79,9 +62,6 @@
   margin-top: 10px;
 }
 
-/* Media Queries for Privacy Policy */
-
-/* Tablets and smaller screens (max-width: 768px) */
 @media screen and (max-width: 768px) {
   .privacy-container {
     padding: 15px;
@@ -108,13 +88,8 @@
   .privacy-section p {
     font-size: 14px;
   }
-
-  .privacy-contact p {
-    font-size: 14px;
-  }
 }
 
-/* Mobile devices (max-width: 480px) */
 @media screen and (max-width: 480px) {
   .privacy-container {
     padding: 10px;
@@ -139,10 +114,6 @@
   .privacy-section ul li,
   .privacy-section p {
     font-size: 13px;
-  }
-
-  .privacy-contact p {
-    font-size: 12px;
   }
 
   .privacy-updated {
