@@ -142,7 +142,7 @@ const PolicyPage = () => {
       </div>
       <hr />
       <p className="privacy-updated">
-        <strong>Last Updated:</strong> 13 March 2025
+        <strong>Last Updated:</strong> 19 April 2025
       </p>
     </div>
   );
