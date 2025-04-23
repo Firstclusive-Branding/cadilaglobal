@@ -18,16 +18,6 @@ const ContactUs = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    if (!isChecked) {
-      Swal.fire({
-        icon: "warning",
-        title: "Terms & Conditions Required",
-        text: "You must accept the terms and conditions to proceed.",
-        confirmButtonText: "OK",
-      });
-      return;
-    }
-
     const formData = new FormData(event.target);
     setLoading(true);
 
