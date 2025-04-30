@@ -91,7 +91,6 @@ const AdminLogin = () => {
         password,
       });
       const { encoded_token, public_token } = response.data.data;
-      console.log("response", response.data.data);
       const base64Payload = public_token.split(".")[1];
       const payload = JSON.parse(atob(base64Payload));
       const { email: userEmail, role, firstname } = payload;
@@ -124,7 +123,7 @@ const AdminLogin = () => {
           toast.error("Invalid user role");
       }
 
-      // window.location.reload();
+      window.location.reload();
     } catch (err) {
       const msg =
         err?.response?.data?.message || "Something went wrong. Try again.";
