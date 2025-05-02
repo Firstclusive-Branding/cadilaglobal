@@ -1,9 +1,12 @@
 .admin-layout {
   display: flex;
+  position: relative;
+  background-color: #f4f4f4;
 }
 
 .admin-content {
-  width: 100%;
+  margin-left: 250px;
+  width: calc(100% - 250px);
   min-height: 100vh;
   background-color: #f4f4f4;
 }

@@ -1,10 +1,9 @@
-/* Admin Login Container */
 .admin-login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-color: #2c3e50;
+  background-color: #f4f4f4;
   padding: 20px;
 }
 
@@ -15,10 +14,8 @@
 }
 .admin-login-logo-container img {
   width: 100%;
-  filter: drop-shadow(0 0 0 white) drop-shadow(0 0 1px white)
-    drop-shadow(0 0 0 white) drop-shadow(0 0 0 white);
 }
-/* Login Box */
+
 .admin-login-box {
   display: flex;
   flex-direction: column;
