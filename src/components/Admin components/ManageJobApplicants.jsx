@@ -124,6 +124,7 @@ const ManageJobApplicants = () => {
                 <th>Job Title</th>
                 <th>Location</th>
                 <th>Applied On</th>
+                <th>Terms Accepted</th>
                 {role !== "recruiter" && <th>Posted By</th>}
                 {role !== "recruiter" && <th>Role</th>}
                 <th>Resume</th>
@@ -147,6 +148,9 @@ const ManageJobApplicants = () => {
                   <td>{applicant.jobtitle}</td>
                   <td>{applicant.location}</td>
                   <td>{new Date(applicant.createdAt).toLocaleDateString()}</td>
+                  <td>
+                    {applicant.termsaccepted ? "Accepted" : "Not accepted"}
+                  </td>
 
                   {role !== "recruiter" && <td>{applicant.postedBy}</td>}
                   {role !== "recruiter" && (

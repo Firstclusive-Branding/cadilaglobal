@@ -18,7 +18,7 @@ function Homepage() {
   const industriesRef = useRef(null);
 
   useEffect(() => {
-    document.title = `Cadila Global`;
+    document.title = `Cadila Global LLC`;
   }, []);
   return (
     <div className="homepage-container">

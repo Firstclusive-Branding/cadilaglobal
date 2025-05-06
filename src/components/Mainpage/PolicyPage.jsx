@@ -3,14 +3,14 @@ import "../../styles/Mainpage Styles/PolicyPage.css";
 
 const PolicyPage = () => {
   useEffect(() => {
-    document.title = `Privacy Policy - Cadila Global`;
+    document.title = `Privacy Policy - Cadila Global LLC`;
   }, []);
   return (
     <div className="privacy-container">
       <div className="privacy-header">
-        <h1>Privacy Policy for Cadila Global</h1>
+        <h1>Privacy Policy for Cadila Global LLC</h1>
         <p>
-          At Cadila Global, protecting your privacy is our priority. This
+          At Cadila Global LLC, protecting your privacy is our priority. This
           Privacy Policy explains how we collect, use, disclose, and protect
           your information when you use our website and services.
         </p>
@@ -55,9 +55,9 @@ const PolicyPage = () => {
       <div className="privacy-section">
         <h2>3. Consent for SMS Communications</h2>
         <p>
-          Phone numbers collected with SMS consent, will not be sold, rented, or
-          shared with third parties or affiliates for marketing purposes under
-          any circumstances.
+          SMS opt-in and phone numbers collected for SMS communication purposes
+          will not be shared with any third party and affiliates for marketing
+          purposes.
         </p>
       </div>
       <hr />
@@ -132,7 +132,7 @@ const PolicyPage = () => {
         <h2>11. Contact Us</h2>
         <p>For any privacy concerns, contact:</p>
         <p>
-          Cadila Global
+          Cadila Global LLC
           <br />
           Email:{" "}
           <a href="mailto:info@cadilaglobal.com">info@cadilaglobal.com</a>
@@ -142,7 +142,7 @@ const PolicyPage = () => {
       </div>
       <hr />
       <p className="privacy-updated">
-        <strong>Last Updated:</strong> 19 April 2025
+        <strong>Last Updated:</strong> 06 May 2025
       </p>
     </div>
   );

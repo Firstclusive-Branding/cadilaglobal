@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const RPO = () => {
   useEffect(() => {
-    document.title = `Recruitment Process Outsourcing - Cadila Global`;
+    document.title = `Recruitment Process Outsourcing - Cadila Global LLC`;
   }, []);
 
   return (

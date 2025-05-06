@@ -4,7 +4,7 @@ import notFoundImage from "../../assets/not-found.png";
 
 const NotFound = () => {
   useEffect(() => {
-    document.title = `Page not found - Cadila Global`;
+    document.title = `Page not found - Cadila Global LLC`;
   }, []);
 
   return (

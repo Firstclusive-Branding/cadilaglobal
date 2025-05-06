@@ -11,14 +11,14 @@ const testimonials = [
     name: "Mark Thompson",
     role: "HR Director",
     review:
-      "Finding skilled professionals used to be a challenge for us. Cadila Global understood our hiring needs and provided us with top-tier candidates who perfectly fit our company culture. Their efficiency and expertise saved us valuable time and resources.",
+      "Finding skilled professionals used to be a challenge for us. Cadila Global LLC understood our hiring needs and provided us with top-tier candidates who perfectly fit our company culture. Their efficiency and expertise saved us valuable time and resources.",
   },
   {
     image: client2,
     name: "Sarah Collins",
     role: "Talent Acquisition Manager",
     review:
-      "We needed a reliable staffing partner for our rapid expansion. Cadila Global delivered highly qualified candidates in record time, allowing us to scale without any hiring bottlenecks. Their tailored approach and commitment to quality make them our go-to recruitment partner.",
+      "We needed a reliable staffing partner for our rapid expansion. Cadila Global LLC delivered highly qualified candidates in record time, allowing us to scale without any hiring bottlenecks. Their tailored approach and commitment to quality make them our go-to recruitment partner.",
   },
 ];
 
@@ -29,7 +29,7 @@ const ClientSuccessStories = () => {
       <div className="success-stories-content">
         <p className="success-subtitle">CLIENT SUCCESS STORIES</p>
         <h2 className="success-title">
-          Discover How Businesses Found the Right Talent with Cadila Global
+          Discover How Businesses Found the Right Talent with Cadila Global LLC
         </h2>
         <div className="testimonial-grid">
           {testimonials.map((testimonial, index) => (

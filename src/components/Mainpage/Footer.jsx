@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>CADILA GLOBAL</h3>
+          <h3>CADILA GLOBAL LLC</h3>
           <p>
             With 10+ years of experience, we connect top talent with leading
             companies in engineering, IT, healthcare, finance and more. Our

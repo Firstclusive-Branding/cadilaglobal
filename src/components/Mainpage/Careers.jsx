@@ -8,7 +8,7 @@ import axios from "axios";
 
 const Careers = () => {
   useEffect(() => {
-    document.title = `Find Jobs - Cadila Global`;
+    document.title = `Find Jobs - Cadila Global LLC`;
   }, []);
 
   const [jobListings, setJobListings] = useState([]);

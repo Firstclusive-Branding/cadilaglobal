@@ -3,7 +3,7 @@ import "../../styles/Mainpage Styles/TermsAndCondition.css";
 
 const TermsAndCondition = () => {
   useEffect(() => {
-    document.title = `Terms and Conditions - Cadila Global`;
+    document.title = `Terms and Conditions - Cadila Global LLC`;
   }, []);
 
   return (
@@ -11,7 +11,7 @@ const TermsAndCondition = () => {
       <div className="terms-header">
         <h1>Terms and Conditions </h1>
         <p>
-          Welcome to Cadila Global. By accessing or using our website and
+          Welcome to Cadila Global LLC. By accessing or using our website and
           services, you agree to the following terms and conditions. Please read
           them carefully.
         </p>
@@ -21,8 +21,8 @@ const TermsAndCondition = () => {
         <h2>1. General Terms</h2>
         <ul>
           <li>
-            <strong>Services Provided:</strong> Cadila Global offers staffing
-            and recruitment services to businesses and job seekers.
+            <strong>Services Provided:</strong> Cadila Global LLC offers
+            staffing and recruitment services to businesses and job seekers.
           </li>
           <li>
             <strong>Accuracy of Information:</strong> Users must ensure that all
@@ -72,21 +72,17 @@ const TermsAndCondition = () => {
           </li>
           <li>
             <strong>Types of SMS Communications:</strong> If you have consented
-            to receive text messages from Cadila Global, you may receive
+            to receive text messages from Cadila Global LLC, you may receive
             messages related to the following:
             <ul>
-              <li>
-                <strong>To Clients:</strong> Follow-up after call
-              </li>
-              <li>
-                <strong>To Candidates:</strong> Follow-up after call
-              </li>
+              <li>Conversations external</li>
             </ul>
           </li>
           <li>
             <strong>Message Frequency:</strong> Message frequency may vary
-            depending on the type of communication. For example, you may receive
-            up to 1 SMS message related to follow-up after the call.
+            depending on the type of communications. For example, you will be
+            receiving between 300 to 400 SMS messages related to follow-up after
+            the calls.
           </li>
           <li>
             <strong>Potential Fees for SMS Messaging:</strong> Please note that
@@ -96,7 +92,7 @@ const TermsAndCondition = () => {
           </li>
           <li>
             <strong>Opt-In Method:</strong> You may opt-in to receive SMS
-            messages from Cadila Global in the following way:
+            messages from Cadila Global LLC in the following way:
             <ul>
               <li>By submitting an online form.</li>
             </ul>
@@ -152,7 +148,7 @@ const TermsAndCondition = () => {
         <h2>5. Regulatory Compliance</h2>
         <ul>
           <li>
-            <strong>Licensing:</strong> Cadila Global operates in compliance
+            <strong>Licensing:</strong> Cadila Global LLC operates in compliance
             with all applicable licensing requirements in Texas.
           </li>
           <li>
@@ -188,9 +184,9 @@ const TermsAndCondition = () => {
         <h2>7. Limitation of Liability</h2>
         <ul>
           <li>
-            <strong>Service Interruptions:</strong> Cadila Global is not liable
-            for any damages resulting from service interruptions, technical
-            issues, or unforeseen events.
+            <strong>Service Interruptions:</strong> Cadila Global LLC is not
+            liable for any damages resulting from service interruptions,
+            technical issues, or unforeseen events.
           </li>
           <li>
             <strong>Employment Decisions:</strong> We are not responsible for
@@ -214,7 +210,7 @@ const TermsAndCondition = () => {
           contact:
         </p>
         <p>
-          Cadila Global
+          Cadila Global LLC
           <br />
           Email:{" "}
           <a href="mailto:info@cadilaglobal.com">info@cadilaglobal.com</a>
@@ -224,7 +220,7 @@ const TermsAndCondition = () => {
       </div>
       <hr />
       <p className="terms-updated">
-        <strong>Last Updated:</strong> 19 April 2025
+        <strong>Last Updated:</strong> 06 May 2025
       </p>
     </div>
   );

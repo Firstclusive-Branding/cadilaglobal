@@ -97,6 +97,7 @@ const ContactForms = () => {
                 <th>Mobile</th>
                 <th>Email</th>
                 <th>Message</th>
+                <th>Terms Accepted</th>
                 {role === "Admin" && <th>Actions</th>}
               </tr>
             </thead>
@@ -109,6 +110,7 @@ const ContactForms = () => {
                   <td>{contact.mobile}</td>
                   <td>{contact.email}</td>
                   <td style={{ textAlign: "left" }}>{contact.message}</td>
+                  <td>{contact.termsaccepted ? "Accepted" : "Not accepted"}</td>
                   {role === "Admin" ? (
                     <td>
                       <button

@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 function HomepageAboutUs() {
   useEffect(() => {
-    document.title = `About Us - Cadila Global`;
+    document.title = `About Us - Cadila Global LLC`;
   }, []);
 
   return (
@@ -46,7 +46,7 @@ function HomepageAboutUs() {
               <h5 className="about-title">ABOUT US</h5>
               <h2>Finding You The Leaders Of Tomorrow.</h2>
               <p>
-                At Cadila Global, we understand local markets and cultures,
+                At Cadila Global LLC, we understand local markets and cultures,
                 allowing us to tailor our services to meet the unique needs of
                 our clients. Our flexibility and agility enable us to deliver
                 high-quality results at any scale. We are committed to exceeding

@@ -100,6 +100,7 @@ const RecruiterForm = () => {
                 <th>Job Role</th>
                 <th>Email</th>
                 <th>Mobile</th>
+                <th>Terms Accepted</th>
                 <th>Created</th>
                 {role === "Admin" && <th>Actions</th>}
               </tr>
@@ -111,6 +112,7 @@ const RecruiterForm = () => {
                   <td>{entry.jobrole}</td>
                   <td>{entry.email}</td>
                   <td>{entry.mobile}</td>
+                  <td>{entry.termsaccepted ? "Accepted" : "Not accepted"}</td>
                   <td>{new Date(entry.createdAt).toLocaleDateString()}</td>
                   {role === "Admin" && (
                     <td>

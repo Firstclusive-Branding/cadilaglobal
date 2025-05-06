@@ -7,7 +7,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const PermanentHiring = () => {
   useEffect(() => {
-    document.title = `Permanent Hiring - Cadila Global`;
+    document.title = `Permanent Hiring - Cadila Global LLC`;
   }, []);
 
   return (

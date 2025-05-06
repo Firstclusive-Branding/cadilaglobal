@@ -50,7 +50,7 @@ const staffingSolutions = [
 
 const Services = () => {
   useEffect(() => {
-    document.title = `Services - Cadila Global`;
+    document.title = `Services - Cadila Global LLC`;
   }, []);
 
   return (
