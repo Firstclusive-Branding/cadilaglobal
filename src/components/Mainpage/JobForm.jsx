@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../../styles/Mainpage Styles/JobForm.css";
 import Swal from "sweetalert2";
@@ -12,6 +12,7 @@ const JobForm = () => {
   const jobTitle = queryParams.get("title") || "";
   const jobLocation = queryParams.get("location") || "";
   const jobId = queryParams.get("jobid") || "";
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     document.title = `Job Application for ${jobTitle} - Cadila Global LLC`;
@@ -39,16 +40,6 @@ const JobForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
-    if (!isChecked) {
-      Swal.fire({
-        icon: "warning",
-        title: "Terms & Conditions Required",
-        text: "You must accept the terms and conditions to proceed.",
-        confirmButtonText: "OK",
-      });
-      return;
-    }
 
     if (!formData.resume) {
       Swal.fire("Please upload your CV", "", "warning");
@@ -101,6 +92,8 @@ const JobForm = () => {
         resume: null,
       });
       setIsChecked(false);
+      if (fileInputRef.current) fileInputRef.current.value = null;
+
       e.target.reset();
     } catch (err) {
       console.error("Application error:", err);
@@ -112,6 +105,7 @@ const JobForm = () => {
       });
     } finally {
       setLoading(false);
+      window.location.reload();
     }
   };
 
@@ -175,6 +169,7 @@ const JobForm = () => {
               onChange={handleChange}
               required
               disabled={loading}
+              ref={fileInputRef}
             />
 
             <div className="job-form-checkbox">
