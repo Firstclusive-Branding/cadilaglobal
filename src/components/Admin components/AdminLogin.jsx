@@ -137,6 +137,9 @@ const AdminLogin = () => {
     <div className="admin-login-container">
       <div className="admin-login-logo-container">
         <img src={logo} alt="logo" />
+        <a href="/" className="admin-login-home-button">
+          Home
+        </a>
       </div>
       <div className="admin-login-box">
         <h2 className="admin-login-title">Login</h2>
