@@ -52,7 +52,7 @@ const AdminSidebar = ({ role }) => {
 
   return (
     <div className={`universal-sidebar ${role}-sidebar`}>
-      <img src={Logo} alt="Logo" />
+      <img src={Logo} alt="Logo" className="universal-sidebar-logo" />
 
       <ul>
         <li>
