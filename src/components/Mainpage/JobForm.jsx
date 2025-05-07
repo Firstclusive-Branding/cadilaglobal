@@ -12,6 +12,7 @@ const JobForm = () => {
   const jobTitle = queryParams.get("title") || "";
   const jobLocation = queryParams.get("location") || "";
   const jobId = queryParams.get("jobid") || "";
+
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -24,32 +25,35 @@ const JobForm = () => {
     contact: "",
     experience: "",
     resume: null,
+    termsaccepted: false,
   });
 
   const [loading, setLoading] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === "resume") {
+    const { name, value, type, checked, files } = e.target;
+    if (type === "file") {
       setFormData({ ...formData, resume: files[0] });
+    } else if (type === "checkbox") {
+      setFormData({ ...formData, [name]: checked });
     } else {
       setFormData({ ...formData, [name]: value });
     }
   };
 
-  const onSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.resume) {
-      Swal.fire("Please upload your CV", "", "warning");
+      Swal.fire("Resume Required", "Please upload your CV.", "warning");
       return;
     }
 
-    try {
-      setLoading(true);
+    setLoading(true);
 
-      const createRes = await axios.post(
+    try {
+      // Step 1: Create applicant
+      const res = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/user/jobapplicants/create`,
         {
           jobid: jobId,
@@ -57,55 +61,52 @@ const JobForm = () => {
           email: formData.email,
           mobile: formData.contact,
           yearofexperience: formData.experience,
-          termsaccepted: isChecked,
+          termsaccepted: formData.termsaccepted,
         }
       );
 
-      const applicantId = createRes.data.data._id;
+      const applicantId = res?.data?.data?._id;
+      if (!applicantId) throw new Error("Failed to get applicant ID");
 
-      const cvForm = new FormData();
-      cvForm.append("resume", formData.resume);
+      // Step 2: Upload resume
+      const form = new FormData();
+      form.append("resume", formData.resume);
+
       await axios.post(
         `${
           import.meta.env.VITE_API_URL
         }/api/user/jobapplicants/upload/${applicantId}`,
-        cvForm,
+        form,
         {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
+          headers: { "Content-Type": "multipart/form-data" },
         }
       );
 
-      Swal.fire({
-        title: "Application Submitted!",
-        text: "We have received your application.",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
+      Swal.fire("Success", "Application submitted successfully!", "success");
 
+      // Reset form and file
       setFormData({
         name: "",
         email: "",
         contact: "",
         experience: "",
         resume: null,
+        termsaccepted: false,
       });
-      setIsChecked(false);
-      if (fileInputRef.current) fileInputRef.current.value = null;
 
-      e.target.reset();
+      if (fileInputRef.current) {
+        fileInputRef.current.value = null;
+      }
     } catch (err) {
       console.error("Application error:", err);
       Swal.fire({
         icon: "error",
         title: "Submission Failed",
-        text: "Something went wrong. Please try again.",
+        text: err.response?.data?.message || err.message,
         confirmButtonText: "Try Again",
       });
     } finally {
       setLoading(false);
-      window.location.reload();
     }
   };
 
@@ -123,17 +124,20 @@ const JobForm = () => {
         <div className="job-form-content">
           <h2>Apply for This Job</h2>
           <p>Fill in your details and upload your CV.</p>
-          <form onSubmit={onSubmit} className="job-form">
+          <form onSubmit={handleSubmit} className="job-form">
             <input
               type="text"
               name="jobDetails"
               value={`${jobTitle} - ${jobLocation}`}
-              disabled
+              readOnly
+              className="readonly-input"
             />
+
             <input
               type="text"
               name="name"
               placeholder="Enter your full name"
+              value={formData.name}
               onChange={handleChange}
               required
               disabled={loading}
@@ -142,6 +146,7 @@ const JobForm = () => {
               type="email"
               name="email"
               placeholder="Enter your email"
+              value={formData.email}
               onChange={handleChange}
               required
               disabled={loading}
@@ -150,6 +155,7 @@ const JobForm = () => {
               type="text"
               name="contact"
               placeholder="Enter your contact number"
+              value={formData.contact}
               onChange={handleChange}
               required
               disabled={loading}
@@ -158,6 +164,7 @@ const JobForm = () => {
               type="number"
               name="experience"
               placeholder="Years of Experience"
+              value={formData.experience}
               onChange={handleChange}
               required
               disabled={loading}
@@ -167,17 +174,18 @@ const JobForm = () => {
               name="resume"
               accept=".pdf,.doc,.docx"
               onChange={handleChange}
+              ref={fileInputRef}
               required
               disabled={loading}
-              ref={fileInputRef}
             />
 
             <div className="job-form-checkbox">
               <input
                 type="checkbox"
                 id="termsCheckbox"
-                checked={isChecked}
-                onChange={() => setIsChecked(!isChecked)}
+                name="termsaccepted"
+                checked={formData.termsaccepted}
+                onChange={handleChange}
                 disabled={loading}
               />
               <label htmlFor="termsCheckbox" className="checkbox-label">
