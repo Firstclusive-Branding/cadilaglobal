@@ -311,7 +311,7 @@ const ManageJobs = ({ role }) => {
             {!isRecruiter && <th>Posted By</th>}
             {!isRecruiter && <th>Role</th>}
             <th>Updated</th>
-            {!isRecruiter && <th>Status</th>}
+            <th>Status</th>
             <th>Actions</th>
           </tr>
         </thead>
