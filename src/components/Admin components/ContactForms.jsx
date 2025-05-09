@@ -64,7 +64,7 @@ const ContactForms = () => {
         { _id },
         getAuthHeaders()
       );
-      toast.success("Contact form deleted successfully!");
+      toast.success("Deleted successfully!");
       fetchContacts();
     } catch (err) {
       toast.error("Failed to delete contact.");

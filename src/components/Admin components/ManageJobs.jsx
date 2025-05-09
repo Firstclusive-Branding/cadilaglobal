@@ -252,7 +252,7 @@ const ManageJobs = ({ role }) => {
           { _id },
           getAuthHeaders()
         );
-        toast.success("Job deleted successfully!");
+        toast.success("Deleted successfully!");
         fetchJobs();
       } catch (err) {
         toast.error("Failed to delete the job post.");

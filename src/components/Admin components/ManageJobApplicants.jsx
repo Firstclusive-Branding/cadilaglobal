@@ -86,7 +86,7 @@ const ManageJobApplicants = () => {
         { _id },
         getAuthHeaders()
       );
-      toast.success("Applicant deleted successfully!");
+      toast.success("Deleted successfully!");
       fetchApplicants();
     } catch (err) {
       toast.error("Error deleting applicant.");

@@ -67,7 +67,7 @@ const RecruiterForm = () => {
         { _id },
         getAuthHeaders()
       );
-      toast.success("Recruiter form deleted successfully!");
+      toast.success("Deleted successfully!");
       fetchEntries();
     } catch (err) {
       toast.error("Failed to delete entry.");
