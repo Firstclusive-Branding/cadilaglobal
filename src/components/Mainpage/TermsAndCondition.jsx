@@ -54,12 +54,10 @@ const TermsAndCondition = () => {
           <h2>{`${idx + 1}. ${section.section.replace(/^\d+\.\s*/, "")}`}</h2>
 
           <ul>
-            {section.items.map((item) => (
-              // <li key={item._id}>
-              //   <strong>{formatTitle(item.title)}:</strong> {item.value}
-              // </li>
-              <li key={item._id}>
-                <strong>{formatTitle(item.title)}:</strong>
+            {section.items.map((item, i) => (
+              <li key={item._id || i}>
+                {item.title && <strong>{formatTitle(item.title)}:</strong>}
+
                 {item.value.includes("\n") ? (
                   <>
                     {item.value
