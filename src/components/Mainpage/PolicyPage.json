@@ -1,0 +1,135 @@
+{
+  "privacyPolicy": [
+    {
+      "section": "Information We Collect",
+      "items": [
+        {
+          "title": "Personal Information",
+          "value": "Name, email, phone number, address, and government-issued IDs (if applicable)."
+        },
+        {
+          "title": "Employment Information",
+          "value": "Resumes, work history, education, certifications, and job preferences."
+        },
+        {
+          "title": "Technical Information",
+          "value": "IP address, browser type, operating system, and usage data (collected via cookies)."
+        },
+        {
+          "title": "SMS Consent Information",
+          "value": "Mobile numbers and consent for communication."
+        }
+      ]
+    },
+    {
+      "section": "How We Use Your Information",
+      "items": [
+        {
+          "value": "Staffing Services: Matching candidates with job opportunities."
+        },
+        {
+          "value": "Customer Support: Addressing inquiries and providing support."
+        },
+        {
+          "value": "Notifications: Sending job updates and employment-related messages."
+        },
+        {
+          "value": "Compliance: Ensuring adherence to legal regulations."
+        }
+      ]
+    },
+    {
+      "section": "Consent For SMS Communications",
+      "items": [
+        {
+          "value": "SMS opt-in and phone numbers collected for SMS communication purposes will not be shared with any third party and affiliates for marketing purposes."
+        }
+      ]
+    },
+    {
+      "section": "Data Sharing And Disclosure",
+      "items": [
+        {
+          "value": "We do not sell or rent your personal information."
+        },
+        {
+          "value": "Information is shared only with trusted service providers and legal authorities when necessary."
+        }
+      ]
+    },
+    {
+      "section": "Data Retention And Security",
+      "items": [
+        {
+          "value": "Your data is retained only as long as necessary."
+        },
+        {
+          "value": "We implement industry-standard security measures."
+        }
+      ]
+    },
+    {
+      "section": "Your Rights",
+      "items": [
+        {
+          "value": "Access: Request a copy of your data."
+        },
+        {
+          "value": "Correction: Update incorrect information."
+        },
+        {
+          "value": "Deletion: Request data removal (subject to legal obligations)."
+        }
+      ]
+    },
+    {
+      "section": "Cookies And Tracking",
+      "items": [
+        {
+          "value": "Our website uses cookies to enhance user experience and analyze website performance. You can control cookies through browser settings."
+        }
+      ]
+    },
+    {
+      "section": "Children's Privacy",
+      "items": [
+        {
+          "value": "Our services are not directed to individuals under 18. We do not knowingly collect data from minors."
+        }
+      ]
+    },
+    {
+      "section": "Changes To This Policy",
+      "items": [
+        {
+          "value": "We may update this Privacy Policy from time to time. Changes will be posted on this page."
+        }
+      ]
+    },
+    {
+      "section": "Standard Messaging Disclosures",
+      "items": [
+        {
+          "value": "Message and data rates may apply."
+        },
+        {
+          "value": "You can opt out at any time by texting ‘STOP’."
+        },
+        {
+          "value": "For assistance, text ‘HELP’ or visit our Privacy Policy and Terms and Conditions pages."
+        },
+        {
+          "value": "Message frequency may vary."
+        }
+      ]
+    },
+    {
+      "section": "Contact Us",
+      "items": [
+        {
+          "value": "Cadila Global LLC\nEmail: info@cadilaglobal.com\nPhone: +1 (832) 757-9277"
+        }
+      ]
+    }
+  ]
+}

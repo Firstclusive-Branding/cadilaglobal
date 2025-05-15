@@ -12,6 +12,8 @@ import {
 import "../../styles/Admin Styles/AdminSidebar.css";
 import Logo from "../../assets/Logo.png";
 import profilePic from "../../assets/profile-pic.png";
+import { IoMdDocument } from "react-icons/io";
+import { MdOutlinePolicy } from "react-icons/md";
 
 const AdminSidebar = ({ role }) => {
   const isAdmin = role === "admin";
@@ -92,6 +94,21 @@ const AdminSidebar = ({ role }) => {
               </Link>
             </li>
           </>
+        )}
+
+        {isAdmin && (
+          <li>
+            <Link to="/admin/manage-terms">
+              <IoMdDocument /> Terms & Conditions
+            </Link>
+          </li>
+        )}
+        {isAdmin && (
+          <li>
+            <Link to="/admin/manage-policies">
+              <MdOutlinePolicy /> Privacy Policy
+            </Link>
+          </li>
         )}
       </ul>
 

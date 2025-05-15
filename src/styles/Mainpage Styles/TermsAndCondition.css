@@ -44,6 +44,7 @@
 .terms-section p {
   margin-bottom: 8px;
   color: #444;
+  white-space: pre-line;
 }
 .terms-section ul li a {
   color: #007bff;

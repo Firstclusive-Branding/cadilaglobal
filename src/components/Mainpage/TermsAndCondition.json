@@ -1,0 +1,163 @@
+{
+  "terms_and_conditions": [
+    {
+      "section": "1_general_terms",
+      "items": [
+        {
+          "title": "services_provided",
+          "value": "Cadila Global LLC offers staffing and recruitment services to businesses and job seekers."
+        },
+        {
+          "title": "accuracy_of_information",
+          "value": "Users must ensure that all information provided is accurate and truthful."
+        },
+        {
+          "title": "modifications",
+          "value": "We reserve the right to modify these terms at any time, with changes taking effect immediately upon posting."
+        }
+      ]
+    },
+    {
+      "section": "2_privacy_policy",
+      "items": [
+        {
+          "title": "data_collection",
+          "value": "We collect personal information necessary for providing our services."
+        },
+        {
+          "title": "data_usage",
+          "value": "Collected data is used in accordance with our Privacy Policy."
+        },
+        {
+          "title": "data_protection",
+          "value": "We implement measures to protect your personal information from unauthorized access."
+        }
+      ]
+    },
+    {
+      "section": "3_terms_of_service_sms",
+      "items": [
+        {
+          "title": "consent_for_sms_communication",
+          "value": "The information (Phone Numbers) obtained as part of the SMS consent process will not be shared with third parties for marketing purposes."
+        },
+        {
+          "title": "types_of_sms_communications",
+          "value": "If you have consented to receive text messages from Cadila Global LLC, you may receive messages related to the following: Conversations external."
+        },
+        {
+          "title": "message_frequency",
+          "value": "Message frequency may vary depending on the type of communications. For example, you will be receiving between 300 to 400 SMS messages related to follow-up after the calls."
+        },
+        {
+          "title": "potential_fees_for_sms_messaging",
+          "value": "Please note that standard message and data rates may apply, depending on your carrier’s pricing plan. These fees may vary if the message is sent domestically or internationally."
+        },
+        {
+          "title": "opt_in_method",
+          "value": "You may opt-in to receive SMS messages from Cadila Global LLC in the following way: By submitting an online form."
+        },
+        {
+          "title": "opt_out_method",
+          "value": "You can opt out of receiving SMS messages at any time. To do so, simply reply 'STOP' to any SMS message you receive or contact us directly to request removal."
+        },
+        {
+          "title": "help",
+          "value": "If you are experiencing any issues, you can reply with the keyword HELP or contact us at (832) 757-9277."
+        },
+        {
+          "title": "additional_options",
+          "value": "If you do not wish to receive SMS messages, you can choose not to check the SMS consent box on our forms."
+        },
+        {
+          "title": "standard_messaging_disclosures",
+          "value": "Message and data rates may apply. You can opt out at any time by texting 'STOP'. For assistance, text 'HELP' or visit our Privacy Policy and Terms and Conditions pages. Message frequency may vary."
+        }
+      ]
+    },
+    {
+      "section": "4_types_of_sms_communications",
+      "items": [
+        {
+          "title": "customers_and_guests",
+          "value": "Updates about orders, deliveries, or other relevant service-related information."
+        },
+        {
+          "title": "job_applicants",
+          "value": "Information regarding application status, onboarding materials, or other employment-related updates."
+        }
+      ]
+    },
+    {
+      "section": "5_regulatory_compliance",
+      "items": [
+        {
+          "title": "licensing",
+          "value": "Cadila Global LLC operates in compliance with all applicable licensing requirements in Texas."
+        },
+        {
+          "title": "employment_classification",
+          "value": "We classify our workers in accordance with federal and state laws to ensure proper wages, benefits, and protections."
+        },
+        {
+          "title": "non_discrimination",
+          "value": "We adhere to non-discrimination policies, ensuring equal opportunity for all candidates and employees."
+        }
+      ]
+    },
+    {
+      "section": "6_client_responsibilities",
+      "items": [
+        {
+          "title": "job_descriptions",
+          "value": "Clients must provide accurate job descriptions, qualifications, and requirements for positions to be filled."
+        },
+        {
+          "title": "work_environment",
+          "value": "Clients are responsible for maintaining a safe and compliant work environment for assigned employees."
+        }
+      ]
+    },
+    {
+      "section": "7_limitation_of_liability",
+      "items": [
+        {
+          "title": "service_interruptions",
+          "value": "Cadila Global LLC is not liable for any damages resulting from service interruptions, technical issues, or unforeseen events."
+        },
+        {
+          "title": "employment_decisions",
+          "value": "We are not responsible for employment decisions made by clients or candidates."
+        }
+      ]
+    },
+    {
+      "section": "8_governing_law",
+      "items": [
+        {
+          "title": "jurisdiction",
+          "value": "These terms are governed by the laws of the State of Texas. Any disputes arising shall be resolved in the courts of Texas."
+        }
+      ]
+    },
+    {
+      "section": "9_contact_us",
+      "items": [
+        {
+          "title": "company_info",
+          "value": "Cadila Global LLC"
+        },
+        {
+          "title": "email",
+          "value": "info@cadilaglobal.com"
+        },
+        {
+          "title": "phone",
+          "value": "+1 (832) 757-9277"
+        }
+      ]
+    }
+  ],
+  "version": "1.0",
+  "last_updated": "2025-05-06"
+}

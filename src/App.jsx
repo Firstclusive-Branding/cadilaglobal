@@ -55,6 +55,8 @@ import RecruiterForm from "./components/Admin components/RecruiterForm";
 import ContactForms from "./components/Admin components/ContactForms";
 import AdminUsers from "./components/Admin components/AdminUsers";
 import ForgotPassword from "./components/Admin components/ForgotPassword";
+import ManageTerms from "./components/Admin components/ManageTerms";
+import ManagePolicies from "./components/Admin components/ManagePolicies";
 
 // Route Protection
 const ProtectedRoute = ({ element, roleKey }) => {
@@ -262,6 +264,24 @@ const router = createBrowserRouter([
                     ? "adminAuthenticated"
                     : "managerAuthenticated"
                 }
+              />
+            ),
+          },
+          {
+            path: "manage-terms",
+            element: (
+              <ProtectedRoute
+                element={<ManageTerms />}
+                roleKey="adminAuthenticated"
+              />
+            ),
+          },
+          {
+            path: "manage-policies",
+            element: (
+              <ProtectedRoute
+                element={<ManagePolicies />}
+                roleKey="adminAuthenticated"
               />
             ),
           },
