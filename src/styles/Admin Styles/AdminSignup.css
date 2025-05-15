@@ -13,9 +13,9 @@
 /* Signup Box */
 .admin-signup-box {
   background-color: #ffffff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 420px;
   text-align: center;
@@ -25,11 +25,11 @@
 .admin-signup-title {
   color: #2c3e50;
   margin-bottom: 20px;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bold;
 }
 
-/* Input Fields */
+/* Input Groups */
 .signup-input-group {
   margin-bottom: 16px;
   text-align: left;
@@ -38,7 +38,7 @@
 .signup-input-field {
   width: 100%;
   padding: 12px;
-  border: 2px solid #2c3e504f;
+  border: 2px solid #ccd0d5;
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 15px;
@@ -50,7 +50,7 @@
 .signup-input-field:focus {
   border-color: #2c3e50;
   outline: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .signup-input-field::placeholder {
@@ -67,7 +67,7 @@
   margin-bottom: 16px;
   padding: 10px;
   border-radius: 6px;
-  border: 2px solid #2c3e504f;
+  border: 2px solid #ccd0d5;
 }
 
 .signup-radio-wrapper {
@@ -86,6 +86,91 @@
   font-weight: 600;
 }
 
+/* CAPTCHA */
+.admin-signup-captcha {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-signup-captcha-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.admin-signup-captcha-image-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+canvas {
+  border-radius: 5px;
+  border: 1px solid #2c3e50;
+  background: #ffffff;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-signup--refresh-btn {
+  background-color: #2c3e50;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.admin-signup--refresh-btn:hover {
+  background-color: #1e2b38;
+}
+
+.admin-signup--text-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-signup-captcha-input {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #ccd0d5;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #ffffff;
+  color: #2c3e50;
+  transition: border-color 0.3s ease;
+}
+
+.admin-signup-captcha-input:focus {
+  border-color: #2c3e50;
+  outline: none;
+}
+
+.admin-signup--text-container button {
+  background-color: #2c3e50;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.admin-signup--text-container button:hover {
+  background-color: #1e2b38;
+}
+
 /* Error and Success Messages */
 .signup-error-text,
 .signup-error-message {
@@ -94,50 +179,12 @@
   margin-top: 5px;
   text-align: left;
 }
+
 .signup-success-message {
   color: #28a745;
   font-size: 14px;
   margin-bottom: 12px;
   text-align: center;
-}
-
-/* CAPTCHA */
-.signup-captcha {
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.captcha-container {
-  display: flex;
-  gap: 10px;
-}
-
-.captcha-input {
-  padding: 8px;
-  border: 2px solid #2c3e504f;
-  border-radius: 4px;
-  font-size: 14px;
-  text-align: center;
-  background-color: #ffffff;
-  color: #2c3e50;
-  transition: border-color 0.3s ease;
-}
-
-.captcha-input:focus {
-  border-color: #2c3e50;
-  outline: none;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-}
-
-.captcha-refresh-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.captcha-refresh-btn svg {
-  display: flex;
 }
 
 /* Submit Button */
@@ -164,21 +211,18 @@
   cursor: not-allowed;
 }
 
-.captcha-text-container {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  gap: 10px;
-}
+/* Login Prompt */
 .admin-sign-up-login {
   color: #1e2b38;
-  margin: 0;
+  margin: 15px 0 0;
+  font-size: 14px;
 }
 
 .admin-sign-up-login a {
   color: #007bff;
   text-decoration: none;
 }
+
 .admin-sign-up-login a:hover {
   text-decoration: underline;
 }

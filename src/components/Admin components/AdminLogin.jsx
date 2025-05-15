@@ -168,7 +168,7 @@ const AdminLogin = () => {
 
           <div className="admin-login-captcha">
             <div className="captcha-container">
-              <div>
+              <div className="captcha-image">
                 <canvas ref={canvasRef} width="155" height="50" />
                 <button
                   type="button"

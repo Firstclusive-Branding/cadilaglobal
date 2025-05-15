@@ -287,24 +287,24 @@ function AdminSignup() {
           </div>
 
           <div className="admin-signup-captcha">
-            <div className="captcha-container">
-              <div>
+            <div className="admin-signup-captcha-container">
+              <div className="admin-signup-captcha-image-container">
                 <canvas ref={canvasRef} width="155" height="50" />
                 <button
                   type="button"
                   onClick={drawCaptcha}
-                  className="captcha-refresh-btn"
+                  className="admin-signup--refresh-btn"
                 >
                   <IoMdRefresh size={30} />
                 </button>
               </div>
-              <div className="captcha-text-container">
+              <div className="admin-signup--text-container">
                 <input
                   type="text"
                   value={userCaptchaInput}
                   onChange={(e) => setUserCaptchaInput(e.target.value)}
                   placeholder="Enter CAPTCHA text"
-                  className="captcha-input"
+                  className="admin-signup-captcha-input"
                   required
                 />
                 <button type="button" onClick={handleCaptchaInputChange}>
