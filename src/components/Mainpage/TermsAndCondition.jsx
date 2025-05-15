@@ -55,8 +55,44 @@ const TermsAndCondition = () => {
 
           <ul>
             {section.items.map((item) => (
+              // <li key={item._id}>
+              //   <strong>{formatTitle(item.title)}:</strong> {item.value}
+              // </li>
               <li key={item._id}>
-                <strong>{formatTitle(item.title)}:</strong> {item.value}
+                <strong>{formatTitle(item.title)}:</strong>
+                {item.value.includes("\n") ? (
+                  <>
+                    {item.value
+                      .split("\n")
+                      .filter((line) => line.trim() !== "")
+                      .map((line, idx) => {
+                        const isBullet =
+                          line.trim().startsWith("-") ||
+                          line.trim().startsWith("*");
+                        return isBullet ? (
+                          <ul
+                            key={idx}
+                            style={{
+                              paddingLeft: "1.2rem",
+                              marginTop: "4px",
+                              listStyleType: "disc",
+                            }}
+                          >
+                            <li>{line.replace(/^[-*]\s*/, "")}</li>
+                          </ul>
+                        ) : (
+                          <div
+                            key={idx}
+                            style={{ marginTop: idx === 0 ? "6px" : "10px" }}
+                          >
+                            {line}
+                          </div>
+                        );
+                      })}
+                  </>
+                ) : (
+                  <span> {item.value}</span>
+                )}
               </li>
             ))}
           </ul>

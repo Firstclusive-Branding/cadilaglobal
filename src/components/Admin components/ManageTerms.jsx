@@ -279,7 +279,18 @@ const ManageTerms = () => {
               <div className="MT-item-title">
                 {item.title.replace(/_/g, " ")}
               </div>
-              <div className="MT-item-desc">{item.value}</div>
+              <div className="MT-item-desc">
+                {item.value.split("\n").map((line, idx) => {
+                  if (
+                    line.trim().startsWith("*") ||
+                    line.trim().startsWith("-")
+                  ) {
+                    return <li key={idx}>{line.replace(/^[-*]\s*/, "")}</li>;
+                  }
+                  return <p key={idx}>{line}</p>;
+                })}
+              </div>
+
               <div className="MT-item-actions">
                 <FaEdit onClick={() => handleEdit(sectionIndex, itemIndex)} />
                 <FaTrashAlt
@@ -322,6 +333,7 @@ const ManageTerms = () => {
                 setNewTerm({ ...newTerm, title: e.target.value })
               }
             />
+            <span>(For sub-points use dash -)</span>
             <textarea
               className="MT-textarea"
               placeholder="Description"

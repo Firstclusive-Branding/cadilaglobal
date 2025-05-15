@@ -62,10 +62,41 @@ const PrivacyPage = () => {
           <ul>
             {section.items.map((item, i) => (
               <li key={item._id || i}>
-                {item.title ? (
+                {item.title && <strong>{formatTitle(item.title)}:</strong>}{" "}
+                {item.value.includes("\n") ? (
                   <>
-                    <strong>{formatTitle(item.title)}:</strong>{" "}
-                    <span style={{ whiteSpace: "pre-line" }}>{item.value}</span>
+                    {item.value
+                      .split("\n")
+                      .filter((line) => line.trim() !== "")
+                      .map((line, idx) => {
+                        const isBullet =
+                          line.trim().startsWith("-") ||
+                          line.trim().startsWith("*");
+
+                        return isBullet ? (
+                          <ul
+                            key={idx}
+                            style={{
+                              paddingLeft: "1.2rem",
+                              marginTop: "4px",
+                              listStyleType: "disc",
+                            }}
+                          >
+                            <li>{line.replace(/^[-*]\s*/, "")}</li>
+                          </ul>
+                        ) : (
+                          <div
+                            key={idx}
+                            style={{
+                              marginTop: idx === 0 ? "6px" : "10px",
+                              marginLeft: "5px",
+                              whiteSpace: "pre-line",
+                            }}
+                          >
+                            {line}
+                          </div>
+                        );
+                      })}
                   </>
                 ) : (
                   <span style={{ whiteSpace: "pre-line" }}>{item.value}</span>

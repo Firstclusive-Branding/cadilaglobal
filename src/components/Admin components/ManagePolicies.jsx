@@ -274,8 +274,17 @@ const ManagePolicies = () => {
           {section.items.map((item, itemIndex) => (
             <div key={item._id} className="MP-item">
               <div className="MP-item-title">{item.title}</div>
-              <div className="MP-item-desc" style={{ whiteSpace: "pre-line" }}>
-                {item.value}
+
+              <div className="MP-item-desc">
+                {item.value.split("\n").map((line, idx) => {
+                  if (
+                    line.trim().startsWith("*") ||
+                    line.trim().startsWith("-")
+                  ) {
+                    return <li key={idx}>{line.replace(/^[-*]\s*/, "")}</li>;
+                  }
+                  return <p key={idx}>{line}</p>;
+                })}
               </div>
               <div className="MP-item-actions">
                 <FaEdit onClick={() => handleEdit(sectionIndex, itemIndex)} />
@@ -309,7 +318,6 @@ const ManagePolicies = () => {
                 }
               />
             )}
-
             <input
               className="MP-input"
               type="text"
@@ -319,6 +327,7 @@ const ManagePolicies = () => {
                 setNewPolicy({ ...newPolicy, title: e.target.value })
               }
             />
+            <span>(For sub-points use dash -)</span>
             <textarea
               className="MP-textarea"
               placeholder="Description"
@@ -327,7 +336,6 @@ const ManagePolicies = () => {
                 setNewPolicy({ ...newPolicy, value: e.target.value })
               }
             ></textarea>
-
             <div className="MP-modal-actions">
               <button className="MP-btn-save" onClick={handleAddOrUpdate}>
                 Save
